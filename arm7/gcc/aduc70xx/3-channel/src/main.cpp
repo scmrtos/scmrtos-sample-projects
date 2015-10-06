@@ -163,7 +163,7 @@ namespace OS
             //
             //     Get data through channel
             //
-            TSlon *p;
+            TSlon *p = 0;
             SlonQueue.pop(p);     // get pointer from queue
             p->eat();             // feed the appropriate Slon
         }
