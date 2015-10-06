@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<project>
+  <fileVersion>2</fileVersion>
+  <configuration>
+    <name>STM8S105C6</name>
+    <toolchain>
+      <name>STM8</name>
+    </toolchain>
+    <debug>1</debug>
+  </configuration>
+  <file>
+    <name>$PROJ_DIR$\src\debug.cpp</name>
+  </file>
+  <file>
+    <name>$PROJ_DIR$\src\debug.h</name>
+  </file>
+  <file>
+    <name>$PROJ_DIR$\src\main.cpp</name>
+  </file>
+  <file>
+    <name>$PROJ_DIR$\..\..\..\..\scmRTOS\core\os_kernel.cpp</name>
+  </file>
+  <file>
+    <name>$PROJ_DIR$\..\..\..\..\scmRTOS\core\os_kernel.h</name>
+  </file>
+  <file>
+    <name>$PROJ_DIR$\..\..\..\..\scmRTOS\core\os_services.cpp</name>
+  </file>
+  <file>
+    <name>$PROJ_DIR$\..\..\..\..\scmRTOS\core\os_services.h</name>
+  </file>
+  <file>
+    <name>$PROJ_DIR$\..\..\..\..\scmRTOS\port\stm8\iar\os_target.cpp</name>
+  </file>
+  <file>
+    <name>$PROJ_DIR$\..\..\..\..\scmRTOS\port\stm8\iar\os_target.h</name>
+  </file>
+  <file>
+    <name>$PROJ_DIR$\..\..\..\..\scmRTOS\port\stm8\iar\os_target_asm.s</name>
+  </file>
+  <file>
+    <name>$PROJ_DIR$\src\prio_names.cpp</name>
+  </file>
+  <file>
+    <name>$PROJ_DIR$\src\prio_names.h</name>
+  </file>
+  <file>
+    <name>$PROJ_DIR$\..\..\..\..\scmRTOS\ext\profiler\profiler.h</name>
+  </file>
+  <file>
+    <name>$PROJ_DIR$\..\..\..\..\scmRTOS\core\scmRTOS.h</name>
+  </file>
+  <file>
+    <name>$PROJ_DIR$\..\..\..\..\scmRTOS\core\scmRTOS_310_compat.h</name>
+  </file>
+  <file>
+    <name>$PROJ_DIR$\src\scmRTOS_CONFIG.h</name>
+  </file>
+  <file>
+    <name>$PROJ_DIR$\..\..\..\..\scmRTOS\core\scmRTOS_defs.h</name>
+  </file>
+  <file>
+    <name>$PROJ_DIR$\src\scmRTOS_extensions.h</name>
+  </file>
+  <file>
+    <name>$PROJ_DIR$\src\scmRTOS_TARGET_CFG.h</name>
+  </file>
+  <file>
+    <name>$PROJ_DIR$\..\..\..\..\scmRTOS\core\usrlib.cpp</name>
+  </file>
+  <file>
+    <name>$PROJ_DIR$\..\..\..\..\scmRTOS\core\usrlib.h</name>
+  </file>
+</project>
+
+

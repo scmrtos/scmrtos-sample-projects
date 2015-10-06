@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<project>
+  <fileVersion>2</fileVersion>
+  <fileChecksum>2675207798</fileChecksum>
+  <configuration>
+    <name>STM8S105C6</name>
+    <outputs>
+      <file>$PROJ_DIR$\lst\debug.lst</file>
+      <file>$PROJ_DIR$\bin\4-debug.hex</file>
+      <file>$PROJ_DIR$\obj\4-debug.pbd</file>
+      <file>$PROJ_DIR$\lst\prio_names.lst</file>
+      <file>$PROJ_DIR$\..\shared\pin.h</file>
+      <file>$PROJ_DIR$\..\STM8S_StdPeriph_Driver\inc\stm8s_iwdg.h</file>
+      <file>$PROJ_DIR$\bin\1-EventFlag.out</file>
+      <file>$PROJ_DIR$\..\STM8S_StdPeriph_Driver\inc\stm8s_tim2.h</file>
+      <file>$PROJ_DIR$\src\debug.cpp</file>
+      <file>$PROJ_DIR$\src\prio_names.cpp</file>
+      <file>$PROJ_DIR$\..\STM8S_StdPeriph_Driver\inc\stm8s_wwdg.h</file>
+      <file>$PROJ_DIR$\src\scmRTOS_extensions.h</file>
+      <file>$PROJ_DIR$\src\scmRTOS_TARGET_CFG.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\scmRTOS\core\scmRTOS_defs.h</file>
+      <file>$PROJ_DIR$\src\scmRTOS_CONFIG.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\scmRTOS\core\usrlib.cpp</file>
+      <file>$PROJ_DIR$\obj\usrlib.o</file>
+      <file>$PROJ_DIR$\obj\prio_names.o</file>
+      <file>$PROJ_DIR$\obj\debug.o</file>
+      <file>$PROJ_DIR$\obj\debug.pbi</file>
+      <file>$PROJ_DIR$\obj\prio_names.pbi</file>
+      <file>$TOOLKIT_DIR$\inc\c\stdio.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\ystdio.h</file>
+      <file>$PROJ_DIR$\lst\1-EventFlag.log</file>
+      <file>$PROJ_DIR$\lst\1-EventFlag.map</file>
+      <file>$TOOLKIT_DIR$\lib\dlstm8smn.a</file>
+      <file>$TOOLKIT_DIR$\lib\dbgstm8smd.a</file>
+      <file>$PROJ_DIR$\lst\main.lst</file>
+      <file>$TOOLKIT_DIR$\config\lnkstm8s105c6.icf</file>
+      <file>$PROJ_DIR$\src\debug.h</file>
+      <file>$PROJ_DIR$\bin\2-message.hex</file>
+      <file>$TOOLKIT_DIR$\inc\c\ycheck.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\ysizet.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\xencoding_limits.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\DLib_Product.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\stddef.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\stdint.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\yvals.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\DLib_Defaults.h</file>
+      <file>$PROJ_DIR$\lst\os_target.lst</file>
+      <file>$PROJ_DIR$\..\STM8S_StdPeriph_Driver\stm8s_conf.h</file>
+      <file>$PROJ_DIR$\..\STM8S_StdPeriph_Driver\inc\stm8s.h</file>
+      <file>$PROJ_DIR$\..\STM8S_StdPeriph_Driver\inc\stm8s_tim3.h</file>
+      <file>$PROJ_DIR$\..\STM8S_StdPeriph_Driver\inc\stm8s_itc.h</file>
+      <file>$PROJ_DIR$\..\STM8S_StdPeriph_Driver\inc\stm8s_rst.h</file>
+      <file>$PROJ_DIR$\..\STM8S_StdPeriph_Driver\inc\stm8s_gpio.h</file>
+      <file>$PROJ_DIR$\..\STM8S_StdPeriph_Driver\inc\stm8s_tim1.h</file>
+      <file>$PROJ_DIR$\..\STM8S_StdPeriph_Driver\inc\stm8s_tim4.h</file>
+      <file>$PROJ_DIR$\..\STM8S_StdPeriph_Driver\inc\stm8s_uart2.h</file>
+      <file>$PROJ_DIR$\lst\usrlib.lst</file>
+      <file>$PROJ_DIR$\obj\os_kernel.pbi</file>
+      <file>$PROJ_DIR$\lst\os_kernel.lst</file>
+      <file>$PROJ_DIR$\obj\os_services.o</file>
+      <file>$TOOLKIT_DIR$\lib\dlstm8smn.h</file>
+      <file>$PROJ_DIR$\src\main.cpp</file>
+      <file>$PROJ_DIR$\..\STM8S_StdPeriph_Driver\inc\stm8s_adc1.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\scmRTOS\core\os_kernel.cpp</file>
+      <file>$PROJ_DIR$\..\STM8S_StdPeriph_Driver\inc\stm8s_spi.h</file>
+      <file>$PROJ_DIR$\bin\3-channel.hex</file>
+      <file>$PROJ_DIR$\obj\os_target.pbi</file>
+      <file>$PROJ_DIR$\obj\usrlib.pbi</file>
+      <file>$PROJ_DIR$\src\prio_names.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\scmRTOS\core\usrlib.h</file>
+      <file>$PROJ_DIR$\..\STM8S_StdPeriph_Driver\inc\stm8s_exti.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\scmRTOS\port\stm8\iar\os_target.cpp</file>
+      <file>$PROJ_DIR$\..\..\..\..\scmRTOS\core\scmRTOS.h</file>
+      <file>$PROJ_DIR$\..\STM8S_StdPeriph_Driver\stm8_target.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\scmRTOS\core\scmRTOS_310_compat.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\scmRTOS\port\stm8\iar\os_target_asm.s</file>
+      <file>$PROJ_DIR$\..\..\..\..\scmRTOS\port\stm8\iar\os_target.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\scmRTOS\ext\profiler\profiler.h</file>
+      <file>$PROJ_DIR$\lst\os_target_asm.lst</file>
+      <file>$PROJ_DIR$\obj\os_kernel.o</file>
+      <file>$PROJ_DIR$\lst\os_services.lst</file>
+      <file>$PROJ_DIR$\obj\os_target.o</file>
+      <file>$TOOLKIT_DIR$\inc\vregs.inc</file>
+      <file>$PROJ_DIR$\obj\main.o</file>
+      <file>$PROJ_DIR$\obj\os_target_asm.o</file>
+      <file>$PROJ_DIR$\obj\main.pbi</file>
+      <file>$PROJ_DIR$\obj\os_services.pbi</file>
+      <file>$PROJ_DIR$\..\STM8S_StdPeriph_Driver\inc\stm8s_clk.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\intrinsics.h</file>
+      <file>$PROJ_DIR$\..\STM8S_StdPeriph_Driver\inc\stm8s_i2c.h</file>
+      <file>$PROJ_DIR$\..\STM8S_StdPeriph_Driver\inc\stm8s_awu.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\DLib_Threads.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\scmRTOS\core\os_kernel.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\scmRTOS\core\os_services.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\scmRTOS\core\os_services.cpp</file>
+      <file>$PROJ_DIR$\..\STM8S_StdPeriph_Driver\inc\stm8s_beep.h</file>
+      <file>$PROJ_DIR$\bin\1-event-flag.hex</file>
+      <file>$PROJ_DIR$\..\STM8S_StdPeriph_Driver\inc\stm8s_flash.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\string.h</file>
+    </outputs>
+    <file>
+      <name>[ROOT_NODE]</name>
+      <outputs>
+        <tool>
+          <name>ILINK</name>
+          <file> 6 24 23</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\bin\1-EventFlag.out</name>
+      <outputs>
+        <tool>
+          <name>ILINK</name>
+          <file> 24 23</file>
+        </tool>
+        <tool>
+          <name>OBJCOPY</name>
+          <file> 1</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ILINK</name>
+          <file> 28 18 76 72 52 74 77 17 16 25 26</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\src\debug.cpp</name>
+      <outputs>
+        <tool>
+          <name>ICCSTM8</name>
+          <file> 0 18</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 19</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCSTM8</name>
+          <file> 65 35 31 37 38 53 34 33 84 32 36 62 69 81 14 12 66 40 41 55 83 88 80 63 90 45 82 43 5 44 57 46 7 42 47 48 10 13 85 11 70 86 21 22 4 61 29</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 31 41 53 65 29 62 33 84 37 12 45 36 32 4 35 34 81 88 44 48 21 61 69 38 85 14 13 55 63 43 46 47 70 66 40 83 80 90 82 5 57 7 42 10 11 86 22</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\src\prio_names.cpp</name>
+      <outputs>
+        <tool>
+          <name>ICCSTM8</name>
+          <file> 3 17</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 20</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCSTM8</name>
+          <file> 91 31 37 38 53 34 33 84 32 65 35 36 62 69 81 14 12 66 40 41 55 83 88 80 63 90 45 82 43 5 44 57 46 7 42 47 48 10 13 85 11 70 86 61</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 88 37 34 41 14 48 85 44 61 31 33 84 53 69 45 36 65 32 38 13 55 63 43 46 47 81 62 86 91 35 12 66 40 83 80 90 82 5 57 7 42 10 11 70</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\scmRTOS\core\usrlib.cpp</name>
+      <outputs>
+        <tool>
+          <name>ICCSTM8</name>
+          <file> 49 16</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 60</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCSTM8</name>
+          <file> 62 36 31 37 38 53 34 33 84</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 31 38 36 62 37 33 84 53 34</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\src\main.cpp</name>
+      <outputs>
+        <tool>
+          <name>ICCSTM8</name>
+          <file> 27 76</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 78</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCSTM8</name>
+          <file> 65 35 31 37 38 53 34 33 84 32 36 62 69 81 14 12 66 40 41 55 83 88 80 63 90 45 82 43 5 44 57 46 7 42 47 48 10 13 85 11 70 86 4 29</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 65 31 41 62 33 36 45 29 35 32 14 88 44 48 4 69 37 38 13 55 63 43 46 47 81 70 66 84 53 34 85 12 40 83 80 90 82 5 57 7 42 10 11 86</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\scmRTOS\core\os_kernel.cpp</name>
+      <outputs>
+        <tool>
+          <name>ICCSTM8</name>
+          <file> 51 72</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 50</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCSTM8</name>
+          <file> 65 35 31 37 38 53 34 33 84 32 36 62 69 81 14 12 66 40 41 55 83 88 80 63 90 45 82 43 5 44 57 46 7 42 47 48 10 13 85 11 70 86</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 41 62 34 37 45 35 32 31 85 14 88 44 48 33 84 53 13 55 63 43 46 47 81 70 65 36 69 38 12 66 40 83 80 90 82 5 57 7 42 10 11 86</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\scmRTOS\port\stm8\iar\os_target.cpp</name>
+      <outputs>
+        <tool>
+          <name>ICCSTM8</name>
+          <file> 39 74</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 59</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCSTM8</name>
+          <file> 65 35 31 37 38 53 34 33 84 32 36 62 69 81 14 12 66 40 41 55 83 88 80 63 90 45 82 43 5 44 57 46 7 42 47 48 10 13 85 11 70 86</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 83 31 37 40 5 69 38 36 81 90 7 41 12 66 80 82 57 42 10 11 70 35 62 32 33 84 53 34 85 14 13 55 88 63 45 43 44 46 47 48 65 86</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\scmRTOS\port\stm8\iar\os_target_asm.s</name>
+      <outputs>
+        <tool>
+          <name>ASTM8</name>
+          <file> 77 71</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ASTM8</name>
+          <file> 14 12 75</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\scmRTOS\core\os_services.cpp</name>
+      <outputs>
+        <tool>
+          <name>ICCSTM8</name>
+          <file> 73 52</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 79</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCSTM8</name>
+          <file> 65 35 31 37 38 53 34 33 84 32 36 62 69 81 14 12 66 40 41 55 83 88 80 63 90 45 82 43 5 44 57 46 7 42 47 48 10 13 85 11 70 86</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 41 62 37 43 69 38 55 47 36 13 63 46 81 86 35 31 32 33 84 53 14 88 45 44 48 65 34 85 12 66 40 83 80 90 82 5 57 7 42 10 11 70</file>
+        </tool>
+      </inputs>
+    </file>
+  </configuration>
+</project>
+
+

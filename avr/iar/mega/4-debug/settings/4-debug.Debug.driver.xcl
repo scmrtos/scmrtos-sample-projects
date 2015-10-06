@@ -1,0 +1,21 @@
+ -B 
+
+"--cpu=m328" 
+
+"--enhanced_core" 
+
+"-p" 
+
+"D:\cad\iar\ewavr660\avr\Config\iom328.ddf" 
+
+"--eeprom_size" 
+
+"1024" 
+
+"-d" 
+
+"sim" 
+
+
+
+

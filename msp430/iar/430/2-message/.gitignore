@@ -1,0 +1,8 @@
+bin
+lst
+obj
+.sconsign.dblite
+*.pyc
+*.vpwhist
+*.vtg
+
