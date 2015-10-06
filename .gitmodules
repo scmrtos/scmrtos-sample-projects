@@ -1,0 +1,3 @@
+[submodule "scmRTOS"]
+	path = scmRTOS
+	url = https://github.com/scmrtos/scmrtos.git
