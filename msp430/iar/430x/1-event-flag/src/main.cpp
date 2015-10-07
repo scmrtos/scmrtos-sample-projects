@@ -68,8 +68,6 @@ tick_count_t T;                  // global variable for OS::GetTickCount testing
 OS::TEventFlag ef;               //
 OS::TEventFlag Timer_B_Ovf;
 
-void SetSleep(timeout_t x);
-
 //---------------------------------------------------------------------------
 #pragma diag_suppress=Pe951      // suppress return type warning 
 void main()
@@ -106,7 +104,7 @@ void main()
     WDTCTL  = ( (0x5a << 8) + WDTTMSEL + WDTCNTCL + WDTIS0); 
     IE1    |= 0x01;
 
-    OS::Run();
+    OS::run();
 }
 
 size_t StackSlacks[OS::PROCESS_COUNT];
@@ -116,7 +114,7 @@ template<> void TProc1::exec()
 {
     for(;;)
     {
-        ef.Wait();
+        ef.wait();
     }     
 }
 //---------------------------------------------------------------------------
@@ -124,7 +122,7 @@ template<> void TProc2::exec()
 {
     for(;;)
     {
-        Timer_B_Ovf.Wait();
+        Timer_B_Ovf.wait();
         P1OUT &= ~(1 << 4);
     }
 }
@@ -134,7 +132,7 @@ template<> void TProc3::exec()
     for(;;)
     {
         sleep(1);
-        ef.Signal();
+        ef.signal();
 
         for(uint_fast8_t i = 0; i < OS::PROCESS_COUNT; ++i)
         {
@@ -143,14 +141,9 @@ template<> void TProc3::exec()
     }
 }
 //---------------------------------------------------------------------------
-void SetSleep(timeout_t x)
-{
-    OS::Sleep(x);
-}
+void OS::system_timer_user_hook() { }
 //---------------------------------------------------------------------------
-void OS::SystemTimerUserHook() { }
-//---------------------------------------------------------------------------
-void OS::IdleProcessUserHook() { }
+void OS::idle_process_user_hook() { }
 //---------------------------------------------------------------------------
 #pragma vector = TIMERB0_VECTOR
 OS_INTERRUPT void Timer_B_ISR()
@@ -162,7 +155,7 @@ OS_INTERRUPT void Timer_B_ISR()
     ENABLE_NESTED_INTERRUPTS();
 
     P1OUT |= (1 << 4);
-    Timer_B_Ovf.SignalISR();
+    Timer_B_Ovf.signal_isr();
 }
 //-----------------------------------------------------------------------------
 

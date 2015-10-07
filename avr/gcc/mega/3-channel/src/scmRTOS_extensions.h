@@ -43,8 +43,7 @@
 #if scmRTOS_CONTEXT_SWITCH_SCHEME == 1
 namespace OS {
     // Needed for SPM_vect ISR context switcher
-    // Old naming convention is used for this example
-    INLINE void ContextSwitchUserHook() { BlockContextSwitch(); }
+    INLINE void context_switch_user_hook() { block_context_switch(); }
 }  // namespace OS
 #endif
 

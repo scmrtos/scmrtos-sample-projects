@@ -76,7 +76,7 @@ namespace OS
 
 #if scmRTOS_CONTEXT_SWITCH_SCHEME == 1
 
-    INLINE void RaiseContextSwitch() { CACTL1 |=  0x03; } // set flag and enable interrupt
+    INLINE void raise_context_switch() { CACTL1 |=  0x03; } // set flag and enable interrupt
 
     class TNestedISRW              
     {                              

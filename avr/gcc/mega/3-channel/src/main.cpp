@@ -179,7 +179,7 @@ int main()
     DRIVER(IDLE_HOOK,OUT);
     DRIVER(SLON_TRUNK,OUT);
 
-    OS::Run();
+    OS::run();
 }
 
 
@@ -193,7 +193,7 @@ template<> void TProc1::exec()
     for(;;)
     {
         OFF(PROC1);
-        Timer1_Ovf.Wait();
+        Timer1_Ovf.wait();
         ON(PROC1);
         OFF(TIMER1_TO_PROC1);
         SlonQueue.push(&African);
@@ -211,9 +211,9 @@ template<> void TProc2::exec()
     DRIVER(PROC2,OUT);
     for(;;)
     {
-        tick_count = OS::GetTickCount();
+        tick_count = OS::get_tick_count();
         OFF(PROC2);
-        Sleep( static_cast<uint16_t>(tick_count) & 0x200  ?  1  :  2  );
+        sleep( static_cast<uint16_t>(tick_count) & 0x200  ?  1  :  2  );
         ON(PROC2);
         SlonQueue.push(&Indian);
     }
@@ -250,7 +250,7 @@ template<> void TProc3::exec()
 
 //---------------------------------------------------------------------------
 #if scmRTOS_SYSTIMER_HOOK_ENABLE
-void OS::SystemTimerUserHook()
+void OS::system_timer_user_hook()
 {
 #if  scmRTOS_SYSTIMER_NEST_INTS_ENABLE  &&  !PORT_TOGGLE_BY_PIN_WRITE
     TCritSect cs;
@@ -261,7 +261,7 @@ void OS::SystemTimerUserHook()
 
 //---------------------------------------------------------------------------
 #if scmRTOS_IDLE_HOOK_ENABLE
-void OS::IdleProcessUserHook()
+void OS::idle_process_user_hook()
 {
 #if  !PORT_TOGGLE_BY_PIN_WRITE
     TCritSect cs;
@@ -280,7 +280,7 @@ OS_INTERRUPT void TIMER1_COMPA_vect()
 
     ENABLE_NESTED_INTERRUPTS();
 
-    Timer1_Ovf.SignalISR();
+    Timer1_Ovf.signal_isr();
 
     OFF(TIMER1_ISR);
 }

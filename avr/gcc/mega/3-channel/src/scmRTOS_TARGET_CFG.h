@@ -121,15 +121,15 @@ namespace OS
 #if scmRTOS_CONTEXT_SWITCH_SCHEME == 1
 
     // enable and raise SPM interrupt
-    INLINE void RaiseContextSwitch() { SPM_CONTROL_REG |= (1 << SPMIE);  }
+    INLINE void raise_context_switch() { SPM_CONTROL_REG |= (1 << SPMIE);  }
     
     // disable SPM interrupt
-    INLINE void BlockContextSwitch() { SPM_CONTROL_REG &= ~(1 << SPMIE); }
+    INLINE void block_context_switch() { SPM_CONTROL_REG &= ~(1 << SPMIE); }
 
     class TNestedISRW
     {
     public:
-        INLINE TNestedISRW() : State(SPM_CONTROL_REG) { BlockContextSwitch(); sei(); }
+        INLINE TNestedISRW() : State(SPM_CONTROL_REG) { block_context_switch(); sei(); }
         INLINE ~TNestedISRW()
         {
             cli();

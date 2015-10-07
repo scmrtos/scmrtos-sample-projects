@@ -48,9 +48,6 @@
 #ifndef __ASSEMBLER__
 typedef uint16_t timeout_t;
 typedef uint_fast32_t tick_count_t;
-
-#include "scmRTOS_310_compat.h"
-
 #endif // __ASSEMBLER__
 
 //------------------------------------------------------------------------------
