@@ -49,7 +49,6 @@
 typedef uint16_t      timeout_t;
 typedef uint_fast32_t tick_count_t;
 #include <in430.h>
-#include <scmRTOS_310_compat.h>
 #endif // __IAR_SYSTEMS_ASM__
 
 #include "io430.h"

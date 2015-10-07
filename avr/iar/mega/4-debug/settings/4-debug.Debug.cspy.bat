@@ -25,7 +25,7 @@ if not "%1" == "" goto debugFile
 
 @echo on 
 
-"D:\cad\iar\ewavr660\common\bin\cspybat" -f "D:\slon\git\scmrtos\scmrtos-samples\avr\iar\mega\4-debug\settings\4-debug.Debug.general.xcl" --backend -f "D:\slon\git\scmrtos\scmrtos-samples\avr\iar\mega\4-debug\settings\4-debug.Debug.driver.xcl" 
+"D:\cad\iar\ewavr660\common\bin\cspybat" -f "D:\pro\scmRTOS\scmrtos-sample-projects\avr\iar\mega\4-debug\settings\4-debug.Debug.general.xcl" --backend -f "D:\pro\scmRTOS\scmrtos-sample-projects\avr\iar\mega\4-debug\settings\4-debug.Debug.driver.xcl" 
 
 @echo off 
 goto end 
@@ -34,7 +34,7 @@ goto end
 
 @echo on 
 
-"D:\cad\iar\ewavr660\common\bin\cspybat" -f "D:\slon\git\scmrtos\scmrtos-samples\avr\iar\mega\4-debug\settings\4-debug.Debug.general.xcl" "--debug_file=%1" --backend -f "D:\slon\git\scmrtos\scmrtos-samples\avr\iar\mega\4-debug\settings\4-debug.Debug.driver.xcl" 
+"D:\cad\iar\ewavr660\common\bin\cspybat" -f "D:\pro\scmRTOS\scmrtos-sample-projects\avr\iar\mega\4-debug\settings\4-debug.Debug.general.xcl" "--debug_file=%1" --backend -f "D:\pro\scmRTOS\scmrtos-sample-projects\avr\iar\mega\4-debug\settings\4-debug.Debug.driver.xcl" 
 
 @echo off 
 :end

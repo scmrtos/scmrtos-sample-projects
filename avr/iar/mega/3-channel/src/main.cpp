@@ -140,14 +140,14 @@ int main()
     TCCR0 = 0x03;             // Start System Timer
     TIMSK |=  (1 << TOIE0);   //
 
-    OS::Run();
+    OS::run();
 }
 //---------------------------------------------------------------------------
 template<> void TProc1::exec()
 {
     for(;;)
     {
-        Timer1_Ovf.Wait();
+        Timer1_Ovf.wait();
         SlonQueue.push(&African);
     }
 }
@@ -156,9 +156,9 @@ template<> void TProc2::exec()
 {
     for(;;)
     {
-        T += OS::GetTickCount();
+        T += OS::get_tick_count();
 
-        Sleep(1);
+        sleep(1);
         SlonQueue.push(&Indian);
     }
 }
@@ -181,11 +181,11 @@ template<> void TProc3::exec()
 }
 //---------------------------------------------------------------------------
 #if  scmRTOS_SYSTIMER_HOOK_ENABLE
-void OS::SystemTimerUserHook() { }
+void OS::system_timer_user_hook() { }
 #endif
 //---------------------------------------------------------------------------
 #if  scmRTOS_IDLE_HOOK_ENABLE
-void OS::IdleProcessUserHook() { }
+void OS::idle_process_user_hook() { }
 #endif
 //---------------------------------------------------------------------------
 #pragma vector=TIMER1_COMPA_vect
@@ -195,7 +195,7 @@ OS_INTERRUPT void Timer1_period_ISR()
 
     ENABLE_NESTED_INTERRUPTS();
 
-    Timer1_Ovf.SignalISR();
+    Timer1_Ovf.signal_isr();
 }
 //---------------------------------------------------------------------------
 

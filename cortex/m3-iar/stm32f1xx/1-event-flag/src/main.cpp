@@ -64,8 +64,6 @@ tick_count_t T;                  // global variable for OS::GetTickCount testing
 OS::TEventFlag ef;               //
 OS::TEventFlag Timer_Flag;
 
-void SetSleep(timeout_t x);
-
 //---------------------------------------------------------------------------
 //
 void main()
@@ -93,14 +91,9 @@ template<> OS_PROCESS void TProc3::exec()
 {
     for(;;)
     {
-        SetSleep(10);
+        sleep(10);
         ef.signal();
     }
-}
-//---------------------------------------------------------------------------
-void SetSleep(timeout_t x)
-{
-    OS::sleep(x);
 }
 //---------------------------------------------------------------------------
 void OS::system_timer_user_hook()
