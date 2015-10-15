@@ -59,7 +59,8 @@ typedef OS::process<OS::pr0, 100> TProc1;
 typedef OS::process<OS::pr1, 100> TProc2;
 typedef OS::process<OS::pr2, 100> TProc3;
 typedef OS::process<OS::pr3, 200> TTerminalProc;
-typedef OS::process<OS::pr4, 600> TBackgroundProc;
+typedef OS::process<OS::pr4, 200> TBackgroundProc1;
+typedef OS::process<OS::pr5, 200> TBackgroundProc2;
 
 //------------------------------------------------------------------------------
 

@@ -31,8 +31,9 @@ ProjectName  = 'slon'
 RootDir      = '../../../../'                          
 SourceDirs   = ['src', 
                 RootDir + 'scmRTOS/core', 
+                RootDir + 'scmRTOS/port/msp430/iar',
                 RootDir + 'scmRTOS/ext/profiler', 
-                RootDir + 'scmRTOS/port/msp430/iar']
+                RootDir + 'scmRTOS/ext/round-robin']
 
 #--------------------------------------
 #

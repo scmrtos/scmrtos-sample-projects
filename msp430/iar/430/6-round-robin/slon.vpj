@@ -62,7 +62,7 @@
 		<Folder
 			Name="Header Files"
 			Filters="*.h;*.H;*.hh;*.hpp;*.hxx;*.inc;*.sh;*.cpy;*.if">
-			<F N="src/debug.h"/>
+			<F N="src/main.h"/>
 			<F N="Src/scmRTOS_CONFIG.h"/>
 			<F N="Src/scmRTOS_extensions.h"/>
 			<F N="Src/scmRTOS_TARGET_CFG.h"/>
@@ -75,6 +75,8 @@
 			<F N="../../../../scmRTOS/core/os_kernel.cpp"/>
 			<F N="../../../../scmRTOS/core/os_kernel.h"/>
 			<F N="../../../../scmRTOS/core/os_services.cpp"/>
+			<F N="../../../../scmRTOS/ext/profiler/profiler.h"/>
+			<F N="../../../../scmRTOS/ext/round-robin/round-robin.h"/>
 			<F N="../../../../scmRTOS/core/os_services.h"/>
 			<F N="../../../../scmRTOS/port/msp430/iar/os_target.cpp"/>
 			<F N="../../../../scmRTOS/port/msp430/iar/os_target.h"/>

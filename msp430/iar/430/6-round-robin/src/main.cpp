@@ -43,7 +43,8 @@
 //*     MSP430/IAR sample by Harry E. Zhurov, Copyright (c) 2003-2015
 
 #include <scmRTOS.h>
-#include "rrobin.h"
+#include <round-robin.h>
+#include "main.h"
 #include "terminal.h"
 
 //---------------------------------------------------------------------------
@@ -58,10 +59,11 @@ public:
 //
 //      Process objects
 //
-TProc1 Proc1;
-TProc2 Proc2;
-TProc3 Proc3;
-TBackgroundProc BackgroundProc;
+TProc1            Proc1;
+TProc2            Proc2;
+TProc3            Proc3;
+TBackgroundProc1  BackgroundProc1;
+TBackgroundProc2  BackgroundProc2;
 //---------------------------------------------------------------------------
 const uint32_t TIMER_B_PERIOD = 10000;
 
@@ -73,11 +75,17 @@ OS::TEventFlag ef;               //
 OS::TEventFlag Timer_B_Ovf;
 TProcProfiler Profiler;
 
+round_robin_mgr<2> RoundRobinMgr;
+
 //---------------------------------------------------------------------------
 #pragma diag_suppress=Pe951      // suppress return type warning 
 void main()
 {
     P1DIR |= (1 << 4);
+    P1DIR |= (1 << 5);
+    P1DIR |= (1 << 6);
+    P1DIR |= (1 << 7);
+
     P5DIR |= (1 << 4);
     P5SEL |= ( (1 << 4) + (1 << 6) );     // MCLK and ACLK out turn on
     P5DIR |= ( (1 << 4) + (1 << 6) );     
@@ -112,6 +120,9 @@ void main()
 
     UART::init();
 
+    RoundRobinMgr.register_process(BackgroundProc1, 10);
+    RoundRobinMgr.register_process(BackgroundProc2, 10);
+
     OS::run();
 }
 //---------------------------------------------------------------------------
@@ -141,19 +152,44 @@ template<> void TProc3::exec()
     }
 }
 //---------------------------------------------------------------------------
-template<> void TBackgroundProc::exec()
+template<> void TBackgroundProc1::exec()
 {
+    uint32_t cnt;
+
     for(;;)
     {
-    //    Profiler.get_results(1000);
+        P1OUT |= (1 << 5); 
+        if(++cnt == 10000)
+        {
+            os::sleep(3);
+            cnt = 0;
+        }
     }
 }
 //---------------------------------------------------------------------------
-void OS::system_timer_user_hook() { /*Profiler.advance_counters();*/ }
+template<> void TBackgroundProc2::exec()
+{
+    for(;;)
+    {
+        P1OUT &= ~(1 << 5); 
+        //os::sleep(3);
+    }
+}
 //---------------------------------------------------------------------------
-void OS::idle_process_user_hook() { }
+void OS::system_timer_user_hook() 
+{ 
+    RoundRobinMgr.run(); 
+}
 //---------------------------------------------------------------------------
-void OS::context_switch_user_hook() { Profiler.advance_counters(); }
+void OS::idle_process_user_hook() 
+{ 
+    P1OUT ^= (1 << 6); 
+}
+//---------------------------------------------------------------------------
+void OS::context_switch_user_hook() 
+{ 
+    Profiler.advance_counters(); 
+}
 //---------------------------------------------------------------------------
 template<uint_fast8_t sum_shift> 
 uint32_t TProfiler<sum_shift>::time_interval()

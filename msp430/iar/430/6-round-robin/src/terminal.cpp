@@ -47,7 +47,7 @@
 #include <stdio.h>
 #include <stdarg.h>
 #include <string.h>
-#include "rrobin.h"
+#include "main.h"
 #include "terminal.h"
 
 TTerminalProc TerminalProc;       
