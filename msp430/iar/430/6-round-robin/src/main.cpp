@@ -121,7 +121,7 @@ void main()
     UART::init();
 
     RoundRobinMgr.register_process(BackgroundProc1, 10);
-    RoundRobinMgr.register_process(BackgroundProc2, 10);
+    RoundRobinMgr.register_process(BackgroundProc2, 20);
 
     OS::run();
 }
@@ -158,10 +158,10 @@ template<> void TBackgroundProc1::exec()
 
     for(;;)
     {
-        P1OUT |= (1 << 5); 
+        P1OUT ^= (1 << 5); 
         if(++cnt == 10000)
         {
-            os::sleep(3);
+            os::sleep(10);
             cnt = 0;
         }
     }
@@ -169,10 +169,16 @@ template<> void TBackgroundProc1::exec()
 //---------------------------------------------------------------------------
 template<> void TBackgroundProc2::exec()
 {
+    uint32_t cnt;
+
     for(;;)
     {
-        P1OUT &= ~(1 << 5); 
-        //os::sleep(3);
+        P1OUT ^= (1 << 7); 
+        if(++cnt == 10000)
+        {
+            os::sleep(10);
+            cnt = 0;
+        }
     }
 }
 //---------------------------------------------------------------------------
