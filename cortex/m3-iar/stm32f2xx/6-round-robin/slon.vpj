@@ -1,0 +1,105 @@
+<!DOCTYPE Project SYSTEM "http://www.slickedit.com/dtd/vse/10.0/vpj.dtd">
+<Project
+	Version="10.0"
+	VendorName="SlickEdit"
+	WorkingDir="."
+	VCSProject="Subversion:">
+	<Config
+		Name="Release"
+		OutputFile=""
+		CompilerConfigName="Latest Version">
+		<Menu>
+			<Target
+				Name="Compile"
+				MenuCaption="&amp;Compile"
+				SaveOption="SaveAll"
+				RunFromDir="%rw"
+				CaptureOutputWith="ProcessBuffer"
+				ClearProcessBuffer="1">
+				<Exec CmdLine="scons -Q -s -D Obj/%n.o"/>
+			</Target>
+			<Target
+				Name="Build"
+				MenuCaption="&amp;Build"
+				CaptureOutputWith="ProcessBuffer"
+				SaveOption="SaveAll"
+				RunFromDir="%rw"
+				ClearProcessBuffer="1">
+				<Exec CmdLine="scons -Q -s -D all"/>
+			</Target>
+			<Target
+				Name="Rebuild"
+				MenuCaption="&amp;Rebuild"
+				CaptureOutputWith="ProcessBuffer"
+				SaveOption="SaveWorkspaceFiles"
+				RunFromDir="%rw"
+				ClearProcessBuffer="1">
+				<Exec CmdLine="scons -Q -s -D rebuild"/>
+			</Target>
+			<Target
+				Name="Execute"
+				MenuCaption="E&amp;xecute"
+				SaveOption="SaveAll"
+				RunFromDir="%rw"
+				ClearProcessBuffer="1"
+				CaptureOutputWith="ProcessBuffer">
+				<Exec CmdLine="scons -Q -s -D load"/>
+			</Target>
+		</Menu>
+	</Config>
+	<Files>
+		<Folder
+			Name="Source Files"
+			Filters="*.c;*.C;*.cc;*.cpp;*.cp;*.cxx;*.prg;*.pas;*.dpr;*.asm;*.s;*.bas;*.java;*.cs;*.sc;*.e;*.cob;*.html;*.rc;*.tcl;*.py;*.pl">
+			<F N="Src/main.cpp"/>
+			<F N="src/terminal.cpp"/>
+			<F N="src/pdev.cpp"/>
+		</Folder>
+		<Folder
+			Name="Header Files"
+			Filters="*.h;*.H;*.hh;*.hpp;*.hxx;*.inc;*.sh;*.cpy;*.if">
+			<F N="Src/scmRTOS_CONFIG.h"/>
+			<F N="Src/scmRTOS_extensions.h"/>
+			<F N="Src/scmRTOS_TARGET_CFG.h"/>
+			<F N="src/terminal.h"/>
+			<F N="src/pdev.h"/>
+		</Folder>
+		<Folder
+			Name="Scripts"
+			Filters="">
+			<F N="SConstruct"/>
+			<F N="config/stm32f205xE.icf"/>
+		</Folder>
+		<Folder
+			Name="scmRTOS"
+			Filters="">
+			<F N="../scmRTOS/Common/OS_Kernel.cpp"/>
+			<F N="../scmRTOS/Common/OS_Kernel.h"/>
+			<F N="../scmRTOS/Common/OS_Services.cpp"/>
+			<F N="../scmRTOS/Common/OS_Services.h"/>
+			<F N="../scmRTOS/CortexM3/OS_Target.h"/>
+			<F N="../scmRTOS/CortexM3/OS_Target_asm.s"/>
+			<F N="../scmRTOS/CortexM3/OS_Target_cpp.cpp"/>
+			<F N="../scmRTOS/Extensions/Profiler/profiler.h"/>
+			<F N="../scmRTOS/Common/scmRTOS.h"/>
+			<F N="../scmRTOS/Common/scmRTOS_310_compat.h"/>
+			<F N="../scmRTOS/Common/scmRTOS_defs.h"/>
+			<F N="../scmRTOS/Common/usrlib.cpp"/>
+			<F N="../scmRTOS/Common/usrlib.h"/>
+		</Folder>
+		<Folder
+			Name="Lib"
+			Filters="">
+			<F N="lib/core_cm3.h"/>
+			<F N="lib/core_cmFunc.h"/>
+			<F N="lib/core_cmInstr.h"/>
+			<F N="lib/default_handlers.cpp"/>
+			<F N="lib/exception.h"/>
+			<F N="lib/pins.h"/>
+			<F N="lib/stm32f2xx.h"/>
+			<F N="lib/system_stm32f2xx.h"/>
+			<F N="lib/vector_table.cpp"/>
+		</Folder>
+		<F N="1"/>
+	</Files>
+</Project>
