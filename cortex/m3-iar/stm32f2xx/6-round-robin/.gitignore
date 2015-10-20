@@ -1,0 +1,12 @@
+cfg/script/*.pyc
+bin/*
+lst/*
+obj/*
+!bin/*.eww
+!bin/*.ewp
+.sconsign.dblite
+*.out
+*.dat
+*.vpwhist
+*.vtg
+
