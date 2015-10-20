@@ -51,8 +51,8 @@
 //      Process types
 //
 typedef OS::process<OS::pr0, 300> TProc1;
-typedef OS::process<OS::pr1, 300, OS::ssSuspended> TProc2; 
-typedef OS::process<OS::pr2, 300, OS::ssSuspended> TProc3; 
+typedef OS::process<OS::pr1, 300, OS::pssSuspended> TProc2; 
+typedef OS::process<OS::pr2, 300, OS::pssSuspended> TProc3; 
 //---------------------------------------------------------------------------
 //
 //      Process objects
