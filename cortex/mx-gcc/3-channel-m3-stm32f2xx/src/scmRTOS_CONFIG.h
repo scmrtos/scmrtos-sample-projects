@@ -8,7 +8,7 @@
 //*
 //*     TOOLKIT:   ARM GCC
 //*
-//*     PURPOSE:   Project Level Configuration
+//*     PURPOSE:   Project-level OS configuration
 //*
 //*     Version: 5.0.0
 //*
@@ -40,7 +40,7 @@
 //*     =================================================================
 //*
 //******************************************************************************
-//*     GCC port by Anton B. Gusev aka AHTOXA, Copyright (c) 2009-2015
+//*     GCC STM32F2xx samples by Anton B. Gusev aka AHTOXA, Copyright (c) 2009-2015
 
 #ifndef  scmRTOS_CONFIG_H
 #define  scmRTOS_CONFIG_H

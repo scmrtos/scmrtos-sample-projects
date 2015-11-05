@@ -81,14 +81,14 @@
 	</natures>
 	<linkedResources>
 		<link>
-			<name>SamplesCommon</name>
+			<name>common</name>
 			<type>2</type>
-			<locationURI>$%7BPARENT-1-PROJECT_LOC%7D/SamplesCommon</locationURI>
+			<locationURI>$%7BPARENT-1-PROJECT_LOC%7D/common</locationURI>
 		</link>
 		<link>
 			<name>scmRTOS</name>
 			<type>2</type>
-			<locationURI>$%7BPARENT-1-PROJECT_LOC%7D/scmRTOS</locationURI>
+			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/scmRTOS</locationURI>
 		</link>
 	</linkedResources>
 </projectDescription>

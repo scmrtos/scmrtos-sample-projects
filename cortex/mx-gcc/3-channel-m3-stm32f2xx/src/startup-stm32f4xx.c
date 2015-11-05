@@ -29,7 +29,7 @@ void UsageFault_Handler           (void);
 void SVC_Handler                  (void);
 void DebugMon_Handler             (void);
 void PendSVC_ISR                  (void);
-void SystemTimer_ISR              (void);
+void SysTick_Handler              (void);
 
 /* External Interrupts */
 void WWDG_IRQHandler              (void);
@@ -140,7 +140,7 @@ void (* const g_pfnVectors[])(void) =
 	DebugMon_Handler,
 	0,
 	PendSVC_ISR,
-	SystemTimer_ISR,
+	SysTick_Handler,
 
 	WWDG_IRQHandler,                   /* Window WatchDog              */
 	PVD_IRQHandler,                    /* PVD through EXTI Line detection */
