@@ -4,11 +4,11 @@
 //*
 //*     NICKNAME:  scmRTOS
 //*
-//*     PROCESSOR: ARM Cortex-M0(+), Cortex-M1, Cortex-M3, Cortex-M4(F)
+//*     PROCESSOR: ARM Cortex-M0+
 //*
 //*     TOOLKIT:   ARM GCC
 //*
-//*     PURPOSE:   Target Configuration Header.
+//*     PURPOSE:   Project-level target configuration header
 //*
 //*     Version: 5.0.0
 //*
@@ -40,8 +40,7 @@
 //*     =================================================================
 //*
 //******************************************************************************
-//*     Cortex-M3/M4(F) GCC port by Anton B. Gusev aka AHTOXA, Copyright (c) 2012-2015
-//*     Cortex-M0 port by Sergey A. Borshch, Copyright (c) 2011-2015
+//*     GCC STM32L0XX Samples by Anton B. Gusev aka AHTOXA, Copyright (c) 2015
 
 #ifndef  scmRTOS_TARGET_CFG_H
 #define  scmRTOS_TARGET_CFG_H
@@ -64,7 +63,7 @@
 // Define SysTick clock frequency and its interrupt rate in Hz.
 // It makes sense if USE_CUSTOM_TIMER = 0.
 // 
-#define SYSTICKFREQ     72000000
+#define SYSTICKFREQ     32000000
 #define SYSTICKINTRATE  1000
 
 
