@@ -41,7 +41,7 @@ void UsageFault_Handler(void);
 void SVC_Handler(void);
 void DebugMon_Handler(void);
 void PendSVC_ISR(void);
-void SystemTimer_ISR(void);
+void SysTick_Handler(void);
 
 	/* Device interrupt vectors */
 void WDT_IRQHandler(void);
@@ -109,7 +109,7 @@ intfunc g_pfnVectors[] =
 	DebugMon_Handler,
 	0,
 	PendSVC_ISR,
-	SystemTimer_ISR,
+	SysTick_Handler,
 
 	/* Device interrupt vectors */
 	/* 0x40 */
@@ -201,6 +201,7 @@ void __Init_Data(void)
 #pragma weak SVC_Handler = Default_Handler
 #pragma weak DebugMon_Handler = Default_Handler
 #pragma weak PendSVC_ISR = Default_Handler
+#pragma weak SysTick_Handler = Default_Handler
 
 #pragma weak WDT_IRQHandler = Default_Handler
 #pragma weak TIMER0_IRQHandler = Default_Handler

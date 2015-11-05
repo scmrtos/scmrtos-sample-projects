@@ -40,7 +40,7 @@
 //*     =================================================================
 //*
 //******************************************************************************
-//*     GCC port by Anton B. Gusev aka AHTOXA, Copyright (c) 2009-2015
+//*     GCC LPC1766 samples by Oleksandr Redchuk aka ReAl, Copyright (c) 2012-2015
 
 #ifndef  scmRTOS_CONFIG_H
 #define  scmRTOS_CONFIG_H

@@ -40,7 +40,7 @@
 //*     =================================================================
 //*
 //******************************************************************************
-//*     GCC port by Anton B. Gusev aka AHTOXA, Copyright (c) 2009-2015
+//*     GCC LPC1766 samples by Oleksandr Redchuk aka ReAl, Copyright (c) 2012-2015
 
 #ifndef  scmRTOS_TARGET_CFG_H
 #define  scmRTOS_TARGET_CFG_H
@@ -49,56 +49,6 @@
 // These defines for OS_Target_asm.S, no UL prefixes
 #define SYSTICKFREQ     100000000
 #define SYSTICKINTRATE  1000
-
-
-//------------------------------------------------------------------------------
-// Definitions for some processor registers in order to not include specific
-// header file for various Cortex-M3 processor derivatives.
-#define CPU_ICSR            ( ( volatile uint32_t *) 0xE000ED04 )   // Interrupt Control State Register
-#define CPU_SYSTICKCSR      ( ( volatile uint32_t *) 0xE000E010 )   // SysTick Control and Status Register
-#define CPU_SYSTICKCSR_EINT 0x02                                    // Bit for enable/disable SysTick interrupt
-
-#ifndef __ASSEMBLER__
-//------------------------------------------------------------------------------
-//
-//       System Timer stuff
-//
-//
-namespace OS
-{
-extern "C" void SystemTimer_ISR();
-}
-
-#define  LOCK_SYSTEM_TIMER()    ( *CPU_SYSTICKCSR &= ~CPU_SYSTICKCSR_EINT )
-#define  UNLOCK_SYSTEM_TIMER()  ( *CPU_SYSTICKCSR |=  CPU_SYSTICKCSR_EINT )
-
-//------------------------------------------------------------------------------
-//
-//       Context Switch ISR stuff
-//
-//
-namespace OS
-{
-#if scmRTOS_IDLE_HOOK_ENABLE == 1
-    void idle_process_user_hook();
-#endif
-
-#if scmRTOS_CONTEXT_SWITCH_SCHEME == 1
-
-    INLINE void raise_context_switch() { *CPU_ICSR |= 0x10000000; }
-
-    #define ENABLE_NESTED_INTERRUPTS()
-
-    #define DISABLE_NESTED_INTERRUPTS() TCritSect cs
-
-#else
-    #error "Cortex-M3 port supports software interrupt switch method only!"
-
-#endif // scmRTOS_CONTEXT_SWITCH_SCHEME
-
-}
-//-----------------------------------------------------------------------------
-#endif // __ASSEMBLER__
 
 
 #endif // scmRTOS_TARGET_CFG_H
