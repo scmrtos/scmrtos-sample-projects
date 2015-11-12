@@ -8,7 +8,7 @@
 //*
 //*     TOOLKIT:   ARM GCC
 //*
-//*     PURPOSE:   Project Level Configuration
+//*     PURPOSE:   Project-level target configuration header
 //*
 //*     Version: 5.0.0
 //*
@@ -40,65 +40,34 @@
 //*     =================================================================
 //*
 //******************************************************************************
-//*     GCC port by Anton B. Gusev aka AHTOXA, Copyright (c) 2009-2015
+//*     GCC STM32F4xx samples by Anton B. Gusev aka AHTOXA, Copyright (c) 2009-2015
 
 #ifndef  scmRTOS_TARGET_CFG_H
 #define  scmRTOS_TARGET_CFG_H
 
+//------------------------------------------------------------------------------
+// If the macro value is 0 (the default), the port uses SysTick as a system
+// timer. It initializes the timer and starts it. The user must make sure that
+// the address of the timer interrupt handler (SysTick_Handler) is in the right
+// place at the interrupt vector table.
+// If the macro value is 1, then the user has to implement (see docs for details):
+//     1. extern "C" void __init_system_timer();
+//     2. void LOCK_SYSTEM_TIMER() / void UNLOCK_SYSTEM_TIMER();
+//     3. In the interrupt handler of the custom timer, the user needs to call
+//        OS::system_timer_isr().
+//
+#define SCMRTOS_USE_CUSTOM_TIMER 0
+
+//------------------------------------------------------------------------------
 // Define SysTick clock frequency and its interrupt rate in Hz.
-#define SYSTICKFREQ     168000000
+#define SYSTICKFREQ     168000000UL
 #define SYSTICKINTRATE  1000
 
 //------------------------------------------------------------------------------
-// Definitions for some processor registers in order to not include specific
-// header file for various Cortex-M3 processor derivatives.
-#define CPU_ICSR            ( ( volatile uint32_t *) 0xE000ED04 )   // Interrupt Control State Register
-#define CPU_SYSTICKCSR      ( ( volatile uint32_t *) 0xE000E010 )   // SysTick Control and Status Register
-#define CPU_SYSTICKCSR_EINT 0x02                                    // Bit for enable/disable SysTick interrupt
-
-#ifndef __ASSEMBLER__
-//------------------------------------------------------------------------------
+// Define number of priority bits implemented in hardware.
 //
-//       System Timer stuff
-//
-//
-namespace OS
-{
-OS_INTERRUPT void SystemTimer_ISR();
-}
-
-#define  LOCK_SYSTEM_TIMER()    ( *CPU_SYSTICKCSR &= ~CPU_SYSTICKCSR_EINT )
-#define  UNLOCK_SYSTEM_TIMER()  ( *CPU_SYSTICKCSR |=  CPU_SYSTICKCSR_EINT )
-
-//------------------------------------------------------------------------------
-//
-//       Context Switch ISR stuff
-//
-//
-namespace OS
-{
-#if scmRTOS_CONTEXT_SWITCH_SCHEME == 1
-
-    INLINE void raise_context_switch() { *CPU_ICSR |= 0x10000000; }
-
-    #define ENABLE_NESTED_INTERRUPTS()
-
-    #if scmRTOS_SYSTIMER_NEST_INTS_ENABLE == 0
-        #define DISABLE_NESTED_INTERRUPTS() TCritSect cs
-    #else
-        #define DISABLE_NESTED_INTERRUPTS()
-    #endif
-
-#else
-    #error "Cortex-M3 port supports software interrupt switch method only!"
-
-#endif // scmRTOS_CONTEXT_SWITCH_SCHEME
-
-}
-//-----------------------------------------------------------------------------
-#endif // __ASSEMBLER__
+#define CORE_PRIORITY_BITS  4
 
 
 #endif // scmRTOS_TARGET_CFG_H
-//-----------------------------------------------------------------------------
 

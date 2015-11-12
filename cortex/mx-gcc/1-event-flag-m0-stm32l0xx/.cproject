@@ -31,20 +31,6 @@
 							</tool>
 						</toolChain>
 					</folderInfo>
-					<folderInfo id="0.1004614914.792371278" name="/" resourcePath="scmRTOS">
-						<toolChain id="org.eclipse.cdt.build.core.prefbase.toolchain.39559738" name="No ToolChain" superClass="org.eclipse.cdt.build.core.prefbase.toolchain" unusedChildren="">
-							<tool id="org.eclipse.cdt.build.core.settings.holder.libs.280824429" name="holder for library settings" superClass="org.eclipse.cdt.build.core.settings.holder.libs.511754236"/>
-							<tool id="org.eclipse.cdt.build.core.settings.holder.325293203" name="Assembly" superClass="org.eclipse.cdt.build.core.settings.holder.1783945703">
-								<inputType id="org.eclipse.cdt.build.core.settings.holder.inType.671414738" languageId="org.eclipse.cdt.core.assembly" languageName="Assembly" sourceContentType="org.eclipse.cdt.core.asmSource" superClass="org.eclipse.cdt.build.core.settings.holder.inType"/>
-							</tool>
-							<tool id="org.eclipse.cdt.build.core.settings.holder.2109865678" name="GNU C++" superClass="org.eclipse.cdt.build.core.settings.holder.1963305495">
-								<inputType id="org.eclipse.cdt.build.core.settings.holder.inType.1936317713" languageId="org.eclipse.cdt.core.g++" languageName="GNU C++" sourceContentType="org.eclipse.cdt.core.cxxSource,org.eclipse.cdt.core.cxxHeader" superClass="org.eclipse.cdt.build.core.settings.holder.inType"/>
-							</tool>
-							<tool id="org.eclipse.cdt.build.core.settings.holder.1572043230" name="GNU C" superClass="org.eclipse.cdt.build.core.settings.holder.109053417">
-								<inputType id="org.eclipse.cdt.build.core.settings.holder.inType.700949373" languageId="org.eclipse.cdt.core.gcc" languageName="GNU C" sourceContentType="org.eclipse.cdt.core.cSource,org.eclipse.cdt.core.cHeader" superClass="org.eclipse.cdt.build.core.settings.holder.inType"/>
-							</tool>
-						</toolChain>
-					</folderInfo>
 				</configuration>
 			</storageModule>
 			<storageModule moduleId="org.eclipse.cdt.core.externalSettings"/>

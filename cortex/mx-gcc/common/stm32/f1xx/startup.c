@@ -22,16 +22,12 @@ extern unsigned long __ctors_end__;
 extern unsigned long __dtors_start__;
 extern unsigned long __dtors_end__;
 
+void Reset_Handler(void) __attribute__((__interrupt__));
 extern int main(void);
 void __Init_Data(void);
 
-	/* Project-level external memory bus initialization function */
-void SystemInit_ExtMemCtl(void);
-
-// ?? void WEAK Default_Handler(void);
 
 	/* Core interrupt vectors */
-void Reset_Handler(void);
 void NMI_Handler(void);
 void HardFault_Handler(void);
 void MemManage_Handler(void);
@@ -39,8 +35,8 @@ void BusFault_Handler(void);
 void UsageFault_Handler(void);
 void SVC_Handler(void);
 void DebugMon_Handler(void);
-void PendSVC_ISR(void);
-void SystemTimer_ISR(void);
+void PendSV_Handler(void);
+void SysTick_Handler(void);
 
 	/* Device interrupt vectors */
 void WWDG_IRQHandler(void);
@@ -199,15 +195,14 @@ void RTCAlarm_IRQHandler(void);
 
 /******************************************************************************
 *
-* Vector table for a Cortex M3.  Note that the proper constructs
-* must be placed on this to ensure that it ends up at physical address
-* 0x0000.0000.
+* Vector table for a Cortex M3.
 *
 ******************************************************************************/
 typedef void(*const intfunc)(void);
 
+__attribute__ ((used))
 __attribute__ ((section(".isr_vector")))
-intfunc g_pfnVectors[] =
+void (* const g_pfnVectors[])(void) =
 {
 	/* Core interrupt vectors */
 (intfunc)((unsigned long)&_estack),
@@ -224,8 +219,8 @@ intfunc g_pfnVectors[] =
 	SVC_Handler,
 	DebugMon_Handler,
 	0,
-	PendSVC_ISR,
-	SystemTimer_ISR,
+	PendSV_Handler,
+	SysTick_Handler,
 
 	/* Device interrupt vectors */
 	/* 0x40 */
@@ -246,7 +241,7 @@ intfunc g_pfnVectors[] =
 	DMA1_Channel4_IRQHandler,
 	DMA1_Channel5_IRQHandler,
 	DMA1_Channel6_IRQHandler,
-	DMA1_Channel7_IRQHandler,
+	DMA1_Channel7_IRQHandler,  // 18
 
 #if   defined(STM32F10X_LD_VL) || defined(STM32F10X_MD_VL) || defined(STM32F10X_HD_VL)
 	ADC1_IRQHandler,
@@ -277,7 +272,7 @@ intfunc g_pfnVectors[] =
 	TIM1_TRG_COM_IRQHandler,
 	TIM1_CC_IRQHandler,
 	TIM2_IRQHandler,
-	TIM3_IRQHandler,
+	TIM3_IRQHandler,    // 30
 
 #if   defined(STM32F10X_LD_VL) || defined(STM32F10X_LD)
 	0,
@@ -315,7 +310,7 @@ intfunc g_pfnVectors[] =
 #endif
 
 	EXTI15_10_IRQHandler,
-	RTCAlarm_IRQHandler,
+	RTCAlarm_IRQHandler,   // 42
 
 #if   defined(STM32F10X_LD_VL) || defined(STM32F10X_MD_VL) || defined(STM32F10X_HD_VL)
 	CEC_IRQHandler,
@@ -366,10 +361,7 @@ intfunc g_pfnVectors[] =
 	0,0,
 #endif
 
-	/* 0x108 ---------------------------------- end of interrupt table for LD, MD */
-#if   defined(STM32F10X_LD) || defined(STM32F10X_MD)
-	(intfunc)0xF108F85F  /* @0x108 */
-#endif
+//------ End of interrupt table for STM32F10X_LD, STM32F10X_MD. Table contains 50 vectors.
 
 #if   defined(STM32F10X_HD_VL) || defined(STM32F10X_HD) || defined(STM32F10X_XL) || defined(STM32F10X_CL)
 	TIM5_IRQHandler,
@@ -383,73 +375,42 @@ intfunc g_pfnVectors[] =
 	/* 0x118 */
 #if   defined(STM32F10X_LD_VL) || defined(STM32F10X_MD_VL) || defined(STM32F10X_HD_VL)
 	TIM6_DAC_IRQHandler,
-	TIM7_IRQHandler,
+	TIM7_IRQHandler
 #elif defined(STM32F10X_HD) || defined(STM32F10X_XL) || defined(STM32F10X_CL)
 	TIM6_IRQHandler,
 	TIM7_IRQHandler,
 #endif
+//------ End of interrupt table for STM32F10X_LD_VL, STM32F10X_MD_VL. Table contains 56 vectors.
 
 	/* 0x120 */
 #if   defined(STM32F10X_HD_VL)
+	,
 	DMA2_Channel1_IRQHandler,
 	DMA2_Channel2_IRQHandler,
 	DMA2_Channel3_IRQHandler,
 	DMA2_Channel4_5_IRQHandler,
-	DMA2_Channel5_IRQHandler,
+	DMA2_Channel5_IRQHandler
+//------ End of interrupt table for STM32F10X_HD_VL. Table contains 61 vectors.
+#elif defined(STM32F10X_HD) || defined(STM32F10X_XL)
+	DMA2_Channel1_IRQHandler,
+	DMA2_Channel2_IRQHandler,
+	DMA2_Channel3_IRQHandler,
+	DMA2_Channel4_5_IRQHandler
+//------ End of interrupt table for STM32F10X_HD, STM32F10X_XL. Table contains 60 vectors.
 #elif defined(STM32F10X_CL)
 	DMA2_Channel1_IRQHandler,
 	DMA2_Channel2_IRQHandler,
 	DMA2_Channel3_IRQHandler,
 	DMA2_Channel4_IRQHandler,
 	DMA2_Channel5_IRQHandler,
-#elif defined(STM32F10X_HD) || defined(STM32F10X_XL)
-	DMA2_Channel1_IRQHandler,
-	DMA2_Channel2_IRQHandler,
-	DMA2_Channel3_IRQHandler,
-	DMA2_Channel4_5_IRQHandler,
-	0,
-#endif
-
-	/* 0x134 */
-#if   defined(STM32F10X_CL)
 	ETH_IRQHandler,
 	ETH_WKUP_IRQHandler,
 	CAN2_TX_IRQHandler,
 	CAN2_RX0_IRQHandler,
 	CAN2_RX1_IRQHandler,
 	CAN2_SCE_IRQHandler,
-	OTG_FS_IRQHandler,
-	/* 0x150 */
-	0,0,0,0, 0,0,0,0,
-	0,0,0,0, 0,0,0,0,
-	0,0,0,0, 0,0,0,0,
-	0,0,0,0, 0,0,0,0,
-	0,0,0,0,
-	(intfunc)0xF1E0F85F /* @0x1E0 */
-#elif defined(STM32F10X_LD_VL) || defined(STM32F10X_MD_VL)
-	0,0,0,0, 0,0,0,0,
-	0,0,0,0, 0,0,0,0,
-	0,0,0,0, 0,0,0,0,
-	0,0,0,0, 0,0,0,0,
-	0,0,0,0, 0,0,0,0,
-	0,0,0,
-	(intfunc)0xF1CCF85F /* @0x01CC */
-#elif defined(STM32F10X_HD_VL)
-	0,0,0,0, 0,0,0,0,
-	0,0,0,0, 0,0,0,0,
-	0,0,0,0, 0,0,0,0,
-	0,0,0,0, 0,0,0,0,
-	0,0,0,0, 0,0,0,0,
-	0,0,0
-	(intfunc)0xF1E0F85F /* @0x1E0 */
-#elif defined(STM32F10X_HD) || defined(STM32F10X_XL)
-	0,0,0,0, 0,0,0,0,
-	0,0,0,0, 0,0,0,0,
-	0,0,0,0, 0,0,0,0,
-	0,0,0,0, 0,0,0,0,
-	0,0,0,0, 0,0,0,0,
-	0,0,0,0,
-	(intfunc)0xF1E0F85F  /* @0x1E0 */
+	OTG_FS_IRQHandler   // 68
+//------ End of interrupt table for STM32F10X_CL. Table contains 68 vectors.
 #endif
 };
 
@@ -477,8 +438,6 @@ void __Init_Data(void)
 	/* Init hardware before calling constructors */
 	init_HW();
 
-	/* External memory bus initialisation */
-	// ?? SystemInit_ExtMemCtl();
 
 	/* Call constructors */
 	unsigned long *ctors;
@@ -500,7 +459,8 @@ void __Init_Data(void)
 #pragma weak UsageFault_Handler = Default_Handler
 #pragma weak SVC_Handler = Default_Handler
 #pragma weak DebugMon_Handler = Default_Handler
-#pragma weak PendSVC_ISR = Default_Handler
+#pragma weak PendSV_Handler = Default_Handler
+#pragma weak SysTick_Handler = Default_Handler
 #pragma weak WWDG_IRQHandler = Default_Handler
 #pragma weak PVD_IRQHandler = Default_Handler
 #pragma weak TAMPER_IRQHandler = Default_Handler
@@ -583,13 +543,8 @@ void __Init_Data(void)
 #pragma weak CAN2_SCE_IRQHandler = Default_Handler
 #pragma weak OTG_FS_IRQHandler = Default_Handler
 
-#pragma weak SystemInit_ExtMemCtl = SystemInit_ExtMemCtl_Dummy
 
 void Default_Handler(void)
 {
 	for (;;);
-}
-
-void SystemInit_ExtMemCtl_Dummy(void) 
-{
 }

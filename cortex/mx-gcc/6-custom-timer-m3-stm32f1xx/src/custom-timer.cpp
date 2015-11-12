@@ -4,11 +4,11 @@
 //*
 //*     NICKNAME:  scmRTOS
 //*
-//*     PROCESSOR: ARM Cortex-M4F
+//*     PROCESSOR: ARM Cortex-M3
 //*
 //*     TOOLKIT:   ARM GCC
 //*
-//*     PURPOSE:  OS Extensions includes
+//*     PURPOSE:  Custom system timer module
 //*
 //*     Version: 5.0.0
 //*
@@ -40,13 +40,47 @@
 //*     =================================================================
 //*
 //******************************************************************************
-//*     GCC STM32F4xx samples by Anton B. Gusev aka AHTOXA, Copyright (c) 2009-2015
+//*     GCC STM32F1xx samples by Anton B. Gusev aka AHTOXA, Copyright (c) 2009-2015
 
-#ifndef  scmRTOS_EXTENSIONS_H
-#define  scmRTOS_EXTENSIONS_H
+#include "stm32f10x.h"
+#include <scmRTOS.h>
 
-#include <profiler.h>
+/**
+ * Custom system timer configuration.
+ */
+extern "C" void __init_system_timer()
+{
+	RCC->APB1ENR |= RCC_APB1ENR_TIM4EN;
 
-#endif // scmRTOS_EXTENSIONS_H
-//-----------------------------------------------------------------------------
+	NVIC_SetPriority(TIM4_IRQn, 255);
+	NVIC_EnableIRQ(TIM4_IRQn);
 
+	TIM4->PSC = 1;
+	TIM4->ARR = 36000;          // 1KHz
+	TIM4->EGR = TIM_EGR_UG;     // generate an update event to reload the prescaler value immediately
+	TIM4->DIER = TIM_DIER_UIE;  // enable update interrupt
+	TIM4->CR1 = TIM_CR1_CEN;    // run timer
+}
+
+void LOCK_SYSTEM_TIMER()
+{
+	TIM4->CR1 &= ~TIM_CR1_CEN;
+}
+
+void UNLOCK_SYSTEM_TIMER()
+{
+	TIM4->CR1 |= TIM_CR1_CEN;
+}
+
+/**
+ * Interrupt handler.
+ * Clears interrupt flags and calls the OS::system_timer_isr();
+ */
+OS_INTERRUPT void TIM4_IRQHandler()
+{
+	if (TIM4->SR & TIM_SR_UIF)
+	{
+		TIM4->SR = ~TIM_SR_UIF;
+		OS::system_timer_isr();
+	}
+}

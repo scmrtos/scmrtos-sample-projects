@@ -40,19 +40,19 @@
 //*     =================================================================
 //*
 //******************************************************************************
-//*     GCC port by Anton B. Gusev aka AHTOXA, Copyright (c) 2009-2015
+//*     GCC STM32F2xx samples by Anton B. Gusev aka AHTOXA, Copyright (c) 2009-2015
 
 #ifndef  scmRTOS_CONFIG_H
 #define  scmRTOS_CONFIG_H
 
 #ifndef __ASSEMBLER__
 
+#include <stdint.h>
 typedef uint16_t      timeout_t;
 typedef uint_fast32_t tick_count_t;
 
 #endif // __ASSEMBLER__
 
-#include <stdint.h>
 //------------------------------------------------------------------------------
 //
 //    Specify scmRTOS Process Count. Must be less than 31
@@ -99,21 +99,6 @@ typedef uint_fast32_t tick_count_t;
 //
 #define scmRTOS_IDLE_PROCESS_STACK_SIZE       (100 * sizeof(stack_item_t))
 
-//-----------------------------------------------------------------------------
-//
-//    scmRTOS Priority Order
-//
-//    This macro defines the order of the process's priorities. Default,
-//    the ascending order is used. Alternatively, the descending priority
-//    order can be used. On some platforms the descending order is preferred
-//    because of performance.
-//
-//    Default (corresponding to ascending order) value of macro is 0.
-//    Alternative (corresponding to descending order) value of macro is 1.
-//
-//    On Cortex-M3 the descending order is preferred for performance reason.
-//
-#define  scmRTOS_PRIORITY_ORDER 1
 
 //-----------------------------------------------------------------------------
 //
@@ -133,7 +118,7 @@ typedef uint_fast32_t tick_count_t;
 //    stack usage information and information about the object that process is waiting for.
 //
 //
-#define scmRTOS_DEBUG_ENABLE  1
+#define scmRTOS_DEBUG_ENABLE  0
 
 //-----------------------------------------------------------------------------
 //
@@ -143,6 +128,21 @@ typedef uint_fast32_t tick_count_t;
 //
 //
 #define scmRTOS_PROCESS_RESTART_ENABLE 0
+
+//-----------------------------------------------------------------------------
+//
+//     PendSVC_ISR optimization:
+//    0 - use near (+- 1Mb) call for os_context_switch_hook
+//    1 - use far call
+//
+#define scmRTOS_CONTEXT_SWITCH_HOOK_IS_FAR     0
+
+//-----------------------------------------------------------------------------
+//
+//    scmRTOS process with initial suspended state enable
+//
+//
+#define scmRTOS_SUSPENDED_PROCESS_ENABLE  0
 
 #endif // scmRTOS_CONFIG_H
 //-----------------------------------------------------------------------------

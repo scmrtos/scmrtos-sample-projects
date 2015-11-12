@@ -137,6 +137,13 @@ typedef uint_fast32_t tick_count_t;
 //
 #define scmRTOS_CONTEXT_SWITCH_HOOK_IS_FAR     0
 
+//-----------------------------------------------------------------------------
+//
+//    scmRTOS process with initial suspended state enable
+//
+//
+#define scmRTOS_SUSPENDED_PROCESS_ENABLE  0
+
 #endif // scmRTOS_CONFIG_H
 //-----------------------------------------------------------------------------
 
