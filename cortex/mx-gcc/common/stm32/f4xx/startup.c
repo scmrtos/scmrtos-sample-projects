@@ -24,8 +24,8 @@ void BusFault_Handler             (void);
 void UsageFault_Handler           (void);
 void SVC_Handler                  (void);
 void DebugMon_Handler             (void);
-void PendSVC_ISR                  (void);
-void SystemTimer_ISR              (void);
+void PendSV_Handler               (void);
+void SysTick_Handler              (void);
 
 /* External Interrupts */
 void WWDG_IRQHandler              (void);
@@ -135,8 +135,8 @@ void (* const g_pfnVectors[])(void) =
 	SVC_Handler,
 	DebugMon_Handler,
 	0,
-	PendSVC_ISR,
-	SystemTimer_ISR,
+	PendSV_Handler,
+	SysTick_Handler,
 
 	WWDG_IRQHandler,                   /* Window WatchDog              */
 	PVD_IRQHandler,                    /* PVD through EXTI Line detection */
@@ -267,7 +267,8 @@ void __Init_Data(void)
 #pragma weak UsageFault_Handler             = Default_Handler
 #pragma weak SVC_Handler                    = Default_Handler
 #pragma weak DebugMon_Handler               = Default_Handler
-#pragma weak PendSVC_ISR                    = Default_Handler
+#pragma weak PendSV_Handler                 = Default_Handler
+#pragma weak SysTick_Handler                = Default_Handler
 #pragma weak WWDG_IRQHandler                = Default_Handler
 #pragma weak PVD_IRQHandler                 = Default_Handler
 #pragma weak TAMP_STAMP_IRQHandler          = Default_Handler
