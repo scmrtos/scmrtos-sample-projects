@@ -40,7 +40,7 @@
 //*     =================================================================
 //*
 //******************************************************************************
-//*     GCC port by Anton B. Gusev aka AHTOXA, Copyright (c) 2009-2015
+//*     GCC STM32F1xx samples by Anton B. Gusev aka AHTOXA, Copyright (c) 2009-2015
 
 #ifndef  scmRTOS_EXTENSIONS_H
 #define  scmRTOS_EXTENSIONS_H
