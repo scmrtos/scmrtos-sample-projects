@@ -50,53 +50,8 @@
 #define SYSTICKINTRATE  1000
 
 //------------------------------------------------------------------------------
-// Definitions for some processor registers in order to not include specific
-// header file for various Cortex-M3 processor derivatives.
-#define CPU_ICSR            ( ( volatile uint32_t *) 0xE000ED04 )   // Interrupt Control State Register
-#define CPU_SYSTICKCSR      ( ( volatile uint32_t *) 0xE000E010 )   // SysTick Control and Status Register
-#define CPU_SYSTICKCSR_EINT 0x02                                    // Bit for enable/disable SysTick interrupt
-
-#ifndef __ASSEMBLER__
-//------------------------------------------------------------------------------
 //
-//       System Timer stuff
-//
-//
-namespace OS
-{
-OS_INTERRUPT void SystemTimer_ISR();
-}
-
-#define  LOCK_SYSTEM_TIMER()    ( *CPU_SYSTICKCSR &= ~CPU_SYSTICKCSR_EINT )
-#define  UNLOCK_SYSTEM_TIMER()  ( *CPU_SYSTICKCSR |=  CPU_SYSTICKCSR_EINT )
-
-//------------------------------------------------------------------------------
-//
-//       Context Switch ISR stuff
-//
-//
-namespace OS
-{
-#if scmRTOS_CONTEXT_SWITCH_SCHEME == 1
-
-    INLINE void raise_context_switch() { *CPU_ICSR |= 0x10000000; }
-
-    #define ENABLE_NESTED_INTERRUPTS()
-
-    #if scmRTOS_SYSTIMER_NEST_INTS_ENABLE == 0
-        #define DISABLE_NESTED_INTERRUPTS() TCritSect cs
-    #else
-        #define DISABLE_NESTED_INTERRUPTS()
-    #endif
-
-#else
-    #error "Cortex-M3 port supports software interrupt switch method only!"
-
-#endif // scmRTOS_CONTEXT_SWITCH_SCHEME
-
-}
-//-----------------------------------------------------------------------------
-#endif // __ASSEMBLER__
+#define CORE_PRIORITY_BITS  4
 
 
 #endif // scmRTOS_TARGET_CFG_H
