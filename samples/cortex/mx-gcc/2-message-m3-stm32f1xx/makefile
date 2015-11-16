@@ -77,7 +77,7 @@
 	LD_SCRIPT	= $(PRJDIR)/$(CHIP).ld
 
 # scmRTOS dir
-	SCMDIR		= ../../../scmRTOS
+	SCMDIR		= ../../../../scmRTOS
 	COMMON		= ../common
  
 # source directories (all *.c, *.cpp and *.S files included)

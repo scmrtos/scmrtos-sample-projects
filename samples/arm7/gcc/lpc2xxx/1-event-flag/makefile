@@ -55,7 +55,7 @@
 	LD_SCRIPT	= $(PRJDIR)/$(CHIP)-ROM.ld
 
 # dirs
-    SCMDIR      = ../../../../scmRTOS
+    SCMDIR      = ../../../../../scmRTOS
     COMMON      = ../common
 
 # files

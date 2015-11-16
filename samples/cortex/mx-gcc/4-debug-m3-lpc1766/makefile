@@ -67,7 +67,7 @@
 	OK		= $(EXEDIR)/$(TARGET).ok
 
 # scmRTOS dir
-	SCMDIR		= ../../../scmRTOS
+	SCMDIR		= ../../../../scmRTOS
 #
 	COMMON	= ../common
 

@@ -93,7 +93,7 @@ endif
 	LD_SCRIPT	= $(PRJDIR)/$(CHIP).ld
 
 # scmRTOS dir
-	SCMDIR		= ../../../scmRTOS
+	SCMDIR		= ../../../../scmRTOS
 # lib dir
 	LIBDIR		= ../common
  

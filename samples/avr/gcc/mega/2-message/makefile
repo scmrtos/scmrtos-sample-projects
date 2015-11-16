@@ -32,7 +32,7 @@ TRGPGMEXT := hex
 # project modules (directories with source files)
 # "current" directory (.) included automatically in gcc-avr.make
 MODULES := ./src ../common
-MODULES += ../../../../scmRTOS/core ../../../../scmRTOS/port/avr/gcc ../../../../scmRTOS/ext/profiler
+MODULES += ../../../../../scmRTOS/core ../../../../../scmRTOS/port/avr/gcc ../../../../../scmRTOS/ext/profiler
 
 # needed for includes below
 COMMON_MAKEFILES := ../common

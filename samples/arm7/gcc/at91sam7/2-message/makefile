@@ -20,9 +20,9 @@ OPTIMIZE = -Os
 
 ##############################################################################################
 # OS sources directories
-scmRTOS_DIRS =  ../../../../scmRTOS/core
-scmRTOS_DIRS += ../../../../scmRTOS/port/arm7/gcc 
-scmRTOS_DIRS += ../../../../scmRTOS/ext/profiler
+scmRTOS_DIRS =  ../../../../../scmRTOS/core
+scmRTOS_DIRS += ../../../../../scmRTOS/port/arm7/gcc 
+scmRTOS_DIRS += ../../../../../scmRTOS/ext/profiler
 # Application sources directories
 SRC_DIRS  = ./src
 SRC_DIRS += ../common

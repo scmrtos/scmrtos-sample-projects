@@ -59,7 +59,7 @@
 	LD_SCRIPT	= $(PRJDIR)/ADUC7061-ROM.ld
 
 # scmRTOS dir
-	SCMDIR		= ../../../../scmRTOS
+	SCMDIR		= ../../../../../scmRTOS
 	COMMON		= ../common
 
 # files

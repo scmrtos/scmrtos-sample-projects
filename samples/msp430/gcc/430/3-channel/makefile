@@ -50,7 +50,7 @@
 	OK		= $(EXEDIR)/$(TARGET).ok
 
 # scmRTOS dir
-	SCMDIR		= ../../../../scmRTOS
+	SCMDIR		= ../../../../../scmRTOS
 
 # files
 	DIRS	:= $(SRCDIR)
