@@ -33,7 +33,7 @@
 		<link>
 			<name>scmRTOS</name>
 			<type>2</type>
-			<locationURI>$%7BPARENT-3-PROJECT_LOC%7D/scmRTOS</locationURI>
+			<locationURI>$%7BPARENT-4-PROJECT_LOC%7D/scmRTOS</locationURI>
 		</link>
 	</linkedResources>
 </projectDescription>
