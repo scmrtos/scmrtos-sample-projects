@@ -9,17 +9,16 @@
 #----------------------------------------------------------------------------
 
 # program name
-	TARGET	= 5-suspended
+	TARGET	= 7-floating-point
 
 # toolchain
 	TOOL	= arm-none-eabi-
 
 # program version
-	VER_MAJOR	= 0
-	VER_MINOR	= 1
+    VER_MAJOR   = 0
+    VER_MINOR   = 1
 
-
-# compile options 
+# compile options
 	OPTIMIZE        = -O2
 	USE_LTO         = NO
 	USE_CPP11       = YES
@@ -40,15 +39,15 @@
 # STM32F429_439xx : STM32F429/STM32F439
 # STM32F401xx     : STM32F401
 
-	CHIP		= STM32F10X_MD
+
+	CHIP		= STM32F40_41xxx
 	HSE_VALUE	= 8000000
 
 # compiler defines
-	DEFS		= -D$(CHIP)
-	DEFS		+= -DVER_MAJOR=$(VER_MAJOR)
-	DEFS		+= -DVER_MINOR=$(VER_MINOR)
-	DEFS		+= -DHSE_VALUE=$(HSE_VALUE)
-
+    DEFS        = -D$(CHIP)
+    DEFS        += -DVER_MAJOR=$(VER_MAJOR)
+    DEFS        += -DVER_MINOR=$(VER_MINOR)
+    DEFS        += -DHSE_VALUE=$(HSE_VALUE)
 ifneq (,$(filter STM32F4XX STM32F40_41xxx STM32F427_437xx STM32F429_439xx STM32F401xx, $(CHIP)))
 	MCU			= cortex-m4
 	FPU			= -mfpu=fpv4-sp-d16 -mfloat-abi=hard
@@ -85,7 +84,7 @@ endif
 	MD			= mkdir
 
 
-#  dirs
+# dirs
 	SRCDIR		= $(BASE)/src
 	OBJDIR		= $(BASE)/obj
 	EXEDIR		= $(BASE)/exe
@@ -93,7 +92,7 @@ endif
 	PRJDIR		= $(BASE)/prj
 	LD_SCRIPTS	= $(PRJDIR)
 
-#files
+# files
 	HEX		= $(EXEDIR)/$(TARGET).hex
 	BIN		= $(EXEDIR)/$(TARGET).bin
 	ELF		= $(EXEDIR)/$(TARGET).elf
@@ -108,10 +107,11 @@ endif
 	SCMDIR		= ../../../../scmRTOS
 	COMMON		= ../common
  
+
 # source directories (all *.c, *.cpp and *.S files included)
 	DIRS	:= $(SRCDIR)
 	DIRS	+= $(COMMON)/CMSIS $(COMMON)/CMSIS/stm32
-	DIRS	+= $(COMMON)/stm32 $(COMMON)/stm32/f1xx
+	DIRS	+= $(COMMON)/stm32 $(COMMON)/stm32/f4xx
 	DIRS	+= $(SCMDIR)/core $(SCMDIR)/port/cortex/mx-gcc
 	DIRS	+= $(SCMDIR)/ext/profiler
 
@@ -137,16 +137,16 @@ endif
 	FLAGS	= -mcpu=$(MCU) -mthumb
 	FLAGS	+= $(FPU)
 	FLAGS	+= $(INCS)
-	FLAGS	+= $(DEFS) 
+	FLAGS	+= $(DEFS)
 	FLAGS	+= -Wa,-adhlns=$(addprefix $(LSTDIR)/, $(notdir $(addsuffix .lst, $(basename $<))))
 
 	AFLAGS	= $(FLAGS)
 
 	CFLAGS	= $(FLAGS)
 	CFLAGS	+= $(OPTIMIZE)
-ifneq (,$(filter-out discovery defines,$(MAKECMDGOALS)))
+	ifneq (,$(filter-out discovery defines,$(MAKECMDGOALS)))
 	CFLAGS	+= -MD 
-endif
+    endif
 	CFLAGS	+= -std=gnu99
 	CFLAGS	+= -g
 	CFLAGS	+= -pipe
@@ -162,7 +162,7 @@ ifneq (,$(filter-out discovery defines,$(MAKECMDGOALS)))
 endif
 ifeq ($(USE_CPP11),YES)
 	CXXFLAGS	+= -std=c++11
-endif
+    endif
 	CXXFLAGS	+= -g
 	CXXFLAGS	+= -pipe
 	CXXFLAGS	+= -fno-exceptions -fno-rtti
@@ -196,6 +196,7 @@ endif
 
 # debug level (d0..d3)
 	OPENOCD_PARAMS		= -d0
+
 # interface and board/target settings (using the OOCD target-library here)
 #	OPENOCD_PARAMS		+= -f interface/arm-usb-ocd.cfg 
 #	OPENOCD_PARAMS		+= -f $(PRJDIR)/STM32F10X.cfg
@@ -217,6 +218,7 @@ endif
 	OPENOCD_PARAMS_RESET	= $(OPENOCD_PARAMS)
 	OPENOCD_PARAMS_RESET	+= -c "reset run"
 	OPENOCD_PARAMS_RESET	+= -c shutdown
+
 
 .SILENT :
 
@@ -326,6 +328,7 @@ clean:
 	-@$(RM) $(LSS)
 	-@$(RM) $(MAP)
 
+
 #discovery target for Eclipse parser
 discovery:
 ifeq ($(extension),c)
@@ -336,11 +339,11 @@ else
 	$(CXX) $(INCS) $(CXXFLAGS) -E -P -v -dD '$(specs_file)'
 endif
 	$(RM) spec.d
-
+	
 defines:
 	$(CC) $(CFLAGS) -dM -E - < /dev/null | sort
 
 #do not include dependency info on some targets:
 ifneq (,$(filter-out docs build clean dirs discovery,$(MAKECMDGOALS)))
-  -include $(wildcard $(OBJDIR)/*.d) 
+   -include $(wildcard $(OBJDIR)/*.d) 
 endif

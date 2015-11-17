@@ -1,16 +1,17 @@
 #+---------------------------------------------------------------------------
 #
-#  Copyright (c) 2012 Anton Gusev aka AHTOXA (HTTP://AHTOXA.NET)
+#  Copyright (c) 2015 Anton Gusev aka AHTOXA (HTTP://AHTOXA.NET)
 #
 #  File:       makefile
 #
-#  Contents:   makefile to build arm Cortex-M3 software with gcc
+#  Contents:   makefile to build arm Cortex-M3/M4 software with gcc
 #
 #----------------------------------------------------------------------------
 
 # program name
 	TARGET	= 4-debug
 
+# toolchain
 	TOOL	= arm-none-eabi-
 
 # program version
@@ -18,8 +19,10 @@
     VER_MINOR   = 1
 
 # compile options
-	OPTIMIZE		= -O3
-	USE_LTO			= NO
+	OPTIMIZE        = -O2
+	USE_LTO         = NO
+	USE_CPP11       = YES
+	USE_NANO_LIB    = YES
 
 # Select chip: 
 # STM32F10X_LD    : STM32 Low density devices
@@ -31,25 +34,33 @@
 # STM32F10X_CL    : STM32 Connectivity line devices
 # STM32F10X_XL    : STM32 XL-density devices
 # STM32F2XX       : STM32F2XX devices
-# STM32F4XX       : STM32F4XX devices
-	CHIP		= STM32F4XX
-	HSE_VALUE	= 8000000
+# STM32F40_41xxx  : STM32F405, STM32F407, STM32F415, STM32F417 
+# STM32F427_437xx : STM32F427/STM32F437
+# STM32F429_439xx : STM32F429/STM32F439
+# STM32F401xx     : STM32F401
 
-ifeq ($(CHIP),STM32F4XX)
-	MCU			= cortex-m4
-	FPU			= -mfpu=fpv4-sp-d16 -mfloat-abi=hard
-else
-	MCU			= cortex-m3
-endif
+
+	CHIP		= STM32F40_41xxx
+	HSE_VALUE	= 8000000
 
 # compiler defines
     DEFS        = -D$(CHIP)
     DEFS        += -DVER_MAJOR=$(VER_MAJOR)
     DEFS        += -DVER_MINOR=$(VER_MINOR)
     DEFS        += -DHSE_VALUE=$(HSE_VALUE)
+ifneq (,$(filter STM32F4XX STM32F40_41xxx STM32F427_437xx STM32F429_439xx STM32F401xx, $(CHIP)))
+	MCU			= cortex-m4
+	FPU			= -mfpu=fpv4-sp-d16 -mfloat-abi=hard
+#	FPU			= -mfpu=fpv4-sp-d16 -mfloat-abi=softfp
+ifneq ($(CHIP),STM32F4XX)
+    DEFS        += -DSTM32F4XX
+endif
+else
+	MCU			= cortex-m3
+endif
 
 ###########################################################
-#  common part for all my cortex-m3 projects
+#  common part for all my cortex-m3/m4 projects
 ###########################################################
 
 	BASE		= .
@@ -79,7 +90,7 @@ endif
 	EXEDIR		= $(BASE)/exe
 	LSTDIR		= $(BASE)/lst
 	PRJDIR		= $(BASE)/prj
-	BAKDIR		= $(BASE)/bak
+	LD_SCRIPTS	= $(PRJDIR)
 
 # files
 	HEX		= $(EXEDIR)/$(TARGET).hex
@@ -90,20 +101,18 @@ endif
 	OK		= $(EXEDIR)/$(TARGET).ok
 
 # linker script (chip dependent)
-	LD_SCRIPT	= $(PRJDIR)/$(CHIP).ld
+	LD_SCRIPT	= $(CHIP).ld
 
 # scmRTOS dir
 	SCMDIR		= ../../../../scmRTOS
-# lib dir
-	LIBDIR		= ../common
+	COMMON		= ../common
  
 
 # source directories (all *.c, *.cpp and *.S files included)
 	DIRS	:= $(SRCDIR)
-	DIRS	+= $(SRCDIR)/debug
-	DIRS	+= $(LIBDIR)
-	DIRS	+= $(LIBDIR)/CMSIS $(LIBDIR)/CMSIS/stm32
-	DIRS	+= $(LIBDIR)/stm32 $(LIBDIR)/stm32/f4xx
+	DIRS	+= $(SRCDIR)/debug 
+	DIRS	+= $(COMMON)/CMSIS $(COMMON)/CMSIS/stm32
+	DIRS	+= $(COMMON)/stm32 $(COMMON)/stm32/f4xx
 	DIRS	+= $(SCMDIR)/core $(SCMDIR)/port/cortex/mx-gcc
 	DIRS	+= $(SCMDIR)/ext/profiler
 
@@ -124,15 +133,6 @@ endif
 	OBJS	:= $(OBJS:.S=.o)
 	OBJS	:= $(patsubst %, $(OBJDIR)/%, $(OBJS))
 
-#files to archive
-	ARCFILES	= \
-		$(SRCDIR) \
-		$(PRJDIR) \
-		$(SCMDIR) \
-		$(COMMON) \
-		$(BASE)/makefile \
-		$(BASE)/.cproject \
-		$(BASE)/.project
 
 # flags
 	FLAGS	= -mcpu=$(MCU) -mthumb
@@ -158,8 +158,11 @@ endif
 
 	CXXFLAGS	= $(FLAGS)
 	CXXFLAGS	+= $(OPTIMIZE)
-    ifeq (,$(findstring discovery,$(MAKECMDGOALS)))
+ifneq (,$(filter-out discovery defines,$(MAKECMDGOALS)))
 	CXXFLAGS	+= -MD 
+endif
+ifeq ($(USE_CPP11),YES)
+	CXXFLAGS	+= -std=c++11
     endif
 	CXXFLAGS	+= -g
 	CXXFLAGS	+= -pipe
@@ -170,14 +173,18 @@ endif
 	CXXFLAGS	+= -Winline
 	CXXFLAGS	+= -Wpointer-arith -Wredundant-decls
 	CXXFLAGS	+= -Wshadow -Wcast-qual -Wcast-align -pedantic
-        CXXFLAGS        += -std=c++11
 
 	LD_FLAGS	= -mcpu=$(MCU)
 	LD_FLAGS	+= -mthumb
 	LD_FLAGS	+= $(FPU)
 	LD_FLAGS	+= -nostartfiles 
+ifeq ($(USE_NANO_LIB),YES)
+	LD_FLAGS	+= --specs=nano.specs
+#	LD_FLAGS	+= -u _printf_float  
+endif
 	LD_FLAGS	+= -Wl,-Map="$(MAP)",--cref
 	LD_FLAGS	+= -Wl,--gc-sections
+	LD_FLAGS	+= -L$(LD_SCRIPTS)
 	LD_FLAGS	+= -T$(LD_SCRIPT)
 
 ifeq ($(USE_LTO),YES)
@@ -192,6 +199,8 @@ endif
 	OPENOCD_PARAMS		= -d0
 
 # interface and board/target settings (using the OOCD target-library here)
+#	OPENOCD_PARAMS		+= -f interface/arm-usb-ocd.cfg 
+#	OPENOCD_PARAMS		+= -f $(PRJDIR)/STM32F10X.cfg
 	OPENOCD_PARAMS		+= -f board/stm32f4discovery.cfg
 	OPENOCD_PARAMS		+= -c init
 	OPENOCD_PARAMS		+= -c "sleep 200"
@@ -214,7 +223,7 @@ endif
 
 .SILENT :
 
-.PHONY: all dirs build clean program reset archive docs discovery
+.PHONY: all dirs build clean program protect reset archive docs discovery defines
 
 ############# targets
 
@@ -223,6 +232,7 @@ all :
 	$(MAKE) dirs
 	$(MAKE) $(ELF)
 	$(MAKE) $(HEX)
+	$(MAKE) $(BIN)
 	$(MAKE) $(LSS)
 	$(SIZE) $(ELF)
 	@echo "Errors: none"
@@ -261,7 +271,13 @@ ifeq ($(FLASHER),stm32flash)
 #	$(FLASHER) -b 115200 -w $(HEX) -v -g 0x0 COM1
 endif
 ifeq ($(FLASHER),ST-LINK_CLI)
-	$(FLASHER) -Q -P $(HEX) -V $(HEX) -Run
+#	$(FLASHER) -Q -P $(HEX) -V $(HEX) -Run
+	$(FLASHER)  -c SWD UR -Q -P $(HEX) -V "while_programming" -Run
+endif
+
+protect:
+ifeq ($(FLASHER),ST-LINK_CLI)
+	$(FLASHER)  -c SWD UR -Q -P $(HEX) -V $(HEX) -OB RDP=1
 endif
 
 reset:
@@ -291,7 +307,7 @@ $(OBJDIR)/%.o: %.S makefile
 	@echo --- assembling $<...
 	$(AS) -c $(AFLAGS) -o $@ $<
 
-dirs: $(OBJDIR) $(EXEDIR) $(LSTDIR) $(BAKDIR)
+dirs: $(OBJDIR) $(EXEDIR) $(LSTDIR)
 
 $(OBJDIR):
 	-@$(MD) $(OBJDIR)
@@ -302,8 +318,6 @@ $(EXEDIR):
 $(LSTDIR):
 	-@$(MD) $(LSTDIR)
 
-$(BAKDIR):
-	-@$(MD) $(BAKDIR)
 
 clean:
 	-@$(RM) $(OBJDIR)/*.d 2>/dev/null
@@ -311,17 +325,21 @@ clean:
 	-@$(RM) $(LSTDIR)/*.lst 2>/dev/null
 	-@$(RM) $(ELF)
 	-@$(RM) $(HEX)
+	-@$(RM) $(BIN)
 	-@$(RM) $(LSS)
 	-@$(RM) $(MAP)
 
-archive:
-	@echo --- archiving...
-	7z a $(BAKDIR)/$(TARGET)_`date +%Y-%m-%d,%H-%M-%S` $(ARCFILES)
-	@echo --- done!
 
 #discovery target for Eclipse parser
 discovery:
+ifeq ($(extension),c)
+	@echo -- discovery for $(CC)
 	$(CC) $(INCS) $(CFLAGS) -E -P -v -dD '$(specs_file)'
+else
+	@echo -- discovery for $(CCX)
+	$(CXX) $(INCS) $(CXXFLAGS) -E -P -v -dD '$(specs_file)'
+endif
+	$(RM) spec.d
 	
 defines:
 	$(CC) $(CFLAGS) -dM -E - < /dev/null | sort
