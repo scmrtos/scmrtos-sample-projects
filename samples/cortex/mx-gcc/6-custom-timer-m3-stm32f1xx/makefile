@@ -12,15 +12,15 @@
 	TARGET	= 6-custom-timer
 
 # toolchain
-
 	TOOL	= arm-none-eabi-
+
 # program version
 	VER_MAJOR	= 0
 	VER_MINOR	= 1
 
 # compile options 
-	OPTIMIZE	= -O2
-	USE_LTO		= NO
+	OPTIMIZE        = -O2
+	USE_LTO         = NO
 	USE_CPP11       = YES
 	USE_NANO_LIB    = YES
 
@@ -224,7 +224,7 @@ endif
 ############# targets
 
 all : 
-	@echo --- building $(TARGET). defines: $(DEFS) proto: $(UPLINK_PROTO)
+	@echo --- building $(TARGET). defines: $(DEFS)
 	$(MAKE) dirs
 	$(MAKE) $(ELF)
 	$(MAKE) $(HEX)

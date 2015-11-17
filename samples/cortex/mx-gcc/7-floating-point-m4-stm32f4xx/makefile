@@ -9,7 +9,7 @@
 #----------------------------------------------------------------------------
 
 # program name
-	TARGET	= 4-debug
+	TARGET	= 7-floating-point
 
 # toolchain
 	TOOL	= arm-none-eabi-
@@ -110,7 +110,6 @@ endif
 
 # source directories (all *.c, *.cpp and *.S files included)
 	DIRS	:= $(SRCDIR)
-	DIRS	+= $(SRCDIR)/debug 
 	DIRS	+= $(COMMON)/CMSIS $(COMMON)/CMSIS/stm32
 	DIRS	+= $(COMMON)/stm32 $(COMMON)/stm32/f4xx
 	DIRS	+= $(SCMDIR)/core $(SCMDIR)/port/cortex/mx-gcc
