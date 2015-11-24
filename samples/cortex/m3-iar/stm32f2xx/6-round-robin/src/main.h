@@ -94,9 +94,9 @@ typedef Pin<'D',  6, 'H', PIN_SPEED_100MHZ> TerminalDeviceRx;
 //
 //      I/O
 //
-typedef Pin<'A',  3, 'H', PIN_SPEED_100MHZ> PA3;
-typedef Pin<'A',  4, 'H', PIN_SPEED_100MHZ> PA4;
-typedef Pin<'A',  5, 'H', PIN_SPEED_100MHZ> PA5;
+typedef Pin<'A',  3, 'H', PIN_SPEED_100MHZ> PA3;  // pin 26
+typedef Pin<'A',  4, 'H', PIN_SPEED_100MHZ> PA4;  // pin 29
+typedef Pin<'A',  5, 'H', PIN_SPEED_100MHZ> PA5;  // pin 30
 
 
 
