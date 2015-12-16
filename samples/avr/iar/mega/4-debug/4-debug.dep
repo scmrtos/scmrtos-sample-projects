@@ -6,134 +6,175 @@
   <configuration>
     <name>Debug</name>
     <outputs>
+      <file>$PROJ_DIR$\obj\debug.r90</file>
+      <file>$PROJ_DIR$\Debug\Obj\os_target.pbi</file>
+      <file>$PROJ_DIR$\bin\4-debug.d90</file>
+      <file>$PROJ_DIR$\lst\debug.i</file>
+      <file>$TOOLKIT_DIR$\lib\dlib\dlAVR-3s-ec_mul-sf-n.r90</file>
+      <file>$PROJ_DIR$\..\scmRTOS\AVR\OS_Target_cpp.cpp</file>
+      <file>$PROJ_DIR$\obj\os_target.pbi</file>
+      <file>$PROJ_DIR$\obj\os_kernel.r90</file>
+      <file>$TOOLKIT_DIR$\inc\bitdefinitions\iom328.inc</file>
+      <file>$PROJ_DIR$\obj\os_kernel.pbi</file>
+      <file>$PROJ_DIR$\src\debug.h</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\stdarg.h</file>
+      <file>$PROJ_DIR$\src\scmRTOS_TARGET_CFG.h</file>
+      <file>$PROJ_DIR$\lst\os_services.lst</file>
+      <file>$PROJ_DIR$\..\scmRTOS\Common\usrlib.cpp</file>
+      <file>$PROJ_DIR$\lst\os_target.i</file>
+      <file>$PROJ_DIR$\lst\main.i</file>
+      <file>$PROJ_DIR$\obj\usrlib.r90</file>
+      <file>$PROJ_DIR$\obj\os_services.pbi</file>
+      <file>$TOOLKIT_DIR$\inc\intrinsics.h</file>
+      <file>$PROJ_DIR$\lst\os_kernel.lst</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\stdio.h</file>
+      <file>$PROJ_DIR$\lst\os_services.i</file>
+      <file>$PROJ_DIR$\..\common\pin_macros.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\scmRTOS\core\scmRTOS_defs.h</file>
+      <file>$PROJ_DIR$\src\debug.cpp</file>
+      <file>$PROJ_DIR$\Obj\OS_Target_cpp.r90</file>
+      <file>$PROJ_DIR$\src\scmRTOS_CONFIG.h</file>
+      <file>$PROJ_DIR$\obj\4-debug.pbd</file>
+      <file>$PROJ_DIR$\obj\prio_names.r90</file>
+      <file>$PROJ_DIR$\lst\prio_names.i</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\string.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\1-event-flag.pbd</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\scmRTOS\port\avr\iar\os_target_asm.s90</file>
       <file>$PROJ_DIR$\lst\debug.lst</file>
-      <file>$PROJ_DIR$\Debug\Obj\os_kernel.pbi</file>
-      <file>$PROJ_DIR$\bin\2-message.d90</file>
+      <file>$PROJ_DIR$\obj\debug.pbi</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\scmRTOS\core\os_services.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\scmRTOS\core\scmRTOS.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\scmRTOS\port\avr\iar\os_target.h</file>
+      <file>$PROJ_DIR$\lst\usrlib.i</file>
+      <file>$PROJ_DIR$\obj\usrlib.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\usrlib.pbi</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\stddef.h</file>
+      <file>$TOOLKIT_DIR$\src\template\cfg3soim.xcl</file>
+      <file>$PROJ_DIR$\obj\main.__cstat.et</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\DLib_Product.h</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\yvals.h</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\ysizet.h</file>
+      <file>$PROJ_DIR$\obj\2-message.pbd</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\xencoding_limits.h</file>
       <file>$PROJ_DIR$\obj\os_services.r90</file>
       <file>$PROJ_DIR$\bin\1-event-flag.d90</file>
       <file>$PROJ_DIR$\lst\usrlib.lst</file>
-      <file>$PROJ_DIR$\lst\4-debug.map</file>
-      <file>$PROJ_DIR$\Debug\Obj\os_services.pbi</file>
-      <file>$PROJ_DIR$\obj\4-debug.pbd</file>
-      <file>$PROJ_DIR$\obj\2-message.pbd</file>
-      <file>$PROJ_DIR$\lst\os_kernel.lst</file>
-      <file>$TOOLKIT_DIR$\inc\intrinsics.h</file>
-      <file>$PROJ_DIR$\obj\os_services.pbi</file>
-      <file>$PROJ_DIR$\obj\usrlib.r90</file>
-      <file>$TOOLKIT_DIR$\inc\dlib\c\DLib_Defaults.h</file>
-      <file>$TOOLKIT_DIR$\inc\dlib\c\xencoding_limits.h</file>
-      <file>$TOOLKIT_DIR$\inc\dlib\c\stddef.h</file>
-      <file>$TOOLKIT_DIR$\inc\dlib\c\DLib_Threads.h</file>
-      <file>$TOOLKIT_DIR$\inc\dlib\c\stdio.h</file>
-      <file>$PROJ_DIR$\lst\prio_names.lst</file>
-      <file>$TOOLKIT_DIR$\inc\dlib\c\pgmspace.h</file>
-      <file>$PROJ_DIR$\lst\prio_names.i</file>
-      <file>$TOOLKIT_DIR$\inc\dlib\c\ystdio.h</file>
-      <file>$TOOLKIT_DIR$\inc\dlib\c\stdarg.h</file>
-      <file>$TOOLKIT_DIR$\inc\dlib\c\string.h</file>
-      <file>$PROJ_DIR$\obj\debug.__cstat.et</file>
-      <file>$PROJ_DIR$\obj\prio_names.__cstat.et</file>
-      <file>$PROJ_DIR$\lst\debug.i</file>
-      <file>$TOOLKIT_DIR$\src\template\cfg3soim.xcl</file>
-      <file>$PROJ_DIR$\lst\os_services.lst</file>
-      <file>$PROJ_DIR$\Debug\Obj\1-event-flag.pbd</file>
-      <file>$PROJ_DIR$\lst\os_target.lst</file>
-      <file>$PROJ_DIR$\..\scmRTOS\Common\usrlib.cpp</file>
-      <file>$PROJ_DIR$\bin\4-debug.d90</file>
-      <file>$TOOLKIT_DIR$\inc\inavr.h</file>
-      <file>$TOOLKIT_DIR$\lib\dlib\dlAVR-3s-ec_mul-sf-n.r90</file>
-      <file>$PROJ_DIR$\obj\os_target_asm.r90</file>
-      <file>$PROJ_DIR$\obj\os_kernel.pbi</file>
-      <file>$PROJ_DIR$\obj\1-event-flag.pbd</file>
-      <file>$PROJ_DIR$\obj\main.pbi</file>
-      <file>$PROJ_DIR$\obj\debug.r90</file>
-      <file>$PROJ_DIR$\Obj\OS_Target_cpp.pbi</file>
-      <file>$PROJ_DIR$\src\debug.h</file>
       <file>$TOOLKIT_DIR$\src\template\cfgm32.xcl</file>
-      <file>$PROJ_DIR$\obj\prio_names.r90</file>
-      <file>$PROJ_DIR$\obj\debug.pbi</file>
-      <file>$PROJ_DIR$\obj\prio_names.pbi</file>
-      <file>$PROJ_DIR$\Obj\OS_Target_cpp.r90</file>
-      <file>$PROJ_DIR$\src\prio_names.h</file>
-      <file>$TOOLKIT_DIR$\inc\ioavr.h</file>
-      <file>$PROJ_DIR$\lst\main.lst</file>
-      <file>$PROJ_DIR$\obj\os_target.__cstat.et</file>
-      <file>$PROJ_DIR$\..\scmRTOS\AVR\OS_Target_cpp.cpp</file>
-      <file>$PROJ_DIR$\..\..\..\..\..\scmRTOS\core\os_services.h</file>
-      <file>$PROJ_DIR$\..\..\..\..\..\scmRTOS\core\os_kernel.h</file>
-      <file>$PROJ_DIR$\..\common\pin_macros.h</file>
-      <file>$PROJ_DIR$\..\..\..\..\..\scmRTOS\port\avr\iar\os_target.h</file>
+      <file>$PROJ_DIR$\src\prio_names.cpp</file>
+      <file>$PROJ_DIR$\Debug\Obj\os_kernel.pbi</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\scmRTOS\core\usrlib.cpp</file>
+      <file>$PROJ_DIR$\bin\2-message.d90</file>
+      <file>$PROJ_DIR$\Debug\Obj\os_services.pbi</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\scmRTOS\core\usrlib.h</file>
       <file>$PROJ_DIR$\..\..\..\..\..\scmRTOS\ext\profiler\profiler.h</file>
-      <file>$PROJ_DIR$\obj\os_kernel.r90</file>
-      <file>$PROJ_DIR$\obj\os_target.pbi</file>
-      <file>$TOOLKIT_DIR$\inc\bitdefinitions\iom328.inc</file>
+      <file>$PROJ_DIR$\src\scmRTOS_extensions.h</file>
+      <file>$TOOLKIT_DIR$\inc\ioavr.h</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\DLib_Threads.h</file>
+      <file>$PROJ_DIR$\obj\1-event-flag.pbd</file>
       <file>$TOOLKIT_DIR$\inc\iomacro.h</file>
       <file>$TOOLKIT_DIR$\inc\iom328.h</file>
-      <file>$PROJ_DIR$\obj\main.__cstat.et</file>
-      <file>$PROJ_DIR$\obj\os_kernel.__cstat.et</file>
       <file>$TOOLKIT_DIR$\lib\dlib\dlAVR-3s-ec_mul-sf-n.h</file>
       <file>$PROJ_DIR$\obj\usrlib.__cstat.et</file>
-      <file>$PROJ_DIR$\obj\os_services.__cstat.et</file>
-      <file>$TOOLKIT_DIR$\inc\dlib\c\stdint.h</file>
-      <file>$TOOLKIT_DIR$\inc\dlib\c\yvals.h</file>
-      <file>$TOOLKIT_DIR$\inc\dlib\c\ysizet.h</file>
-      <file>$TOOLKIT_DIR$\inc\dlib\c\ycheck.h</file>
-      <file>$PROJ_DIR$\src\scmRTOS_CONFIG.h</file>
-      <file>$PROJ_DIR$\..\..\..\..\..\scmRTOS\core\scmRTOS.h</file>
-      <file>$PROJ_DIR$\..\..\..\..\..\scmRTOS\core\scmRTOS_defs.h</file>
-      <file>$PROJ_DIR$\src\scmRTOS_extensions.h</file>
-      <file>$PROJ_DIR$\src\scmRTOS_TARGET_CFG.h</file>
-      <file>$PROJ_DIR$\..\..\..\..\..\scmRTOS\core\usrlib.h</file>
-      <file>$PROJ_DIR$\src\debug.cpp</file>
-      <file>$PROJ_DIR$\src\main.cpp</file>
-      <file>$PROJ_DIR$\..\..\..\..\..\scmRTOS\core\os_kernel.cpp</file>
-      <file>$PROJ_DIR$\..\..\..\..\..\scmRTOS\core\os_services.cpp</file>
-      <file>$PROJ_DIR$\..\..\..\..\..\scmRTOS\port\avr\iar\os_target.cpp</file>
-      <file>$PROJ_DIR$\src\prio_names.cpp</file>
-      <file>$PROJ_DIR$\..\..\..\..\..\scmRTOS\port\avr\iar\os_target_asm.s90</file>
-      <file>$PROJ_DIR$\..\..\..\..\..\scmRTOS\core\usrlib.cpp</file>
-      <file>$PROJ_DIR$\obj\os_target.r90</file>
-      <file>$PROJ_DIR$\..\scmRTOS\Common\OS_Kernel.cpp</file>
-      <file>$PROJ_DIR$\obj\3-channel.pbd</file>
-      <file>$PROJ_DIR$\obj\usrlib.pbi</file>
-      <file>$PROJ_DIR$\Debug\Obj\usrlib.pbi</file>
-      <file>$PROJ_DIR$\Debug\Obj\main.pbi</file>
-      <file>$PROJ_DIR$\..\scmRTOS\AVR\OS_Target_asm.s90</file>
-      <file>$TOOLKIT_DIR$\src\template\cfgm168.xcl</file>
-      <file>$TOOLKIT_DIR$\inc\dlib\c\DLib_Product.h</file>
-      <file>$PROJ_DIR$\lst\os_target.i</file>
-      <file>$PROJ_DIR$\lst\main.i</file>
-      <file>$PROJ_DIR$\..\scmRTOS\Common\OS_Services.cpp</file>
       <file>$PROJ_DIR$\lst\os_kernel.i</file>
       <file>$PROJ_DIR$\obj\main.r90</file>
-      <file>$PROJ_DIR$\lst\usrlib.i</file>
-      <file>$PROJ_DIR$\lst\os_services.i</file>
-      <file>$PROJ_DIR$\Debug\Obj\os_target.pbi</file>
+      <file>$PROJ_DIR$\lst\4-debug.map</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\DLib_Defaults.h</file>
+      <file>$PROJ_DIR$\obj\os_kernel.__cstat.et</file>
+      <file>$PROJ_DIR$\obj\os_services.__cstat.et</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\stdint.h</file>
+      <file>$PROJ_DIR$\src\main.cpp</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\scmRTOS\core\os_kernel.cpp</file>
+      <file>$PROJ_DIR$\lst\os_target.lst</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\scmRTOS\port\avr\iar\os_target.cpp</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\scmRTOS\core\os_kernel.h</file>
+      <file>$PROJ_DIR$\obj\os_target_asm.r90</file>
+      <file>$PROJ_DIR$\obj\prio_names.pbi</file>
+      <file>$PROJ_DIR$\Obj\OS_Target_cpp.pbi</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\ycheck.h</file>
+      <file>$PROJ_DIR$\obj\os_target.r90</file>
+      <file>$TOOLKIT_DIR$\inc\inavr.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\scmRTOS\core\os_services.cpp</file>
+      <file>$PROJ_DIR$\lst\main.lst</file>
+      <file>$PROJ_DIR$\obj\os_target.__cstat.et</file>
+      <file>$PROJ_DIR$\obj\prio_names.__cstat.et</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\ystdio.h</file>
+      <file>$TOOLKIT_DIR$\src\template\cfgm168.xcl</file>
+      <file>$PROJ_DIR$\src\prio_names.h</file>
+      <file>$PROJ_DIR$\..\scmRTOS\Common\OS_Services.cpp</file>
+      <file>$PROJ_DIR$\obj\debug.__cstat.et</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\pgmspace.h</file>
+      <file>$PROJ_DIR$\lst\prio_names.lst</file>
+      <file>$PROJ_DIR$\Debug\Obj\main.pbi</file>
+      <file>$PROJ_DIR$\..\scmRTOS\AVR\OS_Target_asm.s90</file>
+      <file>$PROJ_DIR$\..\scmRTOS\Common\OS_Kernel.cpp</file>
+      <file>$PROJ_DIR$\obj\3-channel.pbd</file>
+      <file>$PROJ_DIR$\obj\main.pbi</file>
     </outputs>
     <file>
-      <name>$PROJ_DIR$\bin\2-message.d90</name>
+      <name>$PROJ_DIR$\bin\4-debug.d90</name>
+      <outputs>
+        <tool>
+          <name>XLINK</name>
+          <file> 71</file>
+        </tool>
+      </outputs>
       <inputs>
         <tool>
           <name>XLINK</name>
-          <file> 43 28 99 58 3 86 36 13 35</file>
+          <file> 0 70 7 50 85 81 29 17 4</file>
         </tool>
       </inputs>
     </file>
     <file>
-      <name>$PROJ_DIR$\bin\1-event-flag.d90</name>
-      <inputs>
+      <name>$PROJ_DIR$\..\scmRTOS\AVR\OS_Target_cpp.cpp</name>
+      <outputs>
         <tool>
-          <name>XLINK</name>
-          <file> 93 28 99 58 3 86 36 13 35</file>
+          <name>ICCAVR</name>
+          <file> 26</file>
         </tool>
-      </inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 83</file>
+        </tool>
+      </outputs>
     </file>
     <file>
-      <name>$PROJ_DIR$\obj\2-message.pbd</name>
+      <name>$PROJ_DIR$\..\scmRTOS\Common\usrlib.cpp</name>
+      <outputs>
+        <tool>
+          <name>ICCAVR</name>
+          <file> 17</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 40</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\src\debug.cpp</name>
+      <outputs>
+        <tool>
+          <name>ICCAVR</name>
+          <file> 3 34 0</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 35</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 95</file>
+        </tool>
+      </outputs>
       <inputs>
         <tool>
-          <name>BILINK</name>
-          <file> 39 37 12 59 89</file>
+          <name>ICCAVR</name>
+          <file> 37 42 84 46 72 67 45 49 63 47 75 59 38 86 19 27 12 62 66 65 8 24 80 61 60 36 21 91 96 31 11 23 93 10</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 72 75 36 61 93 84 46 27 37 47 96 38 24 80 19 60 21 23 10 42 59 49 63 67 45 86 12 62 66 65 8 91 31 11</file>
         </tool>
       </inputs>
     </file>
@@ -142,228 +183,7 @@
       <inputs>
         <tool>
           <name>BILINK</name>
-          <file> 91 1 7 102 90</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\scmRTOS\Common\usrlib.cpp</name>
-      <outputs>
-        <tool>
-          <name>BICOMP</name>
-          <file> 89</file>
-        </tool>
-        <tool>
-          <name>ICCAVR</name>
-          <file> 13</file>
-        </tool>
-      </outputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\bin\4-debug.d90</name>
-      <outputs>
-        <tool>
-          <name>XLINK</name>
-          <file> 6</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>XLINK</name>
-          <file> 40 99 58 3 86 36 44 13 35</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\obj\1-event-flag.pbd</name>
-      <inputs>
-        <tool>
-          <name>BILINK</name>
-          <file> 39 37 12 59 89</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\scmRTOS\AVR\OS_Target_cpp.cpp</name>
-      <outputs>
-        <tool>
-          <name>BICOMP</name>
-          <file> 41</file>
-        </tool>
-        <tool>
-          <name>ICCAVR</name>
-          <file> 47</file>
-        </tool>
-      </outputs>
-    </file>
-    <file>
-      <name>[ROOT_NODE]</name>
-      <outputs>
-        <tool>
-          <name>XLINK</name>
-          <file> 33 6</file>
-        </tool>
-      </outputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\src\debug.cpp</name>
-      <outputs>
-        <tool>
-          <name>BICOMP</name>
-          <file> 45</file>
-        </tool>
-        <tool>
-          <name>ICCAVR</name>
-          <file> 27 0 40</file>
-        </tool>
-        <tool>
-          <name>__cstat</name>
-          <file> 25</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>BICOMP</name>
-          <file> 14 62 16 49 70 57 48 71 69 72 68 18 20 77 74 61 75 53 73 55 42 56 15 17 65 94 34 76 54 11 60 22 24 23</file>
-        </tool>
-        <tool>
-          <name>ICCAVR</name>
-          <file> 73 16 71 69 14 65 94 15 17 70 68 77 56 34 11 72 76 49 62 61 60 74 54 75 57 53 18 22 20 24 23 55 48 42</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\src\main.cpp</name>
-      <outputs>
-        <tool>
-          <name>BICOMP</name>
-          <file> 39</file>
-        </tool>
-        <tool>
-          <name>ICCAVR</name>
-          <file> 96 50 99</file>
-        </tool>
-        <tool>
-          <name>__cstat</name>
-          <file> 63</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>BICOMP</name>
-          <file> 68 71 60 14 69 72 77 42 56 49 62 73 16 70 15 17 65 94 74 61 55 34 76 54 11 75 53 57</file>
-        </tool>
-        <tool>
-          <name>ICCAVR</name>
-          <file> 55 73 16 71 69 14 65 94 15 17 70 68 77 56 34 11 72 76 49 62 61 60 74 54 75 57 53 42</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\..\..\..\..\scmRTOS\core\os_kernel.cpp</name>
-      <outputs>
-        <tool>
-          <name>BICOMP</name>
-          <file> 37</file>
-        </tool>
-        <tool>
-          <name>ICCAVR</name>
-          <file> 98 10 58</file>
-        </tool>
-        <tool>
-          <name>__cstat</name>
-          <file> 64</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>BICOMP</name>
-          <file> 60 11 65 68 71 74 77 56 69 15 17 94 72 16 70 14 34 76 54 73 49 62 61 75 53 57</file>
-        </tool>
-        <tool>
-          <name>ICCAVR</name>
-          <file> 73 16 71 69 14 65 94 15 17 70 68 77 56 34 11 72 76 49 62 61 60 74 54 75 57 53</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\..\..\..\..\scmRTOS\core\os_services.cpp</name>
-      <outputs>
-        <tool>
-          <name>BICOMP</name>
-          <file> 12</file>
-        </tool>
-        <tool>
-          <name>ICCAVR</name>
-          <file> 101 29 3</file>
-        </tool>
-        <tool>
-          <name>__cstat</name>
-          <file> 67</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>BICOMP</name>
-          <file> 68 14 16 70 71 74 77 61 56 69 15 17 65 94 72 49 62 73 34 76 54 11 60 75 53 57</file>
-        </tool>
-        <tool>
-          <name>ICCAVR</name>
-          <file> 73 16 71 69 14 65 94 15 17 70 68 77 56 34 11 72 76 49 62 61 60 74 54 75 57 53</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\..\..\..\..\scmRTOS\port\avr\iar\os_target.cpp</name>
-      <outputs>
-        <tool>
-          <name>BICOMP</name>
-          <file> 59</file>
-        </tool>
-        <tool>
-          <name>ICCAVR</name>
-          <file> 95 31 86</file>
-        </tool>
-        <tool>
-          <name>__cstat</name>
-          <file> 51</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>BICOMP</name>
-          <file> 68 71 74 65 49 62 56 69 15 17 94 72 16 77 70 14 34 76 61 73 54 11 60 75 53 57</file>
-        </tool>
-        <tool>
-          <name>ICCAVR</name>
-          <file> 73 16 71 69 14 65 94 15 17 70 68 77 56 34 11 72 76 49 62 61 60 74 54 75 57 53</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\src\prio_names.cpp</name>
-      <outputs>
-        <tool>
-          <name>BICOMP</name>
-          <file> 46</file>
-        </tool>
-        <tool>
-          <name>ICCAVR</name>
-          <file> 21 19 44</file>
-        </tool>
-        <tool>
-          <name>__cstat</name>
-          <file> 26</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>BICOMP</name>
-          <file> 54 24 16 53 71 70 75 48 23 69 73 18 14 77 34 76 11 60 57 20 15 17 65 94 22 68 56 72 74 49 62 61</file>
-        </tool>
-        <tool>
-          <name>ICCAVR</name>
-          <file> 20 69 71 14 65 94 15 17 24 70 18 22 23 73 16 68 77 56 34 11 72 76 49 62 61 60 74 54 75 57 53 48</file>
+          <file> 98 55 58 1 41</file>
         </tool>
       </inputs>
     </file>
@@ -372,13 +192,63 @@
       <outputs>
         <tool>
           <name>AAVR</name>
-          <file> 36</file>
+          <file> 81</file>
         </tool>
       </outputs>
       <inputs>
         <tool>
           <name>AAVR</name>
-          <file> 72 76 49 62 61 60</file>
+          <file> 27 12 62 66 65 8</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>[ROOT_NODE]</name>
+      <outputs>
+        <tool>
+          <name>XLINK</name>
+          <file> 2 71</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\obj\2-message.pbd</name>
+      <inputs>
+        <tool>
+          <name>BILINK</name>
+          <file> 102 9 18 6 40</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\bin\1-event-flag.d90</name>
+      <inputs>
+        <tool>
+          <name>XLINK</name>
+          <file> 92 43 70 7 50 85 81 17 4</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\src\prio_names.cpp</name>
+      <outputs>
+        <tool>
+          <name>ICCAVR</name>
+          <file> 30 97 29</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 82</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 90</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCAVR</name>
+          <file> 96 46 84 72 67 45 49 63 31 47 21 91 11 37 42 75 59 38 86 19 27 12 62 66 65 8 24 80 61 60 36 93</file>
         </tool>
       </inputs>
     </file>
@@ -386,39 +256,187 @@
       <name>$PROJ_DIR$\..\..\..\..\..\scmRTOS\core\usrlib.cpp</name>
       <outputs>
         <tool>
-          <name>BICOMP</name>
-          <file> 89</file>
+          <name>ICCAVR</name>
+          <file> 39 52 17</file>
         </tool>
         <tool>
-          <name>ICCAVR</name>
-          <file> 100 5 13</file>
+          <name>BICOMP</name>
+          <file> 40</file>
         </tool>
         <tool>
           <name>__cstat</name>
-          <file> 66</file>
+          <file> 68</file>
         </tool>
       </outputs>
       <inputs>
         <tool>
-          <name>BICOMP</name>
-          <file> 68 65 69 71 15 17 94 77 14</file>
+          <name>ICCAVR</name>
+          <file> 59 75 84 46 72 67 45 49 63</file>
         </tool>
         <tool>
-          <name>ICCAVR</name>
-          <file> 77 68 71 69 14 65 94 15 17</file>
+          <name>BICOMP</name>
+          <file> 75 67 46 84 49 63 45 59 72</file>
         </tool>
       </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\bin\2-message.d90</name>
+      <inputs>
+        <tool>
+          <name>XLINK</name>
+          <file> 53 43 70 7 50 85 81 17 4</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\obj\1-event-flag.pbd</name>
+      <inputs>
+        <tool>
+          <name>BILINK</name>
+          <file> 102 9 18 6 40</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\src\main.cpp</name>
+      <outputs>
+        <tool>
+          <name>ICCAVR</name>
+          <file> 16 88 70</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 102</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 44</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCAVR</name>
+          <file> 23 37 42 84 46 72 67 45 49 63 47 75 59 38 86 19 27 12 62 66 65 8 24 80 61 60 36 10</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 59 63 42 84 49 45 65 10 47 67 86 12 37 75 38 46 72 62 66 8 23 27 24 80 19 61 36 60</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\..\scmRTOS\core\os_kernel.cpp</name>
+      <outputs>
+        <tool>
+          <name>ICCAVR</name>
+          <file> 69 20 7</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 9</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 73</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCAVR</name>
+          <file> 37 42 84 46 72 67 45 49 63 47 75 59 38 86 19 27 12 62 66 65 8 24 80 61 60 36</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 42 84 67 59 75 24 19 47 49 63 45 46 27 38 72 86 12 80 8 37 62 66 65 61 36 60</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\..\scmRTOS\port\avr\iar\os_target.cpp</name>
+      <outputs>
+        <tool>
+          <name>ICCAVR</name>
+          <file> 15 78 85</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 6</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 89</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCAVR</name>
+          <file> 37 42 84 46 72 67 45 49 63 47 75 59 38 86 19 27 12 62 66 65 8 24 80 61 60 36</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 59 63 84 49 45 46 27 80 42 47 67 75 24 38 72 86 12 19 37 62 66 65 8 61 36 60</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\..\scmRTOS\core\os_services.cpp</name>
+      <outputs>
+        <tool>
+          <name>ICCAVR</name>
+          <file> 22 13 50</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 18</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 74</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCAVR</name>
+          <file> 37 42 84 46 72 67 45 49 63 47 75 59 38 86 19 27 12 62 66 65 8 24 80 61 60 36</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 75 86 12 38 46 84 72 65 42 59 47 49 63 67 45 62 66 37 27 24 80 19 8 61 36 60</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\scmRTOS\Common\OS_Services.cpp</name>
+      <outputs>
+        <tool>
+          <name>ICCAVR</name>
+          <file> 50</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 18</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\scmRTOS\AVR\OS_Target_asm.s90</name>
+      <outputs>
+        <tool>
+          <name>AAVR</name>
+          <file> 81</file>
+        </tool>
+      </outputs>
     </file>
     <file>
       <name>$PROJ_DIR$\..\scmRTOS\Common\OS_Kernel.cpp</name>
       <outputs>
         <tool>
-          <name>BICOMP</name>
-          <file> 37</file>
+          <name>ICCAVR</name>
+          <file> 7</file>
         </tool>
         <tool>
-          <name>ICCAVR</name>
-          <file> 58</file>
+          <name>BICOMP</name>
+          <file> 9</file>
         </tool>
       </outputs>
     </file>
@@ -427,31 +445,9 @@
       <inputs>
         <tool>
           <name>BILINK</name>
-          <file> 39 37 12 59 89</file>
+          <file> 102 9 18 6 40</file>
         </tool>
       </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\scmRTOS\AVR\OS_Target_asm.s90</name>
-      <outputs>
-        <tool>
-          <name>AAVR</name>
-          <file> 36</file>
-        </tool>
-      </outputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\scmRTOS\Common\OS_Services.cpp</name>
-      <outputs>
-        <tool>
-          <name>BICOMP</name>
-          <file> 12</file>
-        </tool>
-        <tool>
-          <name>ICCAVR</name>
-          <file> 3</file>
-        </tool>
-      </outputs>
     </file>
   </configuration>
   <configuration>
