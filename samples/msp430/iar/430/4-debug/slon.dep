@@ -2,294 +2,154 @@
 
 <project>
   <fileVersion>2</fileVersion>
-  <fileChecksum>1417697211</fileChecksum>
+  <fileChecksum>798002975</fileChecksum>
   <configuration>
     <name>Debug</name>
     <outputs>
-      <file>$PROJ_DIR$\lst\terminal.lst</file>
-      <file>$PROJ_DIR$\..\..\..\..\..\scmRTOS\ext\profiler\profiler.h</file>
-      <file>$TOOLKIT_DIR$\inc\dlib\c\stddef.h</file>
-      <file>$TOOLKIT_DIR$\inc\dlib\ecpp\exception</file>
-      <file>$PROJ_DIR$\obj\os_target_asm.r43</file>
-      <file>$PROJ_DIR$\..\..\..\..\..\scmRTOS\core\usrlib.cpp</file>
-      <file>$TOOLKIT_DIR$\inc\dlib\c\stdarg.h</file>
-      <file>$PROJ_DIR$\..\..\..\..\..\scmRTOS\port\msp430\iar\os_target.cpp</file>
-      <file>$TOOLKIT_DIR$\config\lnk430F169.xcl</file>
-      <file>$PROJ_DIR$\..\..\..\..\..\scmRTOS\core\scmRTOS_defs.h</file>
-      <file>$TOOLKIT_DIR$\inc\dlib\c\stdio.h</file>
-      <file>$PROJ_DIR$\src\main.cpp</file>
-      <file>$TOOLKIT_DIR$\inc\dlib\ecpp\new</file>
-      <file>$PROJ_DIR$\lst\uart_dev.lst</file>
-      <file>$PROJ_DIR$\..\..\..\..\..\scmRTOS\core\os_services.cpp</file>
-      <file>$TOOLKIT_DIR$\inc\dlib\c\ysizet.h</file>
-      <file>$PROJ_DIR$\obj\os_services.pbi</file>
-      <file>$TOOLKIT_DIR$\config\multiplier.xcl</file>
-      <file>$TOOLKIT_DIR$\inc\dlib\c\ystdio.h</file>
-      <file>$PROJ_DIR$\..\..\..\..\..\scmRTOS\port\msp430\iar\os_target.h</file>
-      <file>$TOOLKIT_DIR$\inc\dlib\c\DLib_Threads.h</file>
-      <file>$TOOLKIT_DIR$\inc\dlib\ecpp\xdebug</file>
-      <file>$PROJ_DIR$\obj\main.pbi</file>
-      <file>$PROJ_DIR$\..\..\..\..\..\scmRTOS\core\os_kernel.cpp</file>
-      <file>$TOOLKIT_DIR$\inc\dlib\ecpp\xmemory</file>
-      <file>$TOOLKIT_DIR$\inc\dlib\ecpp\xstring</file>
-      <file>$TOOLKIT_DIR$\inc\dlib\c\stdint.h</file>
-      <file>$PROJ_DIR$\src\terminal.h</file>
-      <file>$TOOLKIT_DIR$\inc\dlib\c\xencoding_limits.h</file>
-      <file>$PROJ_DIR$\obj\main.r43</file>
-      <file>$PROJ_DIR$\src\uart_dev.cpp</file>
-      <file>$PROJ_DIR$\src\terminal.cpp</file>
-      <file>$PROJ_DIR$\..\..\..\..\..\scmRTOS\core\usrlib.h</file>
-      <file>$PROJ_DIR$\..\..\..\..\..\scmRTOS\core\os_kernel.h</file>
-      <file>$PROJ_DIR$\bin\slon.d43</file>
-      <file>$TOOLKIT_DIR$\inc\msp430f169.h</file>
-      <file>$PROJ_DIR$\src\uart_dev.h</file>
-      <file>$PROJ_DIR$\..\..\..\..\..\scmRTOS\port\msp430\iar\os_target_asm.s43</file>
-      <file>$PROJ_DIR$\src\debug.h</file>
-      <file>$TOOLKIT_DIR$\inc\dlib\c\ycheck.h</file>
-      <file>$PROJ_DIR$\lst\os_target_asm.lst</file>
-      <file>$TOOLKIT_DIR$\inc\dlib\c\DLib_Defaults.h</file>
-      <file>$TOOLKIT_DIR$\inc\dlib\c\yvals.h</file>
-      <file>$PROJ_DIR$\lst\slon.map</file>
-      <file>$PROJ_DIR$\lst\os_target.lst</file>
-      <file>$TOOLKIT_DIR$\inc\dlib\c\xmtx.h</file>
-      <file>$PROJ_DIR$\obj\os_target.pbi</file>
       <file>$TOOLKIT_DIR$\inc\dlib\ecpp\iterator</file>
       <file>$TOOLKIT_DIR$\inc\intrinsics.h</file>
-      <file>$PROJ_DIR$\obj\uart_dev.pbi</file>
-      <file>$PROJ_DIR$\src\scmRTOS_config.h</file>
-      <file>$PROJ_DIR$\Exe\slon.d43</file>
-      <file>$TOOLKIT_DIR$\lib\dlib\dl430fn.h</file>
-      <file>$TOOLKIT_DIR$\inc\dlib\c\cerrno</file>
-      <file>$TOOLKIT_DIR$\inc\dlib\ecpp\memory</file>
-      <file>$TOOLKIT_DIR$\lib\dlib\dl430fn.r43</file>
-      <file>$PROJ_DIR$\lst\os_kernel.lst</file>
-      <file>$TOOLKIT_DIR$\inc\msp430.h</file>
-      <file>$TOOLKIT_DIR$\inc\dlib\ecpp\stdexcept</file>
-      <file>$TOOLKIT_DIR$\inc\dlib\c\limits.h</file>
-      <file>$TOOLKIT_DIR$\inc\dlib\c\locale.h</file>
-      <file>$TOOLKIT_DIR$\inc\dlib\c\xlocale_lconv.h</file>
-      <file>$TOOLKIT_DIR$\inc\dlib\c\ctype.h</file>
-      <file>$TOOLKIT_DIR$\inc\dlib\c\cstdio</file>
-      <file>$TOOLKIT_DIR$\inc\dlib\ecpp\functional</file>
-      <file>$PROJ_DIR$\src\scmRTOS_TARGET_CFG.h</file>
-      <file>$TOOLKIT_DIR$\inc\dlib\ecpp\iutility</file>
-      <file>$PROJ_DIR$\obj\os_services.r43</file>
-      <file>$TOOLKIT_DIR$\inc\dlib\ecpp\streambuf</file>
-      <file>$TOOLKIT_DIR$\inc\dlib\ecpp\ios</file>
-      <file>$PROJ_DIR$\obj\usrlib.pbi</file>
-      <file>$TOOLKIT_DIR$\inc\in430.h</file>
-      <file>$PROJ_DIR$\obj\usrlib.r43</file>
-      <file>$TOOLKIT_DIR$\inc\dlib\ecpp\ostream</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\scmRTOS\core\usrlib.h</file>
       <file>$TOOLKIT_DIR$\inc\dlib\ecpp\xlocnum</file>
-      <file>$TOOLKIT_DIR$\inc\dlib\c\cstring</file>
+      <file>$TOOLKIT_DIR$\config\multiplier.xcl</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\ecpp\ostream</file>
+      <file>$PROJ_DIR$\obj\usrlib.r43</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\scmRTOS\ext\profiler\profiler.h</file>
+      <file>$PROJ_DIR$\obj\slon.pbd</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\cerrno</file>
+      <file>$PROJ_DIR$\lst\slon.map</file>
+      <file>$PROJ_DIR$\obj\main.__cstat.et</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\scmRTOS\core\os_kernel.cpp</file>
+      <file>$PROJ_DIR$\obj\terminal.pbi</file>
+      <file>$PROJ_DIR$\obj\main.r43</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\scmRTOS\port\msp430\iar\os_target_asm.s43</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\errno.h</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\ecpp\xutility</file>
+      <file>$PROJ_DIR$\obj\os_kernel.r43</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\DLib_Product.h</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\ecpp\iutility</file>
+      <file>$PROJ_DIR$\src\scmRTOS_TARGET_CFG.h</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\ecpp\functional</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\stdarg.h</file>
+      <file>$PROJ_DIR$\src\uart_dev.h</file>
+      <file>$TOOLKIT_DIR$\config\linker\lnk430f169.xcl</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\ecpp\stdexcept</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\ecpp\xdebug</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\scmRTOS\port\msp430\iar\os_target.h</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\cstddef</file>
+      <file>$PROJ_DIR$\obj\uart_dev.r43</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\cstdlib</file>
+      <file>$PROJ_DIR$\lst\os_kernel.lst</file>
+      <file>$PROJ_DIR$\bin\slon.d43</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\ycheck.h</file>
+      <file>$PROJ_DIR$\src\terminal.cpp</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\stdint.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\scmRTOS\core\scmRTOS.h</file>
+      <file>$PROJ_DIR$\src\scmRTOS_extensions.h</file>
+      <file>$PROJ_DIR$\lst\main.lst</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\ecpp\iosfwd</file>
+      <file>$TOOLKIT_DIR$\config\lnk430F169.xcl</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\xmtx.h</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\ysizet.h</file>
+      <file>$PROJ_DIR$\lst\os_target.lst</file>
+      <file>$PROJ_DIR$\obj\os_kernel.__cstat.et</file>
+      <file>$TOOLKIT_DIR$\inc\in430.h</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\yvals.h</file>
+      <file>$PROJ_DIR$\lst\os_target_asm.lst</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\scmRTOS\port\msp430\iar\os_target.cpp</file>
+      <file>$PROJ_DIR$\obj\main.pbi</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\scmRTOS\core\os_services.cpp</file>
+      <file>$PROJ_DIR$\Exe\slon.d43</file>
+      <file>$PROJ_DIR$\src\scmRTOS_CONFIG.h</file>
+      <file>$PROJ_DIR$\obj\uart_dev.pbi</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\cctype</file>
+      <file>$PROJ_DIR$\src\debug.h</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\ecpp\utility</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\ecpp\istream</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\scmRTOS\core\os_services.h</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\ecpp\xstddef</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\wchar.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\scmRTOS\core\scmRTOS_defs.h</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\DLib_Threads.h</file>
+      <file>$TOOLKIT_DIR$\config\linker\multiplier.xcl</file>
+      <file>$PROJ_DIR$\obj\terminal.__cstat.et</file>
+      <file>$PROJ_DIR$\obj\os_target.__cstat.et</file>
+      <file>$PROJ_DIR$\obj\uart_dev.__cstat.et</file>
+      <file>$PROJ_DIR$\obj\usrlib.__cstat.et</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\ystdio.h</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\DLib_Defaults.h</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\climits</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\ctype.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\scmRTOS\core\os_kernel.h</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\xlocale_lconv.h</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\locale.h</file>
+      <file>$PROJ_DIR$\src\uart_dev.cpp</file>
+      <file>$PROJ_DIR$\obj\os_target_asm.r43</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\ecpp\memory</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\scmRTOS\core\usrlib.cpp</file>
+      <file>$PROJ_DIR$\obj\os_kernel.pbi</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\cstdio</file>
+      <file>$PROJ_DIR$\obj\os_services.r43</file>
+      <file>$PROJ_DIR$\lst\os_services.lst</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\ecpp\xstring</file>
+      <file>$PROJ_DIR$\lst\terminal.lst</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\xlocale.h</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\xtls.h</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\limits.h</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\stdio.h</file>
+      <file>$TOOLKIT_DIR$\lib\dlib\dl430fn.r43</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\ecpp\new</file>
+      <file>$PROJ_DIR$\obj\terminal.r43</file>
+      <file>$PROJ_DIR$\obj\os_target.pbi</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\ecpp\xmemory</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\xencoding_limits.h</file>
       <file>$TOOLKIT_DIR$\inc\dlib\c\xlocaleuse.h</file>
       <file>$TOOLKIT_DIR$\inc\dlib\c\xlocale_c.h</file>
       <file>$PROJ_DIR$\obj\os_target.r43</file>
-      <file>$TOOLKIT_DIR$\inc\dlib\c\xlocale.h</file>
-      <file>$TOOLKIT_DIR$\inc\dlib\c\xtls.h</file>
-      <file>$TOOLKIT_DIR$\inc\dlib\c\DLib_Product.h</file>
-      <file>$PROJ_DIR$\obj\os_kernel.r43</file>
-      <file>$PROJ_DIR$\lst\main.lst</file>
-      <file>$PROJ_DIR$\src\scmRTOS_extensions.h</file>
-      <file>$PROJ_DIR$\..\..\..\..\..\scmRTOS\core\scmRTOS.h</file>
-      <file>$PROJ_DIR$\obj\os_kernel.pbi</file>
-      <file>$PROJ_DIR$\lst\os_services.lst</file>
-      <file>$PROJ_DIR$\obj\slon.pbd</file>
-      <file>$TOOLKIT_DIR$\inc\dlib\c\cstddef</file>
-      <file>$PROJ_DIR$\obj\uart_dev.r43</file>
-      <file>$PROJ_DIR$\obj\terminal.r43</file>
-      <file>$TOOLKIT_DIR$\inc\dlib\ecpp\iosfwd</file>
-      <file>$TOOLKIT_DIR$\inc\dlib\c\cstdlib</file>
-      <file>$TOOLKIT_DIR$\inc\dlib\c\climits</file>
-      <file>$PROJ_DIR$\obj\terminal.pbi</file>
-      <file>$TOOLKIT_DIR$\inc\dlib\c\clocale</file>
-      <file>$TOOLKIT_DIR$\inc\dlib\c\string.h</file>
-      <file>$TOOLKIT_DIR$\inc\dlib\c\stdlib.h</file>
       <file>$TOOLKIT_DIR$\inc\dlib\ecpp\list</file>
-      <file>$PROJ_DIR$\..\..\..\..\..\scmRTOS\core\os_services.h</file>
-      <file>$TOOLKIT_DIR$\inc\dlib\ecpp\xstddef</file>
-      <file>$TOOLKIT_DIR$\inc\dlib\ecpp\xutility</file>
-      <file>$TOOLKIT_DIR$\inc\dlib\c\wchar.h</file>
-      <file>$TOOLKIT_DIR$\inc\dlib\c\errno.h</file>
-      <file>$TOOLKIT_DIR$\inc\dlib\ecpp\utility</file>
-      <file>$TOOLKIT_DIR$\inc\dlib\ecpp\istream</file>
-      <file>$PROJ_DIR$\lst\usrlib.lst</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\cstring</file>
+      <file>$PROJ_DIR$\src\main.cpp</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\stddef.h</file>
+      <file>$PROJ_DIR$\obj\os_services.pbi</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\stdlib.h</file>
+      <file>$TOOLKIT_DIR$\inc\msp430f169.h</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\clocale</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\ecpp\exception</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\string.h</file>
+      <file>$PROJ_DIR$\obj\os_services.__cstat.et</file>
       <file>$TOOLKIT_DIR$\inc\dlib\ecpp\xiosbase</file>
-      <file>$TOOLKIT_DIR$\inc\dlib\c\cctype</file>
+      <file>$PROJ_DIR$\src\terminal.h</file>
+      <file>$PROJ_DIR$\lst\usrlib.lst</file>
+      <file>$PROJ_DIR$\lst\uart_dev.lst</file>
+      <file>$TOOLKIT_DIR$\lib\dlib\dl430fn.h</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\ecpp\streambuf</file>
+      <file>$PROJ_DIR$\obj\usrlib.pbi</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\ecpp\ios</file>
+      <file>$TOOLKIT_DIR$\inc\msp430.h</file>
     </outputs>
-    <file>
-      <name>$PROJ_DIR$\..\..\..\..\..\scmRTOS\core\usrlib.cpp</name>
-      <outputs>
-        <tool>
-          <name>BICOMP</name>
-          <file> 70</file>
-        </tool>
-        <tool>
-          <name>ICC430</name>
-          <file> 107 72</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>BICOMP</name>
-          <file> 32 26 39 42 41 81 28 20</file>
-        </tool>
-        <tool>
-          <name>ICC430</name>
-          <file> 32 26 39 42 41 52 81 28 20</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\..\..\..\..\scmRTOS\port\msp430\iar\os_target.cpp</name>
-      <outputs>
-        <tool>
-          <name>BICOMP</name>
-          <file> 46</file>
-        </tool>
-        <tool>
-          <name>ICC430</name>
-          <file> 44 78</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>BICOMP</name>
-          <file> 85 2 39 42 41 81 28 20 15 26 32 19 50 57 35 71 48 65 9 33 84 1 100</file>
-        </tool>
-        <tool>
-          <name>ICC430</name>
-          <file> 85 2 39 42 41 52 81 28 20 15 26 32 19 50 57 35 71 48 65 9 33 84 1 100</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\src\main.cpp</name>
-      <outputs>
-        <tool>
-          <name>BICOMP</name>
-          <file> 22</file>
-        </tool>
-        <tool>
-          <name>ICC430</name>
-          <file> 83 29</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>BICOMP</name>
-          <file> 85 2 39 42 41 81 28 20 15 26 32 19 50 57 35 71 48 65 9 33 84 1 100 38 27 6 36 10 18</file>
-        </tool>
-        <tool>
-          <name>ICC430</name>
-          <file> 85 2 39 42 41 52 81 28 20 15 26 32 19 50 57 35 71 48 65 9 33 84 1 100 38 27 6 36 10 18</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\..\..\..\..\scmRTOS\core\os_services.cpp</name>
-      <outputs>
-        <tool>
-          <name>BICOMP</name>
-          <file> 16</file>
-        </tool>
-        <tool>
-          <name>ICC430</name>
-          <file> 87 67</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>BICOMP</name>
-          <file> 85 2 39 42 41 81 28 20 15 26 32 19 50 57 35 71 48 65 9 33 84 1 100</file>
-        </tool>
-        <tool>
-          <name>ICC430</name>
-          <file> 85 2 39 42 41 52 81 28 20 15 26 32 19 50 57 35 71 48 65 9 33 84 1 100</file>
-        </tool>
-      </inputs>
-    </file>
     <file>
       <name>$PROJ_DIR$\..\..\..\..\..\scmRTOS\core\os_kernel.cpp</name>
       <outputs>
         <tool>
           <name>BICOMP</name>
-          <file> 86</file>
+          <file> 80</file>
         </tool>
         <tool>
           <name>ICC430</name>
-          <file> 56 82</file>
+          <file> 32 18</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 45</file>
         </tool>
       </outputs>
       <inputs>
         <tool>
           <name>BICOMP</name>
-          <file> 85 2 39 42 41 81 28 20 15 26 32 19 50 57 35 71 48 65 9 33 84 1 100</file>
+          <file> 46 34 2 47 102 43 95 62 118 1 36 28 70 63 53 73 105 38 37 114 19 21 59 7</file>
         </tool>
         <tool>
           <name>ICC430</name>
-          <file> 85 2 39 42 41 52 81 28 20 15 26 32 19 50 57 35 71 48 65 9 33 84 1 100</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\src\uart_dev.cpp</name>
-      <outputs>
-        <tool>
-          <name>BICOMP</name>
-          <file> 49</file>
-        </tool>
-        <tool>
-          <name>ICC430</name>
-          <file> 13 90</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>BICOMP</name>
-          <file> 36 26 39 42 41 81 28 20 10 15 18 6 85 2 32 19 50 57 35 71 48 65 9 33 84 1 100</file>
-        </tool>
-        <tool>
-          <name>ICC430</name>
-          <file> 36 26 39 42 41 52 81 28 20 10 15 18 6 85 2 32 19 50 57 35 71 48 65 9 33 84 1 100</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\src\terminal.cpp</name>
-      <outputs>
-        <tool>
-          <name>BICOMP</name>
-          <file> 95</file>
-        </tool>
-        <tool>
-          <name>ICC430</name>
-          <file> 0 91</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>BICOMP</name>
-          <file> 99 64 101 39 42 41 81 28 20 89 2 15 93 98 66 54 47 102 94 59 105 92 63 10 18 75 97 106 73 69 74 53 104 96 60 61 68 108 109 62 79 80 45 76 77 103 58 3 25 21 24 12 6 38 85 26 32 19 50 57 35 71 48 65 9 33 84 1 100 27 36</file>
-        </tool>
-        <tool>
-          <name>ICC430</name>
-          <file> 99 64 101 39 42 41 52 81 28 20 89 2 15 93 98 66 54 47 102 94 59 105 92 63 10 18 75 97 106 73 69 74 53 104 96 60 61 68 108 109 62 79 80 45 76 77 103 58 3 25 21 24 12 6 38 85 26 32 19 50 57 35 71 48 65 9 33 84 1 100 27 36</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\bin\slon.d43</name>
-      <outputs>
-        <tool>
-          <name>XLINK</name>
-          <file> 43</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>XLINK</name>
-          <file> 8 17 29 82 67 78 4 91 90 72 55</file>
+          <file> 37 102 34 47 70 114 19 95 63 43 36 2 28 53 118 105 46 1 21 62 73 38 7 59</file>
         </tool>
       </inputs>
     </file>
@@ -298,13 +158,109 @@
       <outputs>
         <tool>
           <name>A430</name>
-          <file> 4 40</file>
+          <file> 77 48</file>
         </tool>
       </outputs>
       <inputs>
         <tool>
           <name>A430</name>
-          <file> 50 57 35 65</file>
+          <file> 53 118 105 21</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\bin\slon.d43</name>
+      <outputs>
+        <tool>
+          <name>XLINK</name>
+          <file> 10</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>XLINK</name>
+          <file> 25 64 14 18 82 98 77 92 30 6 90</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\src\terminal.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 13</file>
+        </tool>
+        <tool>
+          <name>ICC430</name>
+          <file> 85 92</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 65</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 47 58 43 70 29 19 31 1 56 78 17 34 20 72 118 36 23 60 63 104 9 75 87 42 28 46 38 24 89 108 111 22 26 114 95 94 57 88 81 5 117 106 74 96 84 40 91 21 105 99 102 0 71 100 69 3 115 16 110 55 27 86 97 61 107 37 2 53 62 73 59 7</file>
+        </tool>
+        <tool>
+          <name>ICC430</name>
+          <file> 99 22 60 34 47 70 114 19 95 63 29 102 43 31 104 20 78 0 17 71 88 57 40 81 89 69 100 108 58 5 117 3 9 16 106 75 74 115 110 55 72 86 87 42 96 97 61 26 107 84 27 94 91 23 56 37 36 2 28 53 118 105 46 1 21 62 73 38 7 59 111 24</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\..\scmRTOS\port\msp430\iar\os_target.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 93</file>
+        </tool>
+        <tool>
+          <name>ICC430</name>
+          <file> 44 98</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 66</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 2 34 102 43 95 47 36 28 70 63 114 19 21 38 37 53 62 73 118 105 46 1 59 7</file>
+        </tool>
+        <tool>
+          <name>ICC430</name>
+          <file> 37 102 34 47 70 114 19 95 63 43 36 2 28 53 118 105 46 1 21 62 73 38 7 59</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\..\scmRTOS\core\os_services.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 103</file>
+        </tool>
+        <tool>
+          <name>ICC430</name>
+          <file> 83 82</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 109</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 2 47 34 62 38 102 43 95 36 53 73 37 28 70 63 114 19 21 118 105 46 1 59 7</file>
+        </tool>
+        <tool>
+          <name>ICC430</name>
+          <file> 37 102 34 47 70 114 19 95 63 43 36 2 28 53 118 105 46 1 21 62 73 38 7 59</file>
         </tool>
       </inputs>
     </file>
@@ -313,16 +269,61 @@
       <inputs>
         <tool>
           <name>XLINK</name>
-          <file> 8 17 29 82 67 78 4 72 55</file>
+          <file> 41 4 14 18 82 98 77 6 90</file>
         </tool>
       </inputs>
     </file>
     <file>
-      <name>$PROJ_DIR$\obj\slon.pbd</name>
+      <name>$PROJ_DIR$\src\uart_dev.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 54</file>
+        </tool>
+        <tool>
+          <name>ICC430</name>
+          <file> 113 30</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 67</file>
+        </tool>
+      </outputs>
       <inputs>
         <tool>
-          <name>BILINK</name>
-          <file> 22 86 16 46 95 49 70</file>
+          <name>BICOMP</name>
+          <file> 36 89 70 19 47 102 37 34 63 23 114 69 28 21 2 38 24 95 43 53 62 73 118 105 46 1 59 7</file>
+        </tool>
+        <tool>
+          <name>ICC430</name>
+          <file> 24 36 34 47 70 114 19 95 63 89 43 69 23 37 102 2 28 53 118 105 46 1 21 62 73 38 7 59</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\..\scmRTOS\core\usrlib.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 116</file>
+        </tool>
+        <tool>
+          <name>ICC430</name>
+          <file> 112 6</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 68</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 36 114 34 47 70 63 19 2 95</file>
+        </tool>
+        <tool>
+          <name>ICC430</name>
+          <file> 2 36 34 47 70 114 19 95 63</file>
         </tool>
       </inputs>
     </file>
@@ -331,13 +332,37 @@
       <outputs>
         <tool>
           <name>XLINK</name>
-          <file> 34 43</file>
+          <file> 33 10</file>
         </tool>
       </outputs>
     </file>
-    <forcedrebuild>
-      <name>[REBUILD_ALL]</name>
-    </forcedrebuild>
+    <file>
+      <name>$PROJ_DIR$\src\main.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 50</file>
+        </tool>
+        <tool>
+          <name>ICC430</name>
+          <file> 39 14</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 11</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 34 63 28 2 47 70 19 62 7 111 36 114 53 73 102 59 37 89 56 43 95 21 118 105 46 1 38 23 24 69</file>
+        </tool>
+        <tool>
+          <name>ICC430</name>
+          <file> 37 102 34 47 70 114 19 95 63 43 36 2 28 53 118 105 46 1 21 62 73 38 7 59 56 111 23 24 89 69</file>
+        </tool>
+      </inputs>
+    </file>
   </configuration>
 </project>
 
