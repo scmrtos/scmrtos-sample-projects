@@ -1,6 +1,8 @@
 bin
 lst
 obj
+settings
+Backup*
 .sconsign.dblite
 *.pyc
 *.vpwhist

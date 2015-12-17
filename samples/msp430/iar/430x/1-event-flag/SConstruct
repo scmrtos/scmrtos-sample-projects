@@ -46,7 +46,7 @@ ExtraAFlags  = ''
 ExtraCFlags  = ''
 ExtraLFlags  = ''
 
-RunTimeLibrary = 'dl430xsfn.r43'
+RunTimeLibrary = 'dl430xlsfn.r43'
                 
 
 
@@ -88,7 +88,7 @@ HexExt  = 'hex'
 #      Toolkit
 #
 IAR = os.environ['IAR']
-TOOLKIT_PATH = IAR + '\\ew430.530'
+TOOLKIT_PATH = IAR + '\\ew430.640'
 
 ASM    = TOOLKIT_PATH + '\\430\\bin\\a430.exe'
 CC     = TOOLKIT_PATH + '\\430\\bin\\icc430.exe'
@@ -128,11 +128,11 @@ CFLAGS  = ' -D__MSP430' + Processor + '__ ' + IncludePath + Optimization + Extra
 CFLAGS += ' -lC ' + ListDir + ' --preprocess ' + ListDir + ' -e --eec++ --silent --debug --no_wrap_diagnostics' 
 CFLAGS += ' --core=430X' + ' --dlib_config ' + RunTimeLibrary.split('.')[0] + '.h'
 #-------------------------------------------------------------------------------
-LFLAGS  = ' -f ' + LinkerCmdFile + ' -l ' + LinkerMapFile + ' -xsmeo' + ' -s __program_start'
+LFLAGS  = ' -f ' + LinkerCmdFile + ' -l ' + LinkerMapFile + ' -xsme' + ' -s __program_start'
 LFLAGS += LibraryPath + ' ' + RunTimeLibrary + ' ' + ExtraLFlags
 
 if EnableHWMultiplier:
-    LFLAGS += ' -f ' + ConfigPath + '\\multiplier.xcl'
+    LFLAGS += ' -f ' + ConfigPath + '\\linker\\multiplier.xcl'
 #-------------------------------------------------------------------------------
 
 

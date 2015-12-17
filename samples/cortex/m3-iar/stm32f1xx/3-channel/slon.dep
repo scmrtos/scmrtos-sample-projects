@@ -6,306 +6,91 @@
   <configuration>
     <name>Debug</name>
     <outputs>
-      <file>$PROJ_DIR$\Debug\Obj\sysinit.pbi</file>
-      <file>$PROJ_DIR$\..\common\startup.c</file>
-      <file>$TOOLKIT_DIR$\lib\dlpp7M_tl_ne.a</file>
-      <file>$PROJ_DIR$\Debug\Obj\startup.pbi</file>
-      <file>$PROJ_DIR$\..\common\sysinit.cpp</file>
-      <file>$PROJ_DIR$\Debug\Obj\os_target.o</file>
-      <file>$TOOLKIT_DIR$\lib\dl7M_tln.a</file>
-      <file>$PROJ_DIR$\..\..\..\..\..\scmRTOS\core\os_services.h</file>
-      <file>$PROJ_DIR$\..\..\..\..\..\scmRTOS\port\cortex\m3-iar\os_target.cpp</file>
-      <file>$PROJ_DIR$\..\..\..\..\..\scmRTOS\core\scmRTOS.h</file>
-      <file>$PROJ_DIR$\..\..\..\..\..\scmRTOS\core\scmRTOS_defs.h</file>
-      <file>$PROJ_DIR$\..\..\..\..\..\scmRTOS\core\os_services.cpp</file>
-      <file>$PROJ_DIR$\..\..\..\..\..\scmRTOS\core\os_kernel.cpp</file>
-      <file>$PROJ_DIR$\..\..\..\..\..\scmRTOS\core\os_kernel.h</file>
-      <file>$PROJ_DIR$\..\..\..\..\..\scmRTOS\core\usrlib.cpp</file>
-      <file>$PROJ_DIR$\..\..\..\..\..\scmRTOS\core\usrlib.h</file>
-      <file>$TOOLKIT_DIR$\inc\c\ysizet.h</file>
-      <file>$PROJ_DIR$\..\scmRTOS\Common\usrlib.cpp</file>
-      <file>$TOOLKIT_DIR$\inc\c\stdint.h</file>
-      <file>$TOOLKIT_DIR$\inc\c\intrinsics.h</file>
-      <file>$PROJ_DIR$\..\scmRTOS\Common\OS_Kernel.cpp</file>
+      <file>$PROJ_DIR$\Debug\List\startup.lst</file>
+      <file>$PROJ_DIR$\Debug\List\os_services.lst</file>
       <file>$PROJ_DIR$\..\shared\startup_stm32f10x_md.s</file>
-      <file>$TOOLKIT_DIR$\inc\c\ycheck.h</file>
-      <file>$PROJ_DIR$\src\main.cpp</file>
-      <file>$PROJ_DIR$\Debug\Obj\os_services.pbi</file>
-      <file>$PROJ_DIR$\Debug\Obj\SystemInit.o</file>
-      <file>$PROJ_DIR$\..\common\startup_stm32f10x_md.s</file>
-      <file>$PROJ_DIR$\..\..\..\..\..\scmRTOS\port\cortex\m3-iar\os_target.h</file>
-      <file>$PROJ_DIR$\Debug\Obj\OS_Target_cpp.o</file>
-      <file>$PROJ_DIR$\Debug\Obj\usrlib.o</file>
-      <file>$PROJ_DIR$\src\scmRTOS_config.h</file>
-      <file>$PROJ_DIR$\Debug\Obj\usrlib.pbi</file>
-      <file>$PROJ_DIR$\Debug\Obj\os_services.o</file>
-      <file>$PROJ_DIR$\Debug\Obj\os_kernel.pbi</file>
-      <file>$PROJ_DIR$\Debug\Obj\startup_stm32f10x_md.o</file>
-      <file>$PROJ_DIR$\Debug\List\main.lst</file>
-      <file>$PROJ_DIR$\..\..\..\..\..\scmRTOS\port\cortex\m3-iar\os_target_asm.s</file>
-      <file>$PROJ_DIR$\Debug\Obj\startup.o</file>
-      <file>$PROJ_DIR$\..\common\stm32f10x_flash.icf</file>
-      <file>$PROJ_DIR$\Debug\Obj\os_kernel.o</file>
-      <file>$PROJ_DIR$\Debug\List\os_kernel.lst</file>
-      <file>$TOOLKIT_DIR$\inc\c\stddef.h</file>
-      <file>$PROJ_DIR$\Debug\List\os_target_asm.lst</file>
-      <file>$PROJ_DIR$\Debug\Obj\os_target.pbi</file>
-      <file>$PROJ_DIR$\..\common\stm32f10x.h</file>
-      <file>$PROJ_DIR$\Debug\Obj\os_target_asm.o</file>
-      <file>$PROJ_DIR$\src\scmRTOS_TARGET_CFG.h</file>
-      <file>$PROJ_DIR$\..\common\SystemInit.c</file>
-      <file>$PROJ_DIR$\Debug\Obj\main.o</file>
-      <file>$PROJ_DIR$\Debug\List\slon.map</file>
-      <file>$PROJ_DIR$\Debug\Obj\sysinit.o</file>
-      <file>$PROJ_DIR$\Debug\List\usrlib.lst</file>
-      <file>$TOOLKIT_DIR$\lib\m7M_tl.a</file>
-      <file>$PROJ_DIR$\Debug\List\startup_stm32f10x_md.lst</file>
+      <file>$PROJ_DIR$\Debug\Obj\slon.pbd</file>
+      <file>$PROJ_DIR$\Debug\List\os_target.lst</file>
       <file>$TOOLKIT_DIR$\lib\shb_l.a</file>
+      <file>$PROJ_DIR$\..\common\stm32f10x.h</file>
+      <file>$PROJ_DIR$\src\main.cpp</file>
+      <file>$TOOLKIT_DIR$\inc\c\ysizet.h</file>
+      <file>$PROJ_DIR$\..\scmRTOS\Common\OS_Kernel.cpp</file>
+      <file>$PROJ_DIR$\src\scmRTOS_extensions.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\stdint.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\scmRTOS\port\cortex\m3-iar\os_target_asm.s</file>
+      <file>$TOOLKIT_DIR$\lib\dlpp7M_tl_ne.a</file>
+      <file>$PROJ_DIR$\Debug\Obj\SystemInit.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\os_target_asm.o</file>
+      <file>$PROJ_DIR$\Debug\Exe\slon.out</file>
+      <file>$PROJ_DIR$\Debug\Obj\OS_Target_cpp.o</file>
+      <file>$PROJ_DIR$\..\scmRTOS\Common\usrlib.cpp</file>
       <file>$PROJ_DIR$\Debug\List\sysinit.lst</file>
       <file>$PROJ_DIR$\Debug\List\SystemInit.lst</file>
-      <file>$TOOLKIT_DIR$\lib\rt7M_tl.a</file>
-      <file>$PROJ_DIR$\Debug\List\startup.lst</file>
-      <file>$PROJ_DIR$\Debug\List\os_target.lst</file>
-      <file>$PROJ_DIR$\Debug\List\os_services.lst</file>
-      <file>$PROJ_DIR$\Debug\Obj\slon.pbd</file>
+      <file>$PROJ_DIR$\..\common\startup_stm32f10x_md.s</file>
       <file>$PROJ_DIR$\Debug\Obj\main.pbi</file>
-      <file>$PROJ_DIR$\Debug\Exe\slon.out</file>
-      <file>$PROJ_DIR$\Debug\Obj\SystemInit.pbi</file>
-      <file>$PROJ_DIR$\Debug\Obj\OS_Target_cpp.pbi</file>
-      <file>$PROJ_DIR$\src\scmRTOS_extensions.h</file>
-      <file>$TOOLKIT_DIR$\inc\c\DLib_Product.h</file>
-      <file>$TOOLKIT_DIR$\inc\c\xencoding_limits.h</file>
-      <file>$TOOLKIT_DIR$\inc\c\DLib_Defaults.h</file>
-      <file>$TOOLKIT_DIR$\inc\c\yvals.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\scmRTOS\port\cortex\m3-iar\os_target.h</file>
+      <file>$PROJ_DIR$\..\common\SystemInit.c</file>
+      <file>$PROJ_DIR$\Debug\Obj\os_services.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\sysinit.pbi</file>
+      <file>$TOOLKIT_DIR$\inc\c\stddef.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\os_target.o</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\scmRTOS\core\usrlib.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\usrlib.o</file>
+      <file>$TOOLKIT_DIR$\inc\c\intrinsics.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\usrlib.pbi</file>
+      <file>$PROJ_DIR$\Debug\List\slon.map</file>
+      <file>$PROJ_DIR$\Debug\Obj\main.o</file>
+      <file>$TOOLKIT_DIR$\inc\c\DLib_Config_Normal.h</file>
+      <file>$PROJ_DIR$\..\common\stm32f10x_flash.icf</file>
+      <file>$PROJ_DIR$\Debug\List\usrlib.lst</file>
+      <file>$PROJ_DIR$\Debug\Obj\sysinit.o</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\scmRTOS\core\os_services.cpp</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\scmRTOS\core\os_services.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\scmRTOS\core\os_kernel.h</file>
+      <file>$PROJ_DIR$\Debug\List\main.lst</file>
+      <file>$PROJ_DIR$\..\scmRTOS\CortexM3\OS_Target_asm.s</file>
+      <file>$PROJ_DIR$\Debug\Obj\os_kernel.pbi</file>
       <file>$PROJ_DIR$\..\common\core_cm3.h</file>
       <file>$PROJ_DIR$\..\scmRTOS\Common\OS_Services.cpp</file>
-      <file>$TOOLKIT_DIR$\inc\c\DLib_Threads.h</file>
       <file>$PROJ_DIR$\..\shared\SystemInit.c</file>
-      <file>$PROJ_DIR$\..\scmRTOS\CortexM3\OS_Target_asm.s</file>
+      <file>$TOOLKIT_DIR$\inc\c\DLib_Threads.h</file>
+      <file>$PROJ_DIR$\..\common\sysinit.cpp</file>
+      <file>$PROJ_DIR$\Debug\Obj\os_kernel.o</file>
+      <file>$PROJ_DIR$\Debug\Obj\startup.o</file>
+      <file>$TOOLKIT_DIR$\lib\dl7M_tln.a</file>
+      <file>$PROJ_DIR$\src\scmRTOS_TARGET_CFG.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\SystemInit.o</file>
+      <file>$PROJ_DIR$\..\common\startup.c</file>
+      <file>$PROJ_DIR$\Debug\Obj\os_target.pbi</file>
+      <file>$TOOLKIT_DIR$\inc\c\DLib_Product.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\scmRTOS\core\usrlib.cpp</file>
+      <file>$PROJ_DIR$\Debug\List\startup_stm32f10x_md.lst</file>
+      <file>$PROJ_DIR$\Debug\Obj\OS_Target_cpp.pbi</file>
+      <file>$PROJ_DIR$\Debug\List\os_target_asm.lst</file>
+      <file>$TOOLKIT_DIR$\inc\c\xencoding_limits.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\ycheck.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\scmRTOS\core\scmRTOS_defs.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\scmRTOS\core\scmRTOS.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\yvals.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\DLib_Defaults.h</file>
       <file>$PROJ_DIR$\..\scmRTOS\CortexM3\OS_Target_cpp.cpp</file>
-      <file>$TOOLKIT_DIR$\inc\c\DLib_Config_Normal.h</file>
+      <file>$PROJ_DIR$\src\scmRTOS_config.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\scmRTOS\core\os_kernel.cpp</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\scmRTOS\port\cortex\m3-iar\os_target.cpp</file>
+      <file>$PROJ_DIR$\Debug\List\os_kernel.lst</file>
+      <file>$PROJ_DIR$\Debug\Obj\startup.pbi</file>
+      <file>$TOOLKIT_DIR$\lib\rt7M_tl.a</file>
+      <file>$PROJ_DIR$\Debug\Obj\startup_stm32f10x_md.o</file>
+      <file>$PROJ_DIR$\Debug\Obj\os_services.o</file>
+      <file>$TOOLKIT_DIR$\lib\m7M_tl.a</file>
     </outputs>
-    <file>
-      <name>$PROJ_DIR$\..\common\startup.c</name>
-      <outputs>
-        <tool>
-          <name>ICCARM</name>
-          <file> 58 37</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 3</file>
-        </tool>
-      </outputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\common\sysinit.cpp</name>
-      <outputs>
-        <tool>
-          <name>ICCARM</name>
-          <file> 55 50</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 0</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>ICCARM</name>
-          <file> 44 71 18 22 70 69 77 67 68 73 19</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 44 71 18 22 70 69 67 68 73 19</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\..\..\..\..\scmRTOS\port\cortex\m3-iar\os_target.cpp</name>
-      <outputs>
-        <tool>
-          <name>ICCARM</name>
-          <file> 59 5</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 43</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>ICCARM</name>
-          <file> 9 41 22 70 69 77 67 68 73 16 18 15 27 30 46 10 19 13 66 7</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 9 41 22 70 69 67 68 73 16 18 15 27 30 46 10 19 13 66 7</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\..\..\..\..\scmRTOS\core\os_services.cpp</name>
-      <outputs>
-        <tool>
-          <name>ICCARM</name>
-          <file> 60 32</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 24</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>ICCARM</name>
-          <file> 9 41 22 70 69 77 67 68 73 16 18 15 27 30 46 10 19 13 66 7</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 9 41 22 70 69 67 68 73 16 18 15 27 30 46 10 19 13 66 7</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\..\..\..\..\scmRTOS\core\os_kernel.cpp</name>
-      <outputs>
-        <tool>
-          <name>ICCARM</name>
-          <file> 40 39</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 33</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>ICCARM</name>
-          <file> 9 41 22 70 69 77 67 68 73 16 18 15 27 30 46 10 19 13 66 7</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 9 41 22 70 69 67 68 73 16 18 15 27 30 46 10 19 13 66 7</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\..\..\..\..\scmRTOS\core\usrlib.cpp</name>
-      <outputs>
-        <tool>
-          <name>ICCARM</name>
-          <file> 51 29</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 31</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>ICCARM</name>
-          <file> 15 18 22 70 69 77 67 68 73</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 15 18 22 70 69 67 68 73</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\scmRTOS\Common\usrlib.cpp</name>
-      <outputs>
-        <tool>
-          <name>BICOMP</name>
-          <file> 31</file>
-        </tool>
-      </outputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\scmRTOS\Common\OS_Kernel.cpp</name>
-      <outputs>
-        <tool>
-          <name>BICOMP</name>
-          <file> 33</file>
-        </tool>
-      </outputs>
-    </file>
     <file>
       <name>$PROJ_DIR$\..\shared\startup_stm32f10x_md.s</name>
       <outputs>
         <tool>
           <name>AARM</name>
-          <file> 34 53</file>
-        </tool>
-      </outputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\src\main.cpp</name>
-      <outputs>
-        <tool>
-          <name>ICCARM</name>
-          <file> 35 48</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 62</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>ICCARM</name>
-          <file> 9 41 22 70 69 77 67 68 73 16 18 15 27 30 46 10 19 13 66 7</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 9 41 22 70 69 67 68 73 16 18 15 27 30 46 10 19 13 66 7</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\common\startup_stm32f10x_md.s</name>
-      <outputs>
-        <tool>
-          <name>AARM</name>
-          <file> 34 53</file>
-        </tool>
-      </outputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\..\..\..\..\scmRTOS\port\cortex\m3-iar\os_target_asm.s</name>
-      <outputs>
-        <tool>
-          <name>AARM</name>
-          <file> 45 42</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>AARM</name>
-          <file> 46</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\common\SystemInit.c</name>
-      <outputs>
-        <tool>
-          <name>ICCARM</name>
-          <file> 56 25</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 64</file>
-        </tool>
-      </outputs>
-    </file>
-    <file>
-      <name>[ROOT_NODE]</name>
-      <outputs>
-        <tool>
-          <name>ILINK</name>
-          <file> 63 49</file>
+          <file> 75 59</file>
         </tool>
       </outputs>
     </file>
@@ -314,7 +99,54 @@
       <inputs>
         <tool>
           <name>BILINK</name>
-          <file> 64 62 33 24 43 31</file>
+          <file> 14 22 44 25 56 32</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\src\main.cpp</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 42 34</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 22</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 65 27 63 66 67 35 57 62 48 8 11 29 23 69 53 64 31 41 10 40</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 65 27 63 66 67 57 62 48 8 11 29 23 69 53 64 31 41 10 40</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\scmRTOS\Common\OS_Kernel.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 44</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\..\scmRTOS\port\cortex\m3-iar\os_target_asm.s</name>
+      <outputs>
+        <tool>
+          <name>AARM</name>
+          <file> 15 61</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>AARM</name>
+          <file> 53</file>
         </tool>
       </inputs>
     </file>
@@ -323,22 +155,85 @@
       <outputs>
         <tool>
           <name>ILINK</name>
-          <file> 49</file>
+          <file> 33</file>
         </tool>
       </outputs>
       <inputs>
         <tool>
           <name>ILINK</name>
-          <file> 38 25 48 39 32 5 45 34 29 54 57 2 52 6</file>
+          <file> 36 54 34 50 76 28 15 75 30 5 74 13 77 52</file>
         </tool>
       </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\scmRTOS\Common\usrlib.cpp</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 32</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\common\startup_stm32f10x_md.s</name>
+      <outputs>
+        <tool>
+          <name>AARM</name>
+          <file> 75 59</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\common\SystemInit.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 20 54</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 14</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\..\scmRTOS\core\os_services.cpp</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 1 76</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 25</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 65 27 63 66 67 35 57 62 48 8 11 29 23 69 53 64 31 41 10 40</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 65 27 63 66 67 57 62 48 8 11 29 23 69 53 64 31 41 10 40</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\scmRTOS\CortexM3\OS_Target_asm.s</name>
+      <outputs>
+        <tool>
+          <name>AARM</name>
+          <file> 15</file>
+        </tool>
+      </outputs>
     </file>
     <file>
       <name>$PROJ_DIR$\..\scmRTOS\Common\OS_Services.cpp</name>
       <outputs>
         <tool>
           <name>BICOMP</name>
-          <file> 24</file>
+          <file> 25</file>
         </tool>
       </outputs>
     </file>
@@ -347,42 +242,147 @@
       <outputs>
         <tool>
           <name>ICCARM</name>
-          <file> 56 25</file>
+          <file> 20 54</file>
         </tool>
         <tool>
           <name>BICOMP</name>
-          <file> 64</file>
+          <file> 14</file>
         </tool>
       </outputs>
     </file>
     <file>
-      <name>$PROJ_DIR$\..\scmRTOS\CortexM3\OS_Target_asm.s</name>
+      <name>$PROJ_DIR$\..\common\sysinit.cpp</name>
       <outputs>
         <tool>
-          <name>AARM</name>
-          <file> 45</file>
+          <name>ICCARM</name>
+          <file> 19 38</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 26</file>
         </tool>
       </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 6 45 11 63 66 67 35 57 62 48 31</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 6 45 11 63 66 67 57 62 48 31</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\common\startup.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 0 51</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 73</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\..\scmRTOS\core\usrlib.cpp</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 37 30</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 32</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 29 11 63 66 67 35 57 62 48</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 29 11 63 66 67 57 62 48</file>
+        </tool>
+      </inputs>
     </file>
     <file>
       <name>$PROJ_DIR$\..\scmRTOS\CortexM3\OS_Target_cpp.cpp</name>
       <outputs>
         <tool>
           <name>ICCARM</name>
-          <file> 28</file>
+          <file> 17</file>
         </tool>
         <tool>
           <name>BICOMP</name>
-          <file> 65</file>
+          <file> 60</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\..\scmRTOS\core\os_kernel.cpp</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 72 50</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 44</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 65 27 63 66 67 35 57 62 48 8 11 29 23 69 53 64 31 41 10 40</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 65 27 63 66 67 57 62 48 8 11 29 23 69 53 64 31 41 10 40</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\..\scmRTOS\port\cortex\m3-iar\os_target.cpp</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 4 28</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 56</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 65 27 63 66 67 35 57 62 48 8 11 29 23 69 53 64 31 41 10 40</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 65 27 63 66 67 57 62 48 8 11 29 23 69 53 64 31 41 10 40</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>[ROOT_NODE]</name>
+      <outputs>
+        <tool>
+          <name>ILINK</name>
+          <file> 16 33</file>
         </tool>
       </outputs>
     </file>
     <forcedrebuild>
-      <name>$PROJ_DIR$\..\scmRTOS\Common\usrlib.cpp</name>
+      <name>$PROJ_DIR$\..\scmRTOS\Common\OS_Kernel.cpp</name>
       <tool>ICCARM</tool>
     </forcedrebuild>
     <forcedrebuild>
-      <name>$PROJ_DIR$\..\scmRTOS\Common\OS_Kernel.cpp</name>
+      <name>$PROJ_DIR$\..\scmRTOS\Common\usrlib.cpp</name>
       <tool>ICCARM</tool>
     </forcedrebuild>
     <forcedrebuild>
@@ -392,9 +392,6 @@
     <forcedrebuild>
       <name>$PROJ_DIR$\..\scmRTOS\CortexM3\OS_Target_cpp.cpp</name>
       <tool>ICCARM</tool>
-    </forcedrebuild>
-    <forcedrebuild>
-      <name>[REBUILD_ALL]</name>
     </forcedrebuild>
   </configuration>
   <configuration>
