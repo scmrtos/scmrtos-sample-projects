@@ -2,7 +2,7 @@
 #
 #     SCons main construct file
 #
-#     Processor: Blackfin (Analog Devices)
+#     Processor: Blackfin (Analog Devices Inc.)
 #
 #     Toolkit:   bfin-elf
 #
@@ -18,6 +18,7 @@ import re
 
 sys.path.append(os.getcwd() + '/cfg/script')
 
+import utils
 import scmIC
 
 #===============================================================================
@@ -98,9 +99,9 @@ TOOLKIT_PATH = os.environ['CAD'] + '/adi/bfin-elf'
 ASM      = TOOLKIT_PATH + '/bin/bfin-elf-as'
 CC       = TOOLKIT_PATH + '/bin/bfin-elf-gcc'
 Linker   = TOOLKIT_PATH + '/bin/bfin-elf-ld'
-#XML2HTML = TOOLKIT_PATH + '/bin/bfin-elf-'
-#ELFDUMP  = TOOLKIT_PATH + '/bin/bfin-elf-'
+OBJDUMP  = TOOLKIT_PATH + '/bin/bfin-elf-objdump'
 LOADER   = TOOLKIT_PATH + '/bin/bfin-elf-ldr'
+SIZE     = TOOLKIT_PATH + '/bin/bfin-elf-size'
 
 ToolkitIncPath = [TOOLKIT_PATH] # + '/bfin-elf/include'] #,  TOOLKIT_PATH + '/Blackfin/lib/src/libio']
 
@@ -115,12 +116,10 @@ ToolkitLibPath = [TOOLKIT_PATH + '/bfin-elf/lib']
 #      Include, library, config files and paths
 #
 IncludePath = ''.join(' -I' + i for i in SourceDirs + ToolkitIncPath)
-#IncludePathAsm = ''.join(' -flags-asm -I' + i for i in SourceDirs + ToolkitIncPath)
 LibraryPathOptions = ''#.join(' -L ' + i for i in ToolkitLibPath)
 
 
 LinkerMainScript   = os.path.join(ConfigDir, Processor + 'cpp.' + LdExt)
-LinkerMapFile      = os.path.join(ListDir, ProjectName + os.extsep + MapExt)
 
 #-------------------------------------------------------------------------------
 #
@@ -136,9 +135,8 @@ AFLAGS += ' -c '
 AFLAGS += ExtraAFlags
 #-------------------------------------------------------------------------------
 CFLAGS  = COMMON_FLAGS
-#CFLAGS += ' -C'                       # Retains preprocessor comments in the output file
 #CFLAGS += ' -fmessage-length=0'        # output messages in one line
-CFLAGS += ' -c'                       # Compiles and/or assembles only, but does not link
+CFLAGS += ' -c'                         # Compiles and/or assembles only, but does not link
 CFLAGS += DebugLevel
 CFLAGS += ' -pipe'
 CFLAGS += ' -ffunction-sections -fdata-sections'
@@ -150,7 +148,6 @@ CPPFLAGS += ' -fno-exceptions -fno-rtti'
 LFLAGS  = COMMON_FLAGS
 LFLAGS += ' -Wl,--gc-sections'
 LFLAGS += ' -T' + LinkerMainScript
-LFLAGS += ' -Wl,-Map=' + LinkerMapFile + ',--cref'
 LFLAGS += ' -L '   + ObjDir + LibraryPathOptions
 LFLAGS += ' -nostartfiles'
 LFLAGS += ' -lm'
@@ -171,7 +168,7 @@ def compile_c(target, source, env):
     #
     if env['FIRST_ENTRY'] == False:
         env['FIRST_ENTRY'] = True
-        print '*'*60
+        print '*'*61
 
     #------------------------------------------------
     #
@@ -179,21 +176,18 @@ def compile_c(target, source, env):
     #
     print 'Compile:  ' + os.path.basename( str(source[0]) )
     cmd = env['CC'] + env['CFLAGS'] + ' -o ' + str(target[0]) + ' ' + str(source[0])
-    p = subprocess.Popen(cmd.split(), universal_newlines = True,
-                         stdin  = subprocess.PIPE,
-                         stdout = subprocess.PIPE,
-                         stderr = subprocess.PIPE )
-
-    out, err = p.communicate()
+    rcode, out, err = utils.pexec(cmd)
     out += err
-    if out:
-        print out.replace('`', '\'')
-    
-    rcode = p.returncode
+    if out:        print out.replace('`', '\'')
+    if rcode != 0: return rcode
 
-    if rcode != 0:
-        return rcode
-
+    #------------------------------------------------
+    #
+    #   Create listing
+    #
+    cmd = env['OBJDUMP'] + ' -dCS ' + str(target[0])
+    rcode, out, err = utils.pexec(cmd)
+    open( os.path.join( ListDir, utils.namegen(str(source[0]), LstExt) ), 'wb' ).write(out)
 #-------------------------------------------------------------------------------
 #
 #    Build object file from cpp source file
@@ -205,32 +199,26 @@ def compile_cpp(target, source, env):
     #
     if env['FIRST_ENTRY'] == False:
         env['FIRST_ENTRY'] = True
-        print '*'*60
+        print '*'*61
 
     #------------------------------------------------
     #
     #   Launch compiler
     #
-    #print 'Compile:  ' + os.path.relpath( str(source[0]) )
     print 'Compile:  ' + os.path.basename( str(source[0]) )
     cmd = env['CC'] + env['CPPFLAGS'] + ' -o ' + str(target[0]) + ' ' + str(source[0])
-    #print cmd.split()
-    p = subprocess.Popen(cmd.split(), universal_newlines = True,
-                         stdin  = subprocess.PIPE,
-                         stdout = subprocess.PIPE,
-                         stderr = subprocess.PIPE )
-
-    out, err = p.communicate()
+    rcode, out, err = utils.pexec(cmd)
     out += err
-    if out:
-        print out.replace('`', '\'')
+    if out:        print out.replace('`', '\'')
+    if rcode != 0: return rcode
 
-    rcode = p.returncode
-
-    if rcode != 0:
-        return rcode
-
-
+    #------------------------------------------------
+    #
+    #   Create listing
+    #
+    cmd = env['OBJDUMP'] + ' -dCS ' + str(target[0])
+    rcode, out, err = utils.pexec(cmd)
+    open( os.path.join( ListDir, utils.namegen(str(source[0]), LstExt) ), 'wb' ).write(out)
 #-------------------------------------------------------------------------------
 #
 #    Build object file from assembler source file
@@ -242,7 +230,7 @@ def assembly_src(target, source, env):
     #
     if env['FIRST_ENTRY'] == False:
         env['FIRST_ENTRY'] = True
-        print '*'*60
+        print '*'*61
 
     #------------------------------------------------
     #
@@ -251,63 +239,63 @@ def assembly_src(target, source, env):
     src_name = str(source[0])
     print 'Assembly: ' + os.path.basename( src_name ) 
     cmd = env['CC'] + env['AFLAGS'] + ' -o ' + str(target[0]) + ' ' + src_name
-    p = subprocess.Popen(cmd.split(), universal_newlines = True,
-                         stdin  = subprocess.PIPE,
-                         stdout = subprocess.PIPE,
-                         stderr = subprocess.PIPE )
-
-    out, err = p.communicate()
+    rcode, out, err = utils.pexec(cmd)
     out += err
-    if out:
-        print out.replace('`', '\'')
+    if out:        print out.replace('`', '\'')
+    if rcode != 0: return rcode
 
-    rcode = p.returncode
-
-    return p.returncode
-    
+    #------------------------------------------------
+    #
+    #   Create listing
+    #
+    cmd = env['OBJDUMP'] + ' -dC ' + str(target[0])
+    rcode, out, err = utils.pexec(cmd)
+    open( os.path.join( ListDir, utils.namegen(str(source[0]), LstExt) ), 'wb' ).write(out)
 #-------------------------------------------------------------------------------
 #
 #    Build executable file from object files
 #
 def build_bin(target, source, env):
     if env['FIRST_ENTRY'] == False:
-        print '*'*60
+        print '*'*61
         print 'Sources are up to date'
 
-    print '*'*60
+    print '*'*61
     print 'Link: ' + str(target[0])
 
     src_list = ''
     for i in xrange(len(source)):
         src_list += ' ' + str(source[i])
 
-    target_name_full  = str(target[0])
-    target_name_short = os.path.split(target_name_full)[1]
-    target_name       = os.path.splitext(target_name_short)[0]
-    dumpfile_name = target_name_full + '.dmp'
-
     #-------------------------------------------------------------
     #
     #    Link executable
     #
-    cmd  =  env['CC'] + ' -o ' + target_name_full + src_list + env['LFLAGS']
-
-    #print cmd
-    p = subprocess.Popen(cmd.split(), universal_newlines = True,
-                         stdin  = subprocess.PIPE,
-                         stdout = subprocess.PIPE,
-                         stderr = subprocess.PIPE )
-
-    out, err = p.communicate()
+    cmd  =  env['CC'] + ' -o ' + str(target[0]) + src_list + env['LFLAGS'] +\
+           ' -Wl,-Map=' + os.path.join(ListDir, utils.namegen(str(target[0]), MapExt)) + ',--cref'
+    rcode, out, err = utils.pexec(cmd)
     out += err
-    if out:
-        print out.replace('`', '\'')
+    if out: print out.replace('`', '\'')
 
-    rcode = p.returncode
-
-    print '*'*60
+    #print '*'*61
     if rcode != 0:
         return rcode
+
+    #------------------------------------------------
+    #
+    #   Create listing
+    #
+    cmd = env['OBJDUMP'] + ' -dCS ' + str(target[0])
+    rcode, out, er = utils.pexec(cmd)
+    open( os.path.join( ListDir, utils.namegen(str(target[0]), LstExt) ), 'wb' ).write(out)
+
+    #------------------------------------------------
+    #
+    #   Print sizes
+    #
+    cmd = env['SIZE'] + ' --format=sysv ' + str(target[0])
+    rcode, out, er = utils.pexec(cmd)
+    utils.print_size(out)
 
 #-------------------------------------------------------------------------------
 
@@ -359,6 +347,8 @@ env['ASM'          ] = ASM
 env['CC'           ] = CC
 env['LINKER'       ] = Linker
 env['LOADER'       ] = LOADER
+env['OBJDUMP'      ] = OBJDUMP
+env['SIZE'         ] = SIZE
 env['AFLAGS'       ] = AFLAGS
 env['CFLAGS'       ] = CFLAGS
 env['CPPFLAGS'     ] = CPPFLAGS
