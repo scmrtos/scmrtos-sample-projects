@@ -4,9 +4,9 @@
 //*
 //*     NICKNAME:  scmRTOS
 //*
-//*     PROCESSOR: ADSP-BF533 (Analog Devices)
+//*     PROCESSOR: ADSP-BF533 (Analog Devices Inc.)
 //*
-//*     TOOLKIT:   VDSP (Analog Devices)
+//*     TOOLKIT:   bfin-elf (GCC)
 //*
 //*     PURPOSE:   Project Level Configuration
 //*
@@ -42,7 +42,7 @@
 //*     =================================================================
 //*
 //******************************************************************************
-//*     ADSP-BF533/VisualDSP++ sample by Harry E. Zhurov, Copyright (c) 2005-2015
+//*     ADSP-BF533/bfin-elf sample by Harry E. Zhurov, Copyright (c) 2005-2016
 
 #ifndef  scmRTOS_CONFIG_H
 #define  scmRTOS_CONFIG_H
