@@ -98,7 +98,6 @@
             <Folder
                 Name="port"
                 Filters="">
-                <F N="../../../../../scmRTOS/port/blackfin/gcc/device_def.h"/>
                 <F N="../../../../../scmRTOS/port/blackfin/gcc/os_target.cpp"/>
                 <F N="../../../../../scmRTOS/port/blackfin/gcc/os_target.h"/>
                 <F N="../../../../../scmRTOS/port/blackfin/gcc/os_target_asm.S"/>

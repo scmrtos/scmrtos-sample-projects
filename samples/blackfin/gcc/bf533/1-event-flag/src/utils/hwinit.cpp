@@ -1,17 +1,16 @@
 //******************************************************************************
 //*
-//*              Hardware Initialization Stuff
+//*     PURPOSE:   Hardware Initialization Code
 //*
-//*                  VDSP 4.0/Blackfin
+//*     PROCESSOR: ADSP-BF533 (Analog Devices Inc.)
 //*
-//*      Version 1.0
+//*     TOOLKIT:   bfin-elf (GCC)
 //*
-//*      Copyright (c) 2006, Harry E. Zhurov
+//*     Version: v2.0.0
 //*
-//*      $Revision$
-//*      $Date$
-//---------------------------------------------------------------------------
-
+//*     Copyright (c) 2003-2015, Harry E. Zhurov
+//*
+//******************************************************************************
 
 //---------------------------------------------------------------------------
 #include <stdint.h>

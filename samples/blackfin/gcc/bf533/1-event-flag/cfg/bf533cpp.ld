@@ -1,9 +1,20 @@
-
+/********************************************************************************
+*
+*     Linker configuration script file
+*
+*     Processor: Blackfin (Analog Devices Inc.)
+*
+*     Toolkit:   bfin-elf
+*
+*     Copyright (c) 2016, Harry E. Zhurov
+*
+********************************************************************************/
 
 OUTPUT_FORMAT("elf32-bfin", "elf32-bfin", "elf32-bfin")
 OUTPUT_ARCH(bfin)
 ENTRY(__start)
 
+/*-----------------------------------------------------------------------------*/
               
 MEMORY
 {
@@ -21,6 +32,7 @@ MEMORY
     MEM_SDRAM0     : ORIGIN = 0x00000000, LENGTH = 16M * 2    /* SDRAM Bank 0 - 16M 16-bit words */
 }
 
+/*-----------------------------------------------------------------------------*/
 
 SECTIONS
 {    
@@ -101,9 +113,6 @@ SECTIONS
 
     /DISCARD/ : { *(.note.GNU-stack) }
 }
-                                                                                          
-                                                               
 
-
-
+/*-----------------------------------------------------------------------------*/
 

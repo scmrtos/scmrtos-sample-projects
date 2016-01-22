@@ -44,7 +44,6 @@ SourceDirs   = ['src',
 Processor    = 'bf533'
 DeviceRev    = '0.6'
 
-#Optimization = ' '
 Optimization =' -O2 '
 DebugLevel   =' -g3 '          # empty to disable debug info
 
@@ -134,13 +133,13 @@ AFLAGS += ' -x assembler-with-cpp'
 AFLAGS += ' -c '
 AFLAGS += ExtraAFlags
 #-------------------------------------------------------------------------------
-CFLAGS  = COMMON_FLAGS
-#CFLAGS += ' -fmessage-length=0'        # output messages in one line
-CFLAGS += ' -c'                         # Compiles and/or assembles only, but does not link
-CFLAGS += DebugLevel
-CFLAGS += ' -pipe'
-CFLAGS += ' -ffunction-sections -fdata-sections'
-CFLAGS += IncludePath + Optimization + ExtraCFlags
+CFLAGS    = COMMON_FLAGS
+#CFLAGS   += ' -fmessage-length=0'        # output messages in one line
+CFLAGS   += ' -c'                         # Compiles and/or assembles only, but does not link
+CFLAGS   += DebugLevel
+CFLAGS   += ' -pipe'
+CFLAGS   += ' -ffunction-sections -fdata-sections'
+CFLAGS   += IncludePath + Optimization + ExtraCFlags
 CPPFLAGS  = CFLAGS 
 CPPFLAGS += ' -fno-exceptions -fno-rtti'
 
@@ -340,7 +339,7 @@ env['BUILDERS'] = {
                      'asmObj' : asm2obj,
                      'cObj'   : c2obj,
                      'cppObj' : cpp2obj,
-                      'elf'   : binBuilder
+                     'elf'    : binBuilder
                   }
 
 env['ASM'          ] = ASM
@@ -480,7 +479,6 @@ def clean(target, source, env):
     remove_files(ScriptDir, 'pyc')
     print 'Done'
 
-
 #-------------------------------------------------------------------------------
 #
 #
@@ -526,7 +524,4 @@ Default(all)
 #-------------------------------------------------------------------------------
               
 #===============================================================================
-
-
-
 
