@@ -11,8 +11,8 @@
 
 #include <stdint.h>
 
-#define MMR16(x) ( *((uint16_t*)x) )
-#define MMR32(x) ( *((uint32_t*)x) )
+#define MMR16(x) ( *((volatile uint16_t*)x) )
+#define MMR32(x) ( *((volatile uint32_t*)x) )
 
 //------------------------------------------------------------------------------
 #endif  /* MACRO_H */
