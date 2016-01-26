@@ -6,20 +6,19 @@
 //*
 //******************************************************************************
 
-#ifndef DEVICE_H
-#define DEVICE_H
+#ifndef INTRINSIC_H
+#define INTRINSIC_H
 
 //------------------------------------------------------------------------------
-#include <sys/platform.h>
+//
 
-#ifndef __ASSEMBLER__
+inline uint32_t read_cycles_reg() 
+{
+    uint32_t rval; 
+    __asm__ __volatile__ ("%0 = CYCLES;" : "=r"(rval)); 
+    return rval;
+}
 
-#include <sys/pll.h>
-#include <ccblkfn.h>
-#include <exc.h>
-#include <intrinsic.h>
-
-#endif // __ASSEMBLER__
 //------------------------------------------------------------------------------
 
-#endif  /* DEVICE_H */
+#endif  // INTRINSIC_H
