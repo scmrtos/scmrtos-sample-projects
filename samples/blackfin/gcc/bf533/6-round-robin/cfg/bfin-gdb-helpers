@@ -1,0 +1,1270 @@
+#
+# Misc Blackfin helper functions
+#
+define regs
+    printf "R0: %08x %-11i  P0: %08x  RETS: %08x  LC0: %08x %u\n",  $r0, $r0, $p0, $rets, $lc0, $lc0
+    printf "R1: %08x %-11i  P1: %08x  RETI: %08x  LT0: %08x\n",     $r1, $r1, $p1, $reti, $lt0
+    printf "R2: %08x %-11i  P2: %08x  RETX: %08x  LB0: %08x\n",     $r2, $r2, $p2, $retx, $lb0
+    printf "R3: %08x %-11i  P3: %08x  RETE: %08x  LC1: %08x %u\n",  $r3, $r3, $p3, $rete, $lc1, $lc1
+    printf "R4: %08x %-11i  P4: %08x  RETN: %08x  LT1: %08x\n",     $r4, $r4, $p4, $retn, $lt1
+    printf "R5: %08x %-11i  P5: %08x ASTAT: %08x  LB1: %08x\n",     $r5, $r5, $p5, $astat, $lb1
+    printf "R6: %08x %-11i  SP: %08x    CC: %08x\n",                $r6, $r6, $sp, $cc
+    printf "R7: %08x %-11i USP: %08x  CYC1: %08x  SEQSTAT: %08x\n", $r7, $r7, $usp, $cycles, $seqstat
+    printf "PC: %08x              FP: %08x  CYC2: %08x   SYSCFG: %08x\n", $pc, $fp, $cycles2, $syscfg
+end
+document regs
+Usage: regs
+Display the common core registers in a compact format.
+end
+
+define all_regs
+    regs
+    printf " B0 : %08x   L0 : %08x   M0 : %08x   I0 : %08x\n", $b0, $l0, $m0, $i0
+    printf " B1 : %08x   L1 : %08x   M1 : %08x   I1 : %08x\n", $b1, $l1, $m1, $i1
+    printf " B2 : %08x   L2 : %08x   M2 : %08x   I2 : %08x\n", $b2, $l2, $m2, $i2
+    printf " B3 : %08x   L3 : %08x   M3 : %08x   I3 : %08x\n", $b3, $l3, $m3, $i3
+    printf "A0.w: %08x  A0.x: %08x  A1.w: %08x  A1.x: %08x\n", $a0w, $a0x, $a1w, $a1x
+end
+document all_regs
+Usage: all_regs
+Display all core registers in a compact format.
+end
+
+define astat
+    printf "ASTAT: %#x ( ", $astat
+    if $astat & (1 << 25)
+        printf "VS "
+    end
+    if $astat & (1 << 24)
+        printf "V "
+    end
+    if $astat & (1 << 19)
+        printf "AV1S "
+    end
+    if $astat & (1 << 18)
+        printf "AV1 "
+    end
+    if $astat & (1 << 17)
+        printf "AV0S "
+    end
+    if $astat & (1 << 16)
+        printf "AV0 "
+    end
+    if $astat & (1 << 13)
+        printf "AC1 "
+    end
+    if $astat & (1 << 12)
+        printf "AC0 "
+    end
+    if $astat & (1 << 8)
+        printf "RND_MOD "
+    end
+    if $astat & (1 << 6)
+        printf "AQ "
+    end
+    if $astat & (1 << 5)
+        printf "CC "
+    end
+    if $astat & (1 << 3)
+        printf "V_COPY "
+    end
+    if $astat & (1 << 2)
+        printf "AC0_COPY "
+    end
+    if $astat & (1 << 1)
+        printf "AN "
+    end
+    if $astat & (1 << 0)
+        printf "AZ "
+    end
+    printf ")\n"
+    set $$inv = $astat & 0xfcf0ce90
+    if $$inv
+        printf "Invalid bits: %#x\n", $$inv
+    end
+end
+
+define seqstat
+    if $argc == 1
+        set $$seqstat = $arg0
+    else
+        set $$seqstat = $seqstat
+    end
+    set $$excause    = ($$seqstat & 0x3f)
+    set $$sftreset   = ($$seqstat & (0x1 << 13)) >> 13
+    set $$hwerrcause = ($$seqstat & (0x1f << 14)) >> 14
+    printf "SEQSTAT: %08x\n", $$seqstat
+    printf " EXCAUSE:    0x%x\t", $$excause
+    if $$excause >= 0x0 && $$excause <= 0xf
+        printf "(custom exception)"
+    end
+    if $$excause == 0x10
+        printf "(single step)"
+    end
+    if $$excause == 0x11
+        printf "(trace buffer full)"
+    end
+    if $$excause == 0x21
+        printf "(undef inst)"
+    end
+    if $$excause == 0x22
+        printf "(illegal inst)"
+    end
+    if $$excause == 0x23
+        printf "(dcplb prot violation)"
+    end
+    if $$excause == 0x24
+        printf "(misaligned data)"
+    end
+    if $$excause == 0x25
+        printf "(unrecoverable event)"
+    end
+    if $$excause == 0x26
+        printf "(dcplb miss)"
+    end
+    if $$excause == 0x27
+        printf "(multiple dcplb hit)"
+    end
+    if $$excause == 0x28
+        printf "(emulation watchpoint)"
+    end
+    if $$excause == 0x2a
+        printf "(misaligned inst)"
+    end
+    if $$excause == 0x2b
+        printf "(icplb prot violation)"
+    end
+    if $$excause == 0x2c
+        printf "(icplb miss)"
+    end
+    if $$excause == 0x2d
+        printf "(multiple icplb hit)"
+    end
+    if $$excause == 0x2e
+        printf "(illegal use of supervisor resource)"
+    end
+    printf "\n"
+    printf " SFTRESET:   0x%x\t(last reset was ", $$sftreset
+    if $$sftreset == 0
+        printf "not "
+    end
+    printf "a software reset)\n"
+    printf " HWERRCAUSE: 0x%x\t", $$hwerrcause
+    if $$hwerrcause == 0x2
+        printf "(system mmr error)"
+    end
+    if $$hwerrcause == 0x3
+        printf "(external memory addressing error)"
+    end
+    if $$hwerrcause == 0x12
+        printf "(performance monitor overflow)"
+    end
+    if $$hwerrcause == 0x18
+        printf "(raise 5 instruction)"
+    end
+    printf "\n"
+end
+document seqstat
+Usage: seqstat [value=$seqstat]
+Parse the bits of the seqstat [value] into the human readable definitions.
+end
+
+define reset
+    if $argc == 0
+        set $$l1 = 0xffa00000
+    else
+        set $$l1 = $arg0
+    end
+    set $$pc = $$l1
+
+    # SSYNC
+    set *(unsigned short *)($$l1) = 0x0024
+    set $$l1 += 2
+
+    #  P2.H = 0xffc0
+    set *(unsigned long  *)($$l1) = 0xffc0e14a
+    set $$l1 += 4
+
+    # P2.L = 0x100
+    set *(unsigned long  *)($$l1) = 0x0100e10a
+    set $$l1 += 4
+
+    # R0 = 0x7 (X)
+    set *(unsigned short *)($$l1) = 0x6038
+    set $$l1 += 2
+
+    # [P2] = R0
+    set *(unsigned short *)($$l1) = 0x9310
+    set $$l1 += 2
+
+    # SSYNC
+    set *(unsigned short *)($$l1) = 0x0024
+    set $$l1 += 2
+
+    # R0 = 0x0 (X)
+    set *(unsigned short *)($$l1) = 0x6000
+    set $$l1 += 2
+
+    # [P2] = R0
+    set *(unsigned short *)($$l1) = 0x9310
+    set $$l1 += 2
+
+    # SSYNC
+    set *(unsigned short *)($$l1) = 0x0024
+    set $$l1 += 2
+
+    # RAISE 0x1
+    set *(unsigned short *)($$l1) = 0x0091
+    set $$l1 += 2
+
+    # JUMP.S -0x18
+    if ($$l1 - $$pc) != 0x18
+        echo ERROR: jump.s has wrong offset
+    else
+        set $pc == $$pc
+    end
+    set *(unsigned short *)($$l1) = 0x2ff4
+    set $$l1 += 2
+
+    printf "Continuing.\n"
+    continue
+end
+document reset
+Usage: reset [L1 Instruction address=0xffa00000]
+Cram the software reset code into [L1 Instruction address] and execute it.
+This will perform both a system reset and a core reset.
+end
+
+define hwtrace_on
+    set $$TBUFCTL  = (unsigned long *)0xFFE06000
+    set *$$TBUFCTL = 0x3
+end
+define hwtrace_off
+    set $$TBUFCTL  = (unsigned long *)0xFFE06000
+    set *$$TBUFCTL = 0x1
+end
+define hwtrace
+    set $$TBUFSTAT = (unsigned long *)0xFFE06004
+    set $$TBUF = (unsigned long *)0xFFE06100
+    set $$i = 0
+    if (!(*$$TBUFSTAT & 0x1F))
+        printf "Hardware trace buffer is empty\n"
+    end
+    while (*$$TBUFSTAT & 0x1F)
+        printf "%2i Target: ", $$i
+        output/a *$$TBUF
+        printf "\n"
+        printf "   Source: "
+        output/a *$$TBUF
+        printf "\n"
+        set $$i++
+    end
+end
+document hwtrace
+Usage: hwtrace
+Dump the hardware trace buffer.  Remember, this is a destructive operation,
+so it can only be dumped once.
+end
+
+define show_clocks
+    printf "PLL_LOCKCNT: 0x%04x\n", *(unsigned short *)0xFFC00010
+    printf "VR_CTL:      0x%04x\n", *(unsigned short *)0xFFC00008
+    printf "PLL_DIV:     0x%04x\n", *(unsigned short *)0xFFC00004
+    printf "PLL_CTL:     0x%04x\n", *(unsigned short *)0xFFC00000
+end
+
+define show_sdram
+    printf "SDRRC:  0x%04x\n", *(unsigned short *)0xFFC00A18
+
+    set $$SDBCTL = *(unsigned short *)0xFFC00A14
+    set $$EBCAW = ($$SDBCTL & 0x30) >> 4
+    set $$EBSZ = ($$SDBCTL & 0xe) >> 1
+    printf "SDBCTL: 0x%04x ", $$SDBCTL
+    if ($$SDBCTL & 0x1)
+        printf "(enabled) "
+    else
+        printf "(disabled) "
+    end
+    if $$EBCAW == 0x0
+        printf "(8-bit) "
+    end
+    if $$EBCAW == 0x1
+        printf "(9-bit) "
+    end
+    if $$EBCAW == 0x2
+        printf "(10-bit) "
+    end
+    if $$EBCAW == 0x3
+        printf "(11-bit) "
+    end
+    if $$EBSZ == 0x0
+        printf "(16MB)"
+    end
+    if $$EBSZ == 0x1
+        printf "(32MB)"
+    end
+    if $$EBSZ == 0x2
+        printf "(64MB)"
+    end
+    if $$EBSZ == 0x3
+        printf "(128MB)"
+    end
+    if $$EBSZ == 0x4
+        printf "(256MB)"
+    end
+    if $$EBSZ == 0x5
+        printf "(512MB)"
+    end
+    printf "\n"
+
+    set $$SDSTAT = *(unsigned short *)0xFFC00A1C
+    printf "SDSTAT: 0x%04x ", $$SDSTAT
+    if ($$SDSTAT & (1 << 0))
+        printf "(idle) "
+    else
+        printf "(busy) "
+    end
+    if ($$SDSTAT & (1 << 1))
+        printf "(self-refresh) "
+    end
+    if ($$SDSTAT & (1 << 2))
+        printf "(powerup) "
+    end
+    if ($$SDSTAT & (1 << 3))
+        printf "(will power up) "
+    end
+    if ($$SDSTAT & (1 << 4))
+        printf "(EAB error) "
+    end
+    printf "\n"
+
+    printf "SDGCTL: 0x%08x\n", *(unsigned long  *)0xFFC00A10
+end
+
+define show_ddr
+    printf "DDRCTL0: 0x%08x\n", *(unsigned long *)0xFFC00A20
+    printf "DDRCTL1: 0x%08x\n", *(unsigned long *)0xFFC00A24
+    printf "DDRCTL2: 0x%08x\n", *(unsigned long *)0xFFC00A28
+    printf "DDRCTL3: 0x%08x\n", *(unsigned long *)0xFFC00A2C
+    printf "DDRQUE:  0x%08x\n", *(unsigned long *)0xFFC00A30
+    printf "ERRADD:  "
+    output/a *(unsigned long *)0xFFC00A34
+    printf "\n"
+
+    set $$ERRMST = *(unsigned short *)0xFFC00A38
+    printf "ERRMST:  0x%04x     ( ", $$ERRMST
+    if ($$ERRMST & (1 << 7))
+        printf "core_merror "
+    end
+    if ($$ERRMST & (1 << 6))
+        printf "deb2_merror "
+    end
+    if ($$ERRMST & (1 << 5))
+        printf "deb1_merror "
+    end
+    if ($$ERRMST & (1 << 4))
+        printf "deb0_merror "
+    end
+    if ($$ERRMST & (1 << 3))
+        printf "core_error "
+    end
+    if ($$ERRMST & (1 << 2))
+        printf "deb2_error "
+    end
+    if ($$ERRMST & (1 << 1))
+        printf "deb1_error "
+    end
+    if ($$ERRMST & (1 << 0))
+        printf "deb0_error "
+    end
+    printf ")\n"
+
+    set $$RSTCTL = *(unsigned short *)0xFFC00A3C
+    printf "RSTCTL:  0x%04x     ( ", $$RSTCTL
+    if ($$RSTCTL & (1 << 4))
+        printf "srack "
+    end
+    if ($$RSTCTL & (1 << 3))
+        printf "srreq "
+    end
+    if (!($$RSTCTL & (1 << 1)))
+        printf "!!! ERROR: bit 1 needs to be 1, but it is 0 !!! "
+    end
+    if ($$RSTCTL & (1 << 0))
+        printf "ddr_sreset "
+    end
+    printf ")\n"
+end
+
+define show_ebiu
+    printf "EBIU_AMGCTL:  0x%04x\n", *(unsigned short *)0xFFC00A00
+    printf "EBIU_AMBCTL0: 0x%08x\n", *(unsigned long *)0xFFC00A04
+    printf "EBIU_AMBCTL1: 0x%08x\n", *(unsigned long *)0xFFC00A08
+    printf "EBIU_MBSCTL:  0x%08x\n", *(unsigned long *)0xFFC00A0C
+
+    set $$EBIU_ARBSTAT = *(unsigned long *)0xFFC00A10
+    printf "EBIU_ARBSTAT: 0x%08x ( ", $$EBIU_ARBSTAT
+    if ($$EBIU_ARBSTAT & (1 << 1))
+        printf "bgstat "
+    end
+    if ($$EBIU_ARBSTAT & (1 << 0))
+        printf "arbstat "
+    end
+    printf ")\n"
+
+    printf "EBIU_MODE:    0x%08x\n", *(unsigned long *)0xFFC00A14
+    printf "EBIU_FCTL:    0x%08x\n", *(unsigned long *)0xFFC00A18
+end
+
+define _show_cec
+    set $$cec = *(unsigned long *)$arg0
+    printf "0x%08x: ", $$cec
+    if ($$cec & (1 << 0))
+        printf "EMU "
+    else
+        printf "    "
+    end
+    if ($$cec & (1 << 1))
+        printf "RST "
+    else
+        printf "    "
+    end
+    if ($$cec & (1 << 2))
+        printf "NMI "
+    else
+        printf "    "
+    end
+    if ($$cec & (1 << 3))
+        printf "EVX "
+    else
+        printf "    "
+    end
+    if ($$cec & (1 << 4))
+        printf "GBL "
+    else
+        printf "    "
+    end
+    if ($$cec & (1 << 5))
+        printf "HW "
+    else
+        printf "   "
+    end
+    if ($$cec & (1 << 6))
+        printf "TMR "
+    else
+        printf "    "
+    end
+    set $$ceci = 7
+    while ($$ceci < 16)
+        if ($$cec & (1 << $$ceci))
+            printf "G%i ", $$ceci
+        else
+            printf "   "
+            if ($$ceci > 9)
+                printf " "
+            end
+        end
+        set $$ceci = $$ceci + 1
+    end
+    printf "\n"
+end
+define show_cec
+    printf "IMASK: "
+    _show_cec 0xFFE02104
+    printf "IPEND: "
+    _show_cec 0xFFE02108
+    printf "ILAT:  "
+    _show_cec 0xFFE0210C
+
+    set $$EVT = 0xFFE02000
+    set $$EVTi = 0
+    while ($$EVTi < 16)
+        printf "EVT%-2i ", $$EVTi
+        output/a *(unsigned long *)($$EVT + $$EVTi * 4)
+        printf "\n"
+        set $$EVTi = $$EVTi + 1
+    end
+end
+
+define _show_cplbs
+    set $$addr = $arg0
+    set $$data = $arg1
+    set $$i = 0
+    while ($$i < 16)
+        set $$data_val = *(unsigned long *)($$data + $$i * 4)
+        printf " 0x%08x 0x%08x ( ", *(unsigned long *)($$addr + $$i * 4), $$data_val
+        if (($$data_val & (0x3 << 16)) == (0x0 << 16))
+            printf "1K "
+        end
+        if (($$data_val & (0x3 << 16)) == (0x1 << 16))
+            printf "4K "
+        end
+        if (($$data_val & (0x3 << 16)) == (0x2 << 16))
+            printf "1M "
+        end
+        if (($$data_val & (0x3 << 16)) == (0x3 << 16))
+            printf "4M "
+        end
+        if ($$data_val & (0x1 << 14))
+            printf "wt "
+        else
+            printf "wb "
+        end
+        if ($$data_val & (0x1 << 7))
+            printf "dirty "
+        end
+        if ($$data_val & (0x1 << 4))
+            printf "supv-wr "
+        end
+        if ($$data_val & (0x1 << 3))
+            printf "user-wr "
+        end
+        if ($$data_val & (0x1 << 2))
+            printf "user-rd "
+        end
+        if ($$data_val & (0x1 << 1))
+            printf "locked "
+        end
+        if ($$data_val & (0x1 << 0))
+            printf "valid "
+        else
+            printf "invalid "
+        end
+        printf ")\n"
+        set $$i = $$i + 1
+    end
+end
+define show_icplbs
+    set $$IMEM_CONTROL = 0xFFE01004
+    printf "ICPLBS (0x%08x)\n", *(unsigned long *)$$IMEM_CONTROL
+    _show_cplbs 0xFFE01100 0xFFE01200
+end
+define show_dcplbs
+    set $$DMEM_CONTROL = 0xFFE00004
+    printf "DCPLBS (0x%08x)\n", *(unsigned long *)$$DMEM_CONTROL
+    _show_cplbs 0xFFE00100 0xFFE00200
+end
+define show_cplbs
+    show_icplbs
+    show_dcplbs
+end
+
+define _show_cplbstatus
+    set $$CPLB_STATUS     = *(unsigned long *)$arg0
+    printf " STATUS     = 0x%08x ( ", $$CPLB_STATUS
+    if ($$CPLB_STATUS & (1 << 19))
+        printf "illaddr "
+    end
+    if ($$CPLB_STATUS & (1 << 18))
+        printf "dag1 "
+    else
+        printf "dag0 "
+    end
+    if ($$CPLB_STATUS & (1 << 17))
+        printf "super "
+    else
+        printf "user "
+    end
+    if ($$CPLB_STATUS & (1 << 16))
+        printf "write "
+    else
+        printf "read "
+    end
+    set $$i = 15
+    while ($$i >= 0)
+        if ($$CPLB_STATUS & (1 << $$i))
+            printf "%i ", $$i
+        end
+        set $$i--
+    end
+    printf ")\n"
+
+    set $$CPLB_FAULT_ADDR = *(unsigned long *)$arg1
+    printf " FAULT_ADDR = "
+    output/a $$CPLB_FAULT_ADDR
+    printf "\n"
+end
+define show_icplbstatus
+    printf "ICPLB Status\n"
+    _show_cplbstatus 0xFFE01008 0xFFE0100C
+end
+define show_dcplbstatus
+    printf "DCPLB Status\n"
+    _show_cplbstatus 0xFFE00008 0xFFE0000C
+end
+define show_cplbstatus
+    seqstat
+    show_icplbstatus
+    show_dcplbstatus
+end
+
+define safe_regs
+    set $r0 = $r1 = $r2 = $r3 = $r4 = $r5 = $r6 = $r7 = 0xffb00000
+    set $sp = $fp = $usp = $r0 + 0x100
+    set $p0 = $p1 = $p2 = $p3 = $p4 = $p5 = 0xffa00000
+    set $pc = $rets = $reti = $retx = $retn = $p0
+    set $lt0 = $lt1 = $lb0 = $lb1 = 1
+    set $lc0 = $lc1 = 0
+    set $i0 = $i1 = $i2 = $i3 = $r0
+    set $b0 = $b1 = $b2 = $b3 = $r0
+    set $l0 = $l1 = $l2 = $l3 = $r0
+    set $m0 = $m1 = $m2 = $m3 = $r0
+end
+
+define _show_dma
+    set $$DMA_BASE = $arg0
+    set $$NEXT_DESC_PTR = *(unsigned long *)  ($$DMA_BASE + 0x00)
+    set $$START_ADDR    = *(unsigned long *)  ($$DMA_BASE + 0x04)
+    set $$CONFIG        = *(unsigned short *) ($$DMA_BASE + 0x08)
+    set $$X_COUNT       = *(unsigned short *) ($$DMA_BASE + 0x10)
+    set $$X_MODIFY      = *(unsigned short *) ($$DMA_BASE + 0x14)
+    set $$Y_COUNT       = *(unsigned short *) ($$DMA_BASE + 0x18)
+    set $$Y_MODIFY      = *(unsigned short *) ($$DMA_BASE + 0x1C)
+    set $$CURR_DESC_PTR = *(unsigned long *)  ($$DMA_BASE + 0x20)
+    set $$CURR_ADDR     = *(unsigned long *)  ($$DMA_BASE + 0x24)
+    set $$IRQ_STATUS    = *(unsigned short *) ($$DMA_BASE + 0x28)
+    set $$CURR_X_COUNT  = *(unsigned short *) ($$DMA_BASE + 0x30)
+    set $$CURR_Y_COUNT  = *(unsigned short *) ($$DMA_BASE + 0x38)
+    printf "desc: curr: 0x%08x  next: 0x%08x\n", $$CURR_DESC_PTR, $$NEXT_DESC_PTR
+    printf "addr: curr: 0x%08x start: 0x%08x\n", $$CURR_ADDR, $$START_ADDR
+    printf "X: curr: 0x%04x count: 0x%04x mod: 0x%04x (%i)\n", $$CURR_X_COUNT, $$X_COUNT, $$X_MODIFY, (short)$$X_MODIFY
+    printf "Y: curr: 0x%04x count: 0x%04x mod: 0x%04x (%i)\n", $$CURR_Y_COUNT, $$Y_COUNT, $$Y_MODIFY, (short)$$Y_MODIFY
+    printf "dma config: 0x%04x (", $$CONFIG
+    if ($$CONFIG & (1 << 0))
+        printf "enabled "
+    else
+        printf "disabled "
+    end
+    if ($$CONFIG & (0x1 << 1))
+        printf "write "
+    else
+        printf "read "
+    end
+    set $$WDSIZE = ($$CONFIG & (0x3 << 2)) >> 2
+    if ($$WDSIZE == 0x3)
+        printf "WDSIZE:INVALID "
+    end
+    if ($$WDSIZE == 0x2)
+        printf "32-bit "
+    end
+    if ($$WDSIZE == 0x1)
+        printf "16-bit "
+    end
+    if ($$WDSIZE == 0x0)
+        printf "8-bit "
+    end
+    if ($$CONFIG & (0x1 << 4))
+        printf "2D "
+    else
+        printf "1D "
+    end
+    if ($$CONFIG & (0x1 << 5))
+        printf "sync "
+    end
+    if ($$CONFIG & (0x1 << 6))
+        printf "di_sel "
+    end
+    if ($$CONFIG & (0x1 << 7))
+        printf "interrupt "
+    end
+    set $$NDSIZE = ($$CONFIG & (0xF << 8)) >> 8
+    if ($$NDSIZE > 0 && $$NDSIZE < 10)
+        printf "NDSIZE_%i ", $$NDSIZE
+    end
+    if ($$NDSIZE >= 10)
+        printf "NDSIZE:INVALID:%i ", $$NDSIZE
+    end
+    set $$FLOW = ($$CONFIG & (0x7 << 12)) >> 12
+    if ($$FLOW == 0)
+        printf "stop"
+    else
+        if ($$FLOW == 1)
+            printf "autobuffer"
+        else
+            if ($$FLOW == 4)
+                printf "descriptor_array"
+            else
+                if ($$FLOW == 6)
+                    printf "descriptor_list_small"
+                else
+                    if ($$FLOW == 7)
+                        printf "descriptor_list_large"
+                    else
+                        printf "FLOW:INVALID:%i", $$FLOW
+                    end
+                end
+            end
+        end
+    end
+    printf ")\n"
+    printf "irq status: 0x%04x (", $$IRQ_STATUS
+    if ($$IRQ_STATUS & (0x1 << 0))
+        printf "done "
+    end
+    if ($$IRQ_STATUS & (0x1 << 1))
+        printf "err "
+    end
+    if ($$IRQ_STATUS & (0x1 << 2))
+        printf "dfetch "
+    end
+    if ($$IRQ_STATUS & (0x1 << 3))
+        printf "run "
+    end
+    printf ")\n"
+end
+
+define show_ctimer
+    set $$CTIMER  = 0xFFE03000
+    set $$TCNTL   = *(unsigned long *) ($$CTIMER + 0x0)
+    set $$TPERIOD = *(unsigned long *) ($$CTIMER + 0x4)
+    set $$TSCALE  = *(unsigned long *) ($$CTIMER + 0x8)
+    set $$TCOUNT  = *(unsigned long *) ($$CTIMER + 0xC)
+    printf "TCNTL:   %#x ( ", $$TCNTL
+    if ($$TCNTL & (1 << 0))
+        printf "power "
+    end
+    if ($$TCNTL & (1 << 1))
+        printf "enable "
+    end
+    if ($$TCNTL & (1 << 2))
+        printf "autoreload "
+    end
+    if ($$TCNTL & (1 << 3))
+        printf "int-enabled "
+    end
+    printf ")\n"
+    printf "TPERIOD: %#d\n", $$TPERIOD
+    printf "TSCALE:  %#d\n", $$TSCALE
+    printf "TCOUNT:  %#d\n", $$TCOUNT
+end
+
+define show_spi
+    if $argc > 0
+        set $$SPI_BASE = $arg0
+    else
+        set $$SPI_BASE = 0xFFC00500
+    end
+    set $$SPI_BAUD = *(unsigned short *) ($$SPI_BASE + 0x14)
+    set $$SPI_CTL  = *(unsigned short *) ($$SPI_BASE + 0x00)
+    set $$SPI_FLG  = *(unsigned short *) ($$SPI_BASE + 0x04)
+    set $$SPI_STAT = *(unsigned short *) ($$SPI_BASE + 0x08)
+    set $$SPI_TDBR = *(unsigned short *) ($$SPI_BASE + 0x0C)
+    set $$SPI_RDBR = *(unsigned short *) ($$SPI_BASE + 0x10)
+    set $$SPI_SHAD = *(unsigned short *) ($$SPI_BASE + 0x18)
+    printf "BAUD: %04x (%i)\n", $$SPI_BAUD, $$SPI_BAUD
+    printf "CTL:  %04x (", $$SPI_CTL
+    set $$TIMOD = $$SPI_CTL & 0x3
+    printf "timod:%i ", $$TIMOD
+    if ($$SPI_CTL & (1 << 2))
+        printf "sz "
+    end
+    if ($$SPI_CTL & (1 << 3))
+        printf "gm "
+    end
+    if ($$SPI_CTL & (1 << 4))
+        printf "psse "
+    end
+    if ($$SPI_CTL & (1 << 5))
+        printf "emiso "
+    end
+    if ($$SPI_CTL & (1 << 8))
+        printf "16bit "
+    else
+        printf "8bit "
+    end
+    if ($$SPI_CTL & (1 << 9))
+        printf "lsbf "
+    end
+    if ($$SPI_CTL & (1 << 10))
+        printf "cpol "
+    end
+    if ($$SPI_CTL & (1 << 11))
+        printf "cpha "
+    end
+    if ($$SPI_CTL & (1 << 12))
+        printf "mstr "
+    else
+        printf "slave "
+    end
+    if ($$SPI_CTL & (1 << 13))
+        printf "wom "
+    end
+    if ($$SPI_CTL & (1 << 14))
+        printf "enabled"
+    else
+        printf "disabled"
+    end
+    printf ")\n"
+    printf "STAT: %04x (", $$SPI_STAT
+    if ($$SPI_STAT & (1 << 0))
+        printf "spif "
+    end
+    if ($$SPI_STAT & (1 << 1))
+        printf "modf "
+    end
+    if ($$SPI_STAT & (1 << 2))
+        printf "txe "
+    end
+    if ($$SPI_STAT & (1 << 3))
+        printf "txs "
+    end
+    if ($$SPI_STAT & (1 << 4))
+        printf "rbsy "
+    end
+    if ($$SPI_STAT & (1 << 5))
+        printf "rxs "
+    end
+    if ($$SPI_STAT & (1 << 6))
+        printf "txcol "
+    end
+    printf ")\n"
+    printf "FLG:  %04x\n", $$SPI_FLG
+    printf "TDBR: %04x  RDBR: %04x\n", $$SPI_TDBR, $$SPI_SHAD
+end
+
+define show_uart_lcr
+    set $$LCR = $arg0
+    printf "LCR: 0x%02x ( ", $$LCR
+    set $$WLS = $$LCR & 0x3
+    if ($$WLS == 0)
+        printf "5-bit "
+    end
+    if ($$WLS == 1)
+        printf "6-bit "
+    end
+    if ($$WLS == 2)
+        printf "7-bit "
+    end
+    if ($$WLS == 3)
+        printf "8-bit "
+    end
+    if ($$LCR & (1 << 2))
+        printf "stb "
+    end
+    if ($$LCR & (1 << 3))
+        printf "pen "
+    end
+    if ($$LCR & (1 << 4))
+        printf "eps "
+    end
+    if ($$LCR & (1 << 5))
+        printf "stp "
+    end
+    if ($$LCR & (1 << 6))
+        printf "sb "
+    end
+    printf ")\n"
+end
+
+define show_uart_lsr
+    set $$LSR = $arg0
+    printf "LSR: 0x%02x ( ", $$LSR
+    if ($$LSR & (1 << 0))
+        printf "dr "
+    end
+    if ($$LSR & (1 << 1))
+        printf "oe "
+    end
+    if ($$LSR & (1 << 2))
+        printf "pe "
+    end
+    if ($$LSR & (1 << 3))
+        printf "fe "
+    end
+    if ($$LSR & (1 << 4))
+        printf "bi "
+    end
+    if ($$LSR & (1 << 5))
+        printf "thre "
+    end
+    if ($$LSR & (1 << 6))
+        printf "temt "
+    end
+    if ($$LSR & (1 << 7))
+        printf "tfi "
+    end
+    printf ")\n"
+end
+
+define show_uart_ier
+    set $$IER = $arg0
+    printf "IER: 0x%02x ( ", $$IER
+    if ($$IER & (1 << 0))
+        printf "erbfi "
+    end
+    if ($$IER & (1 << 1))
+        printf "etbei "
+    end
+    if ($$IER & (1 << 2))
+        printf "elsi "
+    end
+    if ($$IER & (1 << 3))
+        printf "edssi "
+    end
+    if ($$IER & (1 << 4))
+        printf "edtpti "
+    end
+    if ($$IER & (1 << 5))
+        printf "etfi "
+    end
+    if ($$IER & (1 << 6))
+        printf "erfci "
+    end
+    printf ")\n"
+end
+
+define show_uart_mcr
+    set $$MCR = $arg0
+    printf "MCR: 0x%02x ( ", $$MCR
+    if ($$MCR & (1 << 0))
+        printf "xoff "
+    end
+    if ($$MCR & (1 << 1))
+        printf "mrts "
+    end
+    if ($$MCR & (1 << 2))
+        printf "rfit "
+    end
+    if ($$MCR & (1 << 3))
+        printf "rfrt "
+    end
+    if ($$MCR & (1 << 4))
+        printf "loop_ena "
+    end
+    if ($$MCR & (1 << 5))
+        printf "fcpol "
+    end
+    if ($$MCR & (1 << 6))
+        printf "arts "
+    end
+    if ($$MCR & (1 << 7))
+        printf "acts "
+    end
+    printf ")\n"
+end
+
+define show_uart_msr
+    set $$MSR = $arg0
+    printf "MSR: 0x%02x ( ", $$MSR
+    if ($$MSR & (1 << 0))
+        printf "scts "
+    end
+    if ($$MSR & (1 << 4))
+        printf "cts "
+    end
+    if ($$MSR & (1 << 5))
+        printf "rfcs "
+    end
+    printf ")\n"
+end
+
+define show_uart_gctl
+    set $$GCTL = $arg0
+    printf "GCTL: 0x%02x ( ", $$GCTL
+    if ($$GCTL & (1 << 0))
+        printf "ucen "
+    end
+    if ($$GCTL & (1 << 1))
+        printf "iren "
+    end
+    if ($$GCTL & (1 << 2))
+        printf "tpolc "
+    end
+    if ($$GCTL & (1 << 3))
+        printf "rpolc "
+    end
+    if ($$GCTL & (1 << 4))
+        printf "fpe "
+    end
+    if ($$GCTL & (1 << 5))
+        printf "ffe "
+    end
+    if ($$GCTL & (1 << 6))
+        printf "edbo "
+    end
+    if ($$GCTL & (1 << 7))
+        printf "eglsi "
+    end
+    printf ")\n"
+end
+
+define show_uart
+    if $argc > 0
+        set $$UART_BASE = $arg0
+    else
+        set $$UART_BASE = 0xffc00400
+    end
+    set $$UART_DLL  = (unsigned short *) ($$UART_BASE + 0x00)
+    set $$UART_RBR  = (unsigned short *) ($$UART_BASE + 0x00)
+    set $$UART_DLH  = (unsigned short *) ($$UART_BASE + 0x04)
+    set $$UART_IER  = (unsigned short *) ($$UART_BASE + 0x04)
+    set $$UART_IIR  = (unsigned short *) ($$UART_BASE + 0x08)
+    set $$UART_LCR  = (unsigned short *) ($$UART_BASE + 0x0C)
+    set $$UART_MCR  = (unsigned short *) ($$UART_BASE + 0x10)
+    set $$UART_LSR  = (unsigned short *) ($$UART_BASE + 0x14)
+    set $$UART_MSR  = (unsigned short *) ($$UART_BASE + 0x18)
+    set $$UART_SCR  = (unsigned short *) ($$UART_BASE + 0x1C)
+    set $$UART_GCTL = (unsigned short *) ($$UART_BASE + 0x24)
+
+    set $$DLAB = (1 << 7)
+    set $$LCR = *$$UART_LCR
+    set *$$UART_LCR = ($$LCR | $$DLAB)
+    printf "DLL: 0x%02x   DLH: 0x%02x\n", *$$UART_DLL, *$$UART_DLH
+    set *$$UART_LCR = $$LCR & ~$$DLAB
+    printf "RBR: 0x%02x   SCR: 0x%02x\n", *$$UART_RBR, *$$UART_SCR
+    set *$$UART_LCR = $$LCR
+
+    printf "IIR: 0x%02x   ", *$$UART_IIR
+    show_uart_ier *$$UART_IER
+    show_uart_lcr $$LCR
+    show_uart_mcr *$$UART_MCR
+    show_uart_lsr *$$UART_LSR
+    show_uart_msr *$$UART_MSR
+    show_uart_gctl *$$UART_GCTL
+end
+
+define show_uart2
+    if $argc > 0
+        set $$UART_BASE = $arg0
+    else
+        set $$UART_BASE = 0xffc00400
+    end
+    set $$UART_DLL  = (unsigned short *) ($$UART_BASE + 0x00)
+    set $$UART_DLH  = (unsigned short *) ($$UART_BASE + 0x04)
+    set $$UART_GCTL = (unsigned short *) ($$UART_BASE + 0x08)
+    set $$UART_LCR  = (unsigned short *) ($$UART_BASE + 0x0C)
+    set $$UART_MCR  = (unsigned short *) ($$UART_BASE + 0x10)
+    set $$UART_LSR  = (unsigned short *) ($$UART_BASE + 0x14)
+    set $$UART_MSR  = (unsigned short *) ($$UART_BASE + 0x18)
+    set $$UART_SCR  = (unsigned short *) ($$UART_BASE + 0x1C)
+    set $$UART_IER  = (unsigned short *) ($$UART_BASE + 0x20)
+    set $$UART_RBR  = (unsigned short *) ($$UART_BASE + 0x2C)
+
+    printf "DLL: 0x%02x   DLH: 0x%02x\n", *$$UART_DLL, *$$UART_DLH
+    printf "RBR: 0x%02x   SCR: 0x%02x\n", *$$UART_RBR, *$$UART_SCR
+
+    printf "            "
+    show_uart_ier *$$UART_IER
+    show_uart_lcr *$$UART_LCR
+    show_uart_mcr *$$UART_MCR
+    show_uart_lsr *$$UART_LSR
+    show_uart_msr *$$UART_MSR
+    show_uart_gctl *$$UART_GCTL
+end
+
+define show_uart4
+    if $argc > 0
+        set $$UART_BASE = $arg0
+    else
+        set $$UART_BASE = 0xffc02000
+    end
+    set $$UART_REVID = (unsigned long *) ($$UART_BASE + 0x00)
+    set $$UART_CTL   = (unsigned long *) ($$UART_BASE + 0x04)
+    set $$UART_STAT  = (unsigned long *) ($$UART_BASE + 0x08)
+    set $$UART_SCR   = (unsigned long *) ($$UART_BASE + 0x0C)
+    set $$UART_CLK   = (unsigned long *) ($$UART_BASE + 0x10)
+    set $$UART_IMASK = (unsigned long *) ($$UART_BASE + 0x14)
+    set $$UART_RBR   = (unsigned long *) ($$UART_BASE + 0x20)
+    set $$UART_THR   = (unsigned long *) ($$UART_BASE + 0x24)
+    set $$UART_TAIP  = (unsigned long *) ($$UART_BASE + 0x28)
+    set $$UART_TSR   = (unsigned long *) ($$UART_BASE + 0x2C)
+    set $$UART_RSR   = (unsigned long *) ($$UART_BASE + 0x30)
+    set $$UART_TXCNT = (unsigned long *) ($$UART_BASE + 0x34)
+    set $$UART_RXCNT = (unsigned long *) ($$UART_BASE + 0x38)
+
+    printf "REVID: 0x%08x    SCR: 0x%08x\n", *$$UART_REVID, *$$UART_SCR
+    printf "  CLK: 0x%08x   TAIP: 0x%08x\n", *$$UART_CLK, *$$UART_TAIP
+
+    set $$CTL = *$$UART_CTL
+    printf "  CTL: 0x%08x ( ", $$CTL
+    if ($$CTL & (1 << 0))
+        printf "uen "
+    end
+    if ($$CTL & (1 << 1))
+        printf "loop_ena "
+    end
+    set $$UMOD = ($$CTL & (3 << 4)) >> 4
+    printf "mode:"
+    if ($$UMOD == 0)
+        printf "uart "
+    end
+    if ($$UMOD == 1)
+        printf "mdb "
+    end
+    if ($$UMOD == 2)
+        printf "irda "
+    end
+    if ($$UMOD == 3)
+        printf "reserved "
+    end
+    set $$WLS = ($$CTL & (3 << 8)) >> 8
+    printf "wls:"
+    if ($$WLS == 0)
+        printf "5"
+    end
+    if ($$WLS == 1)
+        printf "6 "
+    end
+    if ($$WLS == 2)
+        printf "7 "
+    end
+    if ($$WLS == 3)
+        printf "8 "
+    end
+    if ($$CTL & (1 << 12))
+        printf "stb "
+    end
+    if ($$CTL & (1 << 13))
+        printf "stbh "
+    end
+    if ($$CTL & (1 << 14))
+        printf "pen "
+    end
+    if ($$CTL & (1 << 15))
+        printf "eps "
+    end
+    if ($$CTL & (1 << 16))
+        printf "stp "
+    end
+    if ($$CTL & (1 << 17))
+        printf "fpe "
+    end
+    if ($$CTL & (1 << 18))
+        printf "ffe "
+    end
+    if ($$CTL & (1 << 19))
+        printf "sb "
+    end
+    if ($$CTL & (1 << 22))
+        printf "fcpol "
+    end
+    if ($$CTL & (1 << 23))
+        printf "rpolc "
+    end
+    if ($$CTL & (1 << 24))
+        printf "tpolc "
+    end
+    if ($$CTL & (1 << 25))
+        printf "mrts "
+    end
+    if ($$CTL & (1 << 26))
+        printf "xoff "
+    end
+    if ($$CTL & (1 << 27))
+        printf "arts "
+    end
+    if ($$CTL & (1 << 28))
+        printf "acts "
+    end
+    if ($$CTL & (1 << 29))
+        printf "rfit "
+    end
+    if ($$CTL & (1 << 30))
+        printf "rfrt "
+    end
+    printf ")\n"
+
+    set $$STAT = *$$UART_STAT
+    printf " STAT: 0x%08x ( ", $$STAT
+    if ($$STAT & (1 << 0))
+        printf "dr "
+    end
+    if ($$STAT & (1 << 1))
+        printf "oe "
+    end
+    if ($$STAT & (1 << 2))
+        printf "pe "
+    end
+    if ($$STAT & (1 << 3))
+        printf "fe "
+    end
+    if ($$STAT & (1 << 4))
+        printf "bi "
+    end
+    if ($$STAT & (1 << 5))
+        printf "thre "
+    end
+    if ($$STAT & (1 << 7))
+        printf "temt "
+    end
+    if ($$STAT & (1 << 8))
+        printf "tfi "
+    end
+    if ($$STAT & (1 << 9))
+        printf "astky "
+    end
+    if ($$STAT & (1 << 10))
+        printf "addr "
+    end
+    if ($$STAT & (1 << 11))
+        printf "ro "
+    end
+    if ($$STAT & (1 << 12))
+        printf "scts "
+    end
+    if ($$STAT & (1 << 16))
+        printf "cts "
+    end
+    if ($$STAT & (1 << 17))
+        printf "rfcs "
+    end
+    printf ")\n"
+
+    printf "IMASK: 0x%08x\n", *$$UART_IMASK
+    printf "  RSR: 0x%04x    TSR: 0x%04x\n", *$$UART_RSR, *$$UART_TSR
+    printf "  RBR: 0x%02x      THR: 0x%02x\n", *$$UART_RBR, *$$UART_THR
+    printf "RXCNT: 0x%02x    TXCNT: 0x%02x\n", *$$UART_RXCNT, *$$UART_TXCNT
+end
+
+define _otp_save
+    set $$s_pc = $pc
+    set $$s_r0 = $r0
+    set $$s_r1 = $r1
+    set $$s_r2 = $r2
+    set $$s_mm = (unsigned long *)0xFFB00000
+    set $$s_m0 = $$s_mm[0]
+    set $$s_m1 = $$s_mm[1]
+end
+define _otp_restore
+    set $pc = $$s_pc
+    set $r0 = $$s_r0
+    set $r1 = $$s_r1
+    set $r2 = $$s_r2
+    set $$s_mm[0] = $$s_m0
+    set $$s_mm[1] = $$s_m1
+end
+
+define _otp_read
+    set $pc = 0xef00001a
+    set $r0 = $arg0
+    set $r1 = $arg1
+    set $r2 = 0xFFB00000
+    
+end
+define otp_read
+    if $argc == 0
+        set $$OTP_PAGE = 0
+    else
+        set $$OTP_PAGE = $arg0
+    end
+
+    printf "OTP Page 0x%02x: ", $$OTP_PAGE
+    _otp_save
+    _otp_read $$OTP_PAGE, 0
+    _otp_read $$OTP_PAGE, 1
+    _otp_restore
+end
+
+define otp_dump
+    _otp_save
+    set $$page = 0
+    while $$page < 0xe0
+        printf "0x%02x: ", $$page
+        _otp_read $$page, 0
+        printf "%08x %08x ", $$OTP_PAGE_L, $$OTP_PAGE_H
+        _otp_read $$page, 1
+        printf "%08x %08x ", $$OTP_PAGE_L, $$OTP_PAGE_H
+        $$page++
+    end
+    _otp_restore
+end
