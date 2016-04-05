@@ -2,9 +2,9 @@
 #
 #             scmRTOS Integrity Checker Script
 #
-#                   Version 2.0
+#                   Version 2.1
 #
-#       Copyright (c) 2006-2011, Harry E. Zhurov
+#       Copyright (c) 2006-2016, Harry E. Zhurov
 #
 #
 #    DESCRIPTION:
@@ -39,7 +39,9 @@ def rip_comments(f):
     return s
 #-------------------------------------------------------------------------------
 def scan_file_pass1(fname):
-    f = open(fname, 'rt').read()
+    with open(fname, 'rt') as fl:
+        f = fl.read()
+
     f = rip_comments(f)
 
     def_list        = re.findall('#\s*define\s+(\w+)\s+(\d+)', f)
@@ -53,11 +55,13 @@ def scan_file_pass2(file, proc_list):
 
     for i in proc_list:
         proc_type_name = i.name
-        procs = re.findall('(?<!extern)\s+' + proc_type_name + '\s+(\w+)\s*;', file_contents)
-        i.procs += procs
+        procs = re.findall('(?<!extern)\s+' + proc_type_name + '\s+(\w+).*;', file_contents)
+        if procs:
+            i.procs += procs
 
-        execs = re.findall('template<>\s+void\s+' + proc_type_name + '::[Ee]xec\s*\(\s*\)\s*\{', file_contents)
-        i.execs += execs
+        execs = re.findall('template<>.+void\s+' + proc_type_name + '::[Ee]xec\s*\(\s*\)\s*\{', file_contents)
+        if execs:
+            i.execs += execs
 
 #-------------------------------------------------------------------------------
 def show_summary(proc_list):
@@ -272,13 +276,13 @@ def checker(fld, Quiet = False, Summary = False, Recursive = False):
         if len(i.procs) and len(i.execs) != 1:
             if len(i.execs) == 0:
                 print 'Error: process object must have root function defined, but process object'
-                print '       of process type "' + i.name + '" has no root function "Exec" defined.'
+                print '       of process type "' + i.name + '" has no root function "exec" defined.'
 
                 return 2
 
             if len(i.execs) > 1:
                 print 'Error: process object must have only one root function, but process object'
-                print '       of process type "' + i.name + '" has ' + str(len(i.execs)) + ' root functions "Exec" defined.'
+                print '       of process type "' + i.name + '" has ' + str(len(i.execs)) + ' root functions "exec" defined.'
 
                 return 2
 
