@@ -63,10 +63,10 @@ public:
 //
 //      Process objects
 //
-TProc1          Proc1;
-TProc2          Proc2;
-TProc3          Proc3;
-TBackgroundProc BackgroundProc;
+TProc1          Proc1("Proc1");
+TProc2          Proc2("Proc2");
+TProc3          Proc3("Proc3");
+TBackgroundProc BackgroundProc("Backgroud");
 //---------------------------------------------------------------------------
 tick_count_t T;             // global variable for OS::get_tick_count testing
                             //

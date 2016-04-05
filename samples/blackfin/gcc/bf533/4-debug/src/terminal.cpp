@@ -52,7 +52,7 @@
 #include "debug.h"
 #include "terminal.h"
 
-TTerminalProc TerminalProc;       
+TTerminalProc TerminalProc("Terminal");       
 OS::TEventFlag NewLineIncoming;
 
 char command[16];
