@@ -27,7 +27,7 @@ import scmIC
 #
 #     Project settings
 #
-ProjectName  = '4-channel'
+ProjectName  = '4-debug'
 
 RootDir      = '../../../../../'                          
 SourceDirs   = ['src',
