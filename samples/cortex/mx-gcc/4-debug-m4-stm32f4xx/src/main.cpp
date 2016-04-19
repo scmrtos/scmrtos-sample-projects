@@ -10,10 +10,10 @@
 //*
 //*     PURPOSE:   Port Test File
 //*
-//*     Version: 5.0.0
+//*     Version: v5.1.0
 //*
 //*
-//*     Copyright (c) 2003-2015, scmRTOS Team
+//*     Copyright (c) 2003-2016, scmRTOS Team
 //*
 //*     Permission is hereby granted, free of charge, to any person 
 //*     obtaining  a copy of this software and associated documentation 
@@ -42,7 +42,7 @@
 //*     =================================================================
 //*
 //******************************************************************************
-//*     gcc port by Anton B. Gusev aka AHTOXA, Copyright (c) 2009-2015
+//*     gcc port by Anton B. Gusev aka AHTOXA, Copyright (c) 2009-2016
 
 #include "stm32f4xx.h"
 #include "pin.h"

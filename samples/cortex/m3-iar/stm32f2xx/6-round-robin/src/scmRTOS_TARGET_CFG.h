@@ -10,10 +10,10 @@
 //*
 //*     PURPOSE:   Port Test File
 //*
-//*     Version: 5.0.0
+//*     Version: v5.1.0
 //*
 //*
-//*     Copyright (c) 2003-2015, scmRTOS Team
+//*     Copyright (c) 2003-2016, scmRTOS Team
 //*
 //*     Permission is hereby granted, free of charge, to any person 
 //*     obtaining  a copy of this software and associated documentation 
@@ -42,8 +42,8 @@
 //*     =================================================================
 //*
 //******************************************************************************
-//*     Ported by Andrey Chuikin, Copyright (c) 2008-2012
-//*     Cortex-M3/IAR sample by Harry E. Zhurov, Copyright (c) 2015
+//*     Ported by Andrey Chuikin, Copyright (c) 2008-2016
+//*     Cortex-M3/IAR sample by Harry E. Zhurov, Copyright (c) 2015-2016
 
 #ifndef  scmRTOS_TARGET_CFG_H
 #define  scmRTOS_TARGET_CFG_H

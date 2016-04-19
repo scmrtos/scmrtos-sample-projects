@@ -10,10 +10,10 @@
 //*
 //*     PURPOSE:   Debug sample definitions
 //*
-//*     Version: 5.0.0
+//*     Version: v5.1.0
 //*
 //*
-//*     Copyright (c) 2003-2015, scmRTOS Team
+//*     Copyright (c) 2003-2016, scmRTOS Team
 //*
 //*     Permission is hereby granted, free of charge, to any person 
 //*     obtaining  a copy of this software and associated documentation 
@@ -42,7 +42,7 @@
 //*     =================================================================
 //*
 //******************************************************************************
-//*     ADSP-BF533/VisualDSP++ sample by Harry E. Zhurov, Copyright (c) 2005-2015
+//*     ADSP-BF533/VisualDSP++ sample by Harry E. Zhurov, Copyright (c) 2005-2016
 
 #ifndef  DEBUG_H
 #define  DEBUG_H
