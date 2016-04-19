@@ -6,9 +6,9 @@
 //*
 //*     TOOLKIT:   bfin-elf (GCC)
 //*
-//*     Version: v2.0.0
+//*     Version: v5.1.0
 //*
-//*     Copyright (c) 2003-2015, Harry E. Zhurov
+//*     Copyright (c) 2003-2016, Harry E. Zhurov
 //*
 //******************************************************************************
 
