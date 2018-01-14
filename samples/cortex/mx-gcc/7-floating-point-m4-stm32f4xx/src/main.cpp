@@ -126,6 +126,7 @@ namespace OS
 					piCalc.step();
 				sleep(1);
 			}
+			sleep(piCalc.result());
 		}
     }
 
