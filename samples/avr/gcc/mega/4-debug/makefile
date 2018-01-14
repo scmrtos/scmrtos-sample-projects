@@ -1,7 +1,7 @@
 #
 #  scmRTOS avr-gcc port
 #
-#  Project-dependent makefile for sample 1-EventFlag
+#  Project-dependent makefile for sample 4-debug
 #
 #     $Revision$
 #     $Date::             $
@@ -25,7 +25,7 @@ MAKE_SMALLEST_HEX = Y
 PROJ_SRCTOP := .
 
 #put the name of the target file here (without extension)
-TRG	  := 3-channel
+TRG	  := 4-debug
 TRGPGMEXT := hex
 #eep
 
