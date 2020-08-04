@@ -70,7 +70,7 @@ static const uint32_t GPIOC_MODER_9_OUTPUT_MASK = ( 1UL << 9 * 2 );
 
 static void ledPortSetup() {
     *RCC_AHBENR |= RCC_AHBENR_IOPCEN | RCC_AHBENR_IOPAEN;
-    *GPIOC_MODER &= GPIOC_MODER_9_MASK | GPIOC_MODER_8_MASK;
+    *GPIOC_MODER &= ~(GPIOC_MODER_9_MASK | GPIOC_MODER_8_MASK);
     *GPIOC_MODER |= GPIOC_MODER_9_OUTPUT_MASK | GPIOC_MODER_8_OUTPUT_MASK;
 }
 static void ledPc9Set( const bool on ) {
