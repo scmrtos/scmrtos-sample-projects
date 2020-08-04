@@ -240,30 +240,6 @@
                 </tool>
             </outputs>
         </file>
-        <forcedrebuild>
-            <name>$PROJ_DIR$\..\..\..\..\scmRTOS\core\os_kernel.cpp</name>
-            <tool>ICCARM</tool>
-        </forcedrebuild>
-        <forcedrebuild>
-            <name>$PROJ_DIR$\..\..\..\..\scmRTOS\core\os_services.cpp</name>
-            <tool>ICCARM</tool>
-        </forcedrebuild>
-        <forcedrebuild>
-            <name>$PROJ_DIR$\..\..\..\..\scmRTOS\core\usrlib.cpp</name>
-            <tool>ICCARM</tool>
-        </forcedrebuild>
-        <forcedrebuild>
-            <name>$PROJ_DIR$\src\stm32f051_startup.cpp</name>
-            <tool>ICCARM</tool>
-        </forcedrebuild>
-        <forcedrebuild>
-            <name>$PROJ_DIR$\src\main.cpp</name>
-            <tool>ICCARM</tool>
-        </forcedrebuild>
-        <forcedrebuild>
-            <name>$PROJ_DIR$\..\..\..\..\scmRTOS\port\cortex\mx-iar\os_target.cpp</name>
-            <tool>ICCARM</tool>
-        </forcedrebuild>
     </configuration>
     <configuration>
         <name>Release</name>
