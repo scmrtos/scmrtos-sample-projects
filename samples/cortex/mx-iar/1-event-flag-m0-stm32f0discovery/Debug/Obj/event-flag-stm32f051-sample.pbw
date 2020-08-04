@@ -1,0 +1,621 @@
+[
+  {
+    "ID": "c:main.cpp@T@TProc0",
+    "What": "Typedef",
+    "defdec": "Def",
+    "display": "int",
+    "location": {
+      "column": "35",
+      "line": "50",
+      "path": "E:\\My\\Projects\\Tests\\scmrtos_developing\\scmrtos-sample-projects\\samples\\cortex\\mx-iar\\1-event-flag-m0-stm32f0discovery\\src\\main.cpp"
+    },
+    "name": "TProc0",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:main.cpp@T@TProc1",
+    "What": "Typedef",
+    "defdec": "Def",
+    "display": "int",
+    "location": {
+      "column": "35",
+      "line": "51",
+      "path": "E:\\My\\Projects\\Tests\\scmrtos_developing\\scmrtos-sample-projects\\samples\\cortex\\mx-iar\\1-event-flag-m0-stm32f0discovery\\src\\main.cpp"
+    },
+    "name": "TProc1",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:main.cpp@T@TProc2",
+    "What": "Typedef",
+    "defdec": "Def",
+    "display": "int",
+    "location": {
+      "column": "35",
+      "line": "52",
+      "path": "E:\\My\\Projects\\Tests\\scmrtos_developing\\scmrtos-sample-projects\\samples\\cortex\\mx-iar\\1-event-flag-m0-stm32f0discovery\\src\\main.cpp"
+    },
+    "name": "TProc2",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@ef",
+    "What": "Variable",
+    "defdec": "Def",
+    "display": "ef",
+    "location": {
+      "column": "16",
+      "line": "55",
+      "path": "E:\\My\\Projects\\Tests\\scmrtos_developing\\scmrtos-sample-projects\\samples\\cortex\\mx-iar\\1-event-flag-m0-stm32f0discovery\\src\\main.cpp"
+    },
+    "name": "ef",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@timerEvent",
+    "What": "Variable",
+    "defdec": "Def",
+    "display": "timerEvent",
+    "location": {
+      "column": "16",
+      "line": "56",
+      "path": "E:\\My\\Projects\\Tests\\scmrtos_developing\\scmrtos-sample-projects\\samples\\cortex\\mx-iar\\1-event-flag-m0-stm32f0discovery\\src\\main.cpp"
+    },
+    "name": "timerEvent",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:main.cpp@RCC_AHBENR",
+    "What": "Variable",
+    "defdec": "Def",
+    "display": "RCC_AHBENR",
+    "location": {
+      "column": "25",
+      "line": "59",
+      "path": "E:\\My\\Projects\\Tests\\scmrtos_developing\\scmrtos-sample-projects\\samples\\cortex\\mx-iar\\1-event-flag-m0-stm32f0discovery\\src\\main.cpp"
+    },
+    "name": "RCC_AHBENR",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:main.cpp@GPIOC_MODER",
+    "What": "Variable",
+    "defdec": "Def",
+    "display": "GPIOC_MODER",
+    "location": {
+      "column": "25",
+      "line": "60",
+      "path": "E:\\My\\Projects\\Tests\\scmrtos_developing\\scmrtos-sample-projects\\samples\\cortex\\mx-iar\\1-event-flag-m0-stm32f0discovery\\src\\main.cpp"
+    },
+    "name": "GPIOC_MODER",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:main.cpp@GPIOC_BSRR",
+    "What": "Variable",
+    "defdec": "Def",
+    "display": "GPIOC_BSRR",
+    "location": {
+      "column": "25",
+      "line": "61",
+      "path": "E:\\My\\Projects\\Tests\\scmrtos_developing\\scmrtos-sample-projects\\samples\\cortex\\mx-iar\\1-event-flag-m0-stm32f0discovery\\src\\main.cpp"
+    },
+    "name": "GPIOC_BSRR",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:main.cpp@GPIOA_IDR",
+    "What": "Variable",
+    "defdec": "Def",
+    "display": "GPIOA_IDR",
+    "location": {
+      "column": "25",
+      "line": "62",
+      "path": "E:\\My\\Projects\\Tests\\scmrtos_developing\\scmrtos-sample-projects\\samples\\cortex\\mx-iar\\1-event-flag-m0-stm32f0discovery\\src\\main.cpp"
+    },
+    "name": "GPIOA_IDR",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:main.cpp@RCC_AHBENR_IOPCEN",
+    "What": "Variable",
+    "defdec": "Def",
+    "display": "RCC_AHBENR_IOPCEN",
+    "location": {
+      "column": "23",
+      "line": "64",
+      "path": "E:\\My\\Projects\\Tests\\scmrtos_developing\\scmrtos-sample-projects\\samples\\cortex\\mx-iar\\1-event-flag-m0-stm32f0discovery\\src\\main.cpp"
+    },
+    "name": "RCC_AHBENR_IOPCEN",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:main.cpp@RCC_AHBENR_IOPAEN",
+    "What": "Variable",
+    "defdec": "Def",
+    "display": "RCC_AHBENR_IOPAEN",
+    "location": {
+      "column": "23",
+      "line": "65",
+      "path": "E:\\My\\Projects\\Tests\\scmrtos_developing\\scmrtos-sample-projects\\samples\\cortex\\mx-iar\\1-event-flag-m0-stm32f0discovery\\src\\main.cpp"
+    },
+    "name": "RCC_AHBENR_IOPAEN",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:main.cpp@GPIOC_MODER_8_MASK",
+    "What": "Variable",
+    "defdec": "Def",
+    "display": "GPIOC_MODER_8_MASK",
+    "location": {
+      "column": "23",
+      "line": "66",
+      "path": "E:\\My\\Projects\\Tests\\scmrtos_developing\\scmrtos-sample-projects\\samples\\cortex\\mx-iar\\1-event-flag-m0-stm32f0discovery\\src\\main.cpp"
+    },
+    "name": "GPIOC_MODER_8_MASK",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:main.cpp@GPIOC_MODER_9_MASK",
+    "What": "Variable",
+    "defdec": "Def",
+    "display": "GPIOC_MODER_9_MASK",
+    "location": {
+      "column": "23",
+      "line": "67",
+      "path": "E:\\My\\Projects\\Tests\\scmrtos_developing\\scmrtos-sample-projects\\samples\\cortex\\mx-iar\\1-event-flag-m0-stm32f0discovery\\src\\main.cpp"
+    },
+    "name": "GPIOC_MODER_9_MASK",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:main.cpp@GPIOC_MODER_8_OUTPUT_MASK",
+    "What": "Variable",
+    "defdec": "Def",
+    "display": "GPIOC_MODER_8_OUTPUT_MASK",
+    "location": {
+      "column": "23",
+      "line": "68",
+      "path": "E:\\My\\Projects\\Tests\\scmrtos_developing\\scmrtos-sample-projects\\samples\\cortex\\mx-iar\\1-event-flag-m0-stm32f0discovery\\src\\main.cpp"
+    },
+    "name": "GPIOC_MODER_8_OUTPUT_MASK",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:main.cpp@GPIOC_MODER_9_OUTPUT_MASK",
+    "What": "Variable",
+    "defdec": "Def",
+    "display": "GPIOC_MODER_9_OUTPUT_MASK",
+    "location": {
+      "column": "23",
+      "line": "69",
+      "path": "E:\\My\\Projects\\Tests\\scmrtos_developing\\scmrtos-sample-projects\\samples\\cortex\\mx-iar\\1-event-flag-m0-stm32f0discovery\\src\\main.cpp"
+    },
+    "name": "GPIOC_MODER_9_OUTPUT_MASK",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:main.cpp@F@ledPortSetup#",
+    "What": "Function",
+    "defdec": "Def",
+    "display": "void ledPortSetup(void)",
+    "location": {
+      "column": "13",
+      "line": "71",
+      "path": "E:\\My\\Projects\\Tests\\scmrtos_developing\\scmrtos-sample-projects\\samples\\cortex\\mx-iar\\1-event-flag-m0-stm32f0discovery\\src\\main.cpp"
+    },
+    "name": "ledPortSetup",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:main.cpp@F@ledPc9Set#1b#",
+    "What": "Function",
+    "defdec": "Def",
+    "display": "void ledPc9Set(const bool)",
+    "location": {
+      "column": "13",
+      "line": "76",
+      "path": "E:\\My\\Projects\\Tests\\scmrtos_developing\\scmrtos-sample-projects\\samples\\cortex\\mx-iar\\1-event-flag-m0-stm32f0discovery\\src\\main.cpp"
+    },
+    "name": "ledPc9Set",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:main.cpp@3589@F@ledPc9Set#1b#@LED_PIN",
+    "What": "Variable",
+    "defdec": "Def",
+    "display": "LED_PIN",
+    "location": {
+      "column": "23",
+      "line": "77",
+      "path": "E:\\My\\Projects\\Tests\\scmrtos_developing\\scmrtos-sample-projects\\samples\\cortex\\mx-iar\\1-event-flag-m0-stm32f0discovery\\src\\main.cpp"
+    },
+    "name": "LED_PIN",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:main.cpp@3625@F@ledPc9Set#1b#@lp",
+    "What": "Variable",
+    "defdec": "Def",
+    "display": "lp",
+    "location": {
+      "column": "15",
+      "line": "78",
+      "path": "E:\\My\\Projects\\Tests\\scmrtos_developing\\scmrtos-sample-projects\\samples\\cortex\\mx-iar\\1-event-flag-m0-stm32f0discovery\\src\\main.cpp"
+    },
+    "name": "lp",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:main.cpp@F@ledPc8Set#1b#",
+    "What": "Function",
+    "defdec": "Def",
+    "display": "void ledPc8Set(const bool)",
+    "location": {
+      "column": "13",
+      "line": "81",
+      "path": "E:\\My\\Projects\\Tests\\scmrtos_developing\\scmrtos-sample-projects\\samples\\cortex\\mx-iar\\1-event-flag-m0-stm32f0discovery\\src\\main.cpp"
+    },
+    "name": "ledPc8Set",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:main.cpp@3751@F@ledPc8Set#1b#@LED_PIN",
+    "What": "Variable",
+    "defdec": "Def",
+    "display": "LED_PIN",
+    "location": {
+      "column": "23",
+      "line": "82",
+      "path": "E:\\My\\Projects\\Tests\\scmrtos_developing\\scmrtos-sample-projects\\samples\\cortex\\mx-iar\\1-event-flag-m0-stm32f0discovery\\src\\main.cpp"
+    },
+    "name": "LED_PIN",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:main.cpp@3787@F@ledPc8Set#1b#@lp",
+    "What": "Variable",
+    "defdec": "Def",
+    "display": "lp",
+    "location": {
+      "column": "15",
+      "line": "83",
+      "path": "E:\\My\\Projects\\Tests\\scmrtos_developing\\scmrtos-sample-projects\\samples\\cortex\\mx-iar\\1-event-flag-m0-stm32f0discovery\\src\\main.cpp"
+    },
+    "name": "lp",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@main#",
+    "What": "Function",
+    "defdec": "Def",
+    "display": "int main(void)",
+    "location": {
+      "column": "5",
+      "line": "87",
+      "path": "E:\\My\\Projects\\Tests\\scmrtos_developing\\scmrtos-sample-projects\\samples\\cortex\\mx-iar\\1-event-flag-m0-stm32f0discovery\\src\\main.cpp"
+    },
+    "name": "main",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@N@OS",
+    "What": "Namespace",
+    "defdec": "Def",
+    "display": "OS",
+    "location": {
+      "column": "11",
+      "line": "93",
+      "path": "E:\\My\\Projects\\Tests\\scmrtos_developing\\scmrtos-sample-projects\\samples\\cortex\\mx-iar\\1-event-flag-m0-stm32f0discovery\\src\\main.cpp"
+    },
+    "members": [],
+    "name": "OS",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@N@OS@F@system_timer_user_hook#",
+    "What": "Function",
+    "defdec": "Def",
+    "display": "void system_timer_user_hook(void)",
+    "location": {
+      "column": "10",
+      "line": "139",
+      "path": "E:\\My\\Projects\\Tests\\scmrtos_developing\\scmrtos-sample-projects\\samples\\cortex\\mx-iar\\1-event-flag-m0-stm32f0discovery\\src\\main.cpp"
+    },
+    "name": "system_timer_user_hook",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:main.cpp@5484@N@OS@F@system_timer_user_hook#@COUNTER_INIT_VALUE",
+    "What": "Variable",
+    "defdec": "Def",
+    "display": "COUNTER_INIT_VALUE",
+    "location": {
+      "column": "23",
+      "line": "140",
+      "path": "E:\\My\\Projects\\Tests\\scmrtos_developing\\scmrtos-sample-projects\\samples\\cortex\\mx-iar\\1-event-flag-m0-stm32f0discovery\\src\\main.cpp"
+    },
+    "name": "COUNTER_INIT_VALUE",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:main.cpp@5534@N@OS@F@system_timer_user_hook#@counter",
+    "What": "Variable",
+    "defdec": "Def",
+    "display": "counter",
+    "location": {
+      "column": "16",
+      "line": "141",
+      "path": "E:\\My\\Projects\\Tests\\scmrtos_developing\\scmrtos-sample-projects\\samples\\cortex\\mx-iar\\1-event-flag-m0-stm32f0discovery\\src\\main.cpp"
+    },
+    "name": "counter",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@Proc0",
+    "What": "Variable",
+    "defdec": "Def",
+    "display": "Proc0",
+    "location": {
+      "column": "8",
+      "line": "155",
+      "path": "E:\\My\\Projects\\Tests\\scmrtos_developing\\scmrtos-sample-projects\\samples\\cortex\\mx-iar\\1-event-flag-m0-stm32f0discovery\\src\\main.cpp"
+    },
+    "name": "Proc0",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@Proc1",
+    "What": "Variable",
+    "defdec": "Def",
+    "display": "Proc1",
+    "location": {
+      "column": "8",
+      "line": "156",
+      "path": "E:\\My\\Projects\\Tests\\scmrtos_developing\\scmrtos-sample-projects\\samples\\cortex\\mx-iar\\1-event-flag-m0-stm32f0discovery\\src\\main.cpp"
+    },
+    "name": "Proc1",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@Proc2",
+    "What": "Variable",
+    "defdec": "Def",
+    "display": "Proc2",
+    "location": {
+      "column": "8",
+      "line": "157",
+      "path": "E:\\My\\Projects\\Tests\\scmrtos_developing\\scmrtos-sample-projects\\samples\\cortex\\mx-iar\\1-event-flag-m0-stm32f0discovery\\src\\main.cpp"
+    },
+    "name": "Proc2",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@U@VectorEntry_t",
+    "What": "Union",
+    "defdec": "Def",
+    "display": "VectorEntry_t",
+    "location": {
+      "column": "15",
+      "line": "1",
+      "path": "E:\\My\\Projects\\Tests\\scmrtos_developing\\scmrtos-sample-projects\\samples\\cortex\\mx-iar\\1-event-flag-m0-stm32f0discovery\\src\\stm32f051_startup.cpp"
+    },
+    "members": [
+      {
+        "ID": "c:@U@VectorEntry_t@FI@pHandler",
+        "What": "FieldDecl",
+        "defdec": "Def",
+        "display": "pHandler",
+        "location": {
+          "column": "13",
+          "line": "2",
+          "path": "E:\\My\\Projects\\Tests\\scmrtos_developing\\scmrtos-sample-projects\\samples\\cortex\\mx-iar\\1-event-flag-m0-stm32f0discovery\\src\\stm32f051_startup.cpp"
+        },
+        "name": "pHandler",
+        "origin": "project_file",
+        "scope": "VectorEntry_t"
+      },
+      {
+        "ID": "c:@U@VectorEntry_t@FI@pStack",
+        "What": "FieldDecl",
+        "defdec": "Def",
+        "display": "pStack",
+        "location": {
+          "column": "12",
+          "line": "3",
+          "path": "E:\\My\\Projects\\Tests\\scmrtos_developing\\scmrtos-sample-projects\\samples\\cortex\\mx-iar\\1-event-flag-m0-stm32f0discovery\\src\\stm32f051_startup.cpp"
+        },
+        "name": "pStack",
+        "origin": "project_file",
+        "scope": "VectorEntry_t"
+      },
+      {
+        "ID": "c:stm32f051_startup.cpp@T@VectorEntry_t",
+        "What": "TypedefDecl",
+        "defdec": "Def",
+        "display": "union VectorEntry_t",
+        "location": {
+          "column": "2",
+          "line": "4",
+          "path": "E:\\My\\Projects\\Tests\\scmrtos_developing\\scmrtos-sample-projects\\samples\\cortex\\mx-iar\\1-event-flag-m0-stm32f0discovery\\src\\stm32f051_startup.cpp"
+        },
+        "name": "VectorEntry_t",
+        "origin": "project_file",
+        "scope": "VectorEntry_t"
+      }
+    ],
+    "name": "VectorEntry_t",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@__iar_program_start",
+    "What": "Function",
+    "defdec": "Dec",
+    "display": "void __iar_program_start(void)",
+    "location": {
+      "column": "17",
+      "line": "7",
+      "path": "E:\\My\\Projects\\Tests\\scmrtos_developing\\scmrtos-sample-projects\\samples\\cortex\\mx-iar\\1-event-flag-m0-stm32f0discovery\\src\\stm32f051_startup.cpp"
+    },
+    "name": "__iar_program_start",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@PendSV_Handler",
+    "What": "Function",
+    "defdec": "Dec",
+    "display": "void PendSV_Handler(void)",
+    "location": {
+      "column": "17",
+      "line": "9",
+      "path": "E:\\My\\Projects\\Tests\\scmrtos_developing\\scmrtos-sample-projects\\samples\\cortex\\mx-iar\\1-event-flag-m0-stm32f0discovery\\src\\stm32f051_startup.cpp"
+    },
+    "name": "PendSV_Handler",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@SysTick_Handler",
+    "What": "Function",
+    "defdec": "Dec",
+    "display": "void SysTick_Handler(void)",
+    "location": {
+      "column": "17",
+      "line": "10",
+      "path": "E:\\My\\Projects\\Tests\\scmrtos_developing\\scmrtos-sample-projects\\samples\\cortex\\mx-iar\\1-event-flag-m0-stm32f0discovery\\src\\stm32f051_startup.cpp"
+    },
+    "name": "SysTick_Handler",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:stm32f051_startup.cpp@F@reset#",
+    "What": "Function",
+    "defdec": "Def",
+    "display": "void reset(void)",
+    "location": {
+      "column": "24",
+      "line": "12",
+      "path": "E:\\My\\Projects\\Tests\\scmrtos_developing\\scmrtos-sample-projects\\samples\\cortex\\mx-iar\\1-event-flag-m0-stm32f0discovery\\src\\stm32f051_startup.cpp"
+    },
+    "name": "reset",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:stm32f051_startup.cpp@F@NMI_DefaultHandler#",
+    "What": "Function",
+    "defdec": "Def",
+    "display": "void NMI_DefaultHandler(void)",
+    "location": {
+      "column": "13",
+      "line": "17",
+      "path": "E:\\My\\Projects\\Tests\\scmrtos_developing\\scmrtos-sample-projects\\samples\\cortex\\mx-iar\\1-event-flag-m0-stm32f0discovery\\src\\stm32f051_startup.cpp"
+    },
+    "name": "NMI_DefaultHandler",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:stm32f051_startup.cpp@F@Reserved_DefaultHandler#",
+    "What": "Function",
+    "defdec": "Def",
+    "display": "void Reserved_DefaultHandler(void)",
+    "location": {
+      "column": "13",
+      "line": "20",
+      "path": "E:\\My\\Projects\\Tests\\scmrtos_developing\\scmrtos-sample-projects\\samples\\cortex\\mx-iar\\1-event-flag-m0-stm32f0discovery\\src\\stm32f051_startup.cpp"
+    },
+    "name": "Reserved_DefaultHandler",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:stm32f051_startup.cpp@F@IRQ_DefaultHandler#",
+    "What": "Function",
+    "defdec": "Def",
+    "display": "void IRQ_DefaultHandler(void)",
+    "location": {
+      "column": "13",
+      "line": "23",
+      "path": "E:\\My\\Projects\\Tests\\scmrtos_developing\\scmrtos-sample-projects\\samples\\cortex\\mx-iar\\1-event-flag-m0-stm32f0discovery\\src\\stm32f051_startup.cpp"
+    },
+    "name": "IRQ_DefaultHandler",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:stm32f051_startup.cpp@F@SVC_DefaultHandler#",
+    "What": "Function",
+    "defdec": "Def",
+    "display": "void SVC_DefaultHandler(void)",
+    "location": {
+      "column": "13",
+      "line": "26",
+      "path": "E:\\My\\Projects\\Tests\\scmrtos_developing\\scmrtos-sample-projects\\samples\\cortex\\mx-iar\\1-event-flag-m0-stm32f0discovery\\src\\stm32f051_startup.cpp"
+    },
+    "name": "SVC_DefaultHandler",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@CSTACK$$Limit",
+    "What": "Variable",
+    "defdec": "Dec",
+    "display": "CSTACK$$Limit",
+    "location": {
+      "column": "22",
+      "line": "30",
+      "path": "E:\\My\\Projects\\Tests\\scmrtos_developing\\scmrtos-sample-projects\\samples\\cortex\\mx-iar\\1-event-flag-m0-stm32f0discovery\\src\\stm32f051_startup.cpp"
+    },
+    "name": "CSTACK$$Limit",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@__vector_table",
+    "What": "Variable",
+    "defdec": "Def",
+    "display": "__vector_table",
+    "location": {
+      "column": "39",
+      "line": "32",
+      "path": "E:\\My\\Projects\\Tests\\scmrtos_developing\\scmrtos-sample-projects\\samples\\cortex\\mx-iar\\1-event-flag-m0-stm32f0discovery\\src\\stm32f051_startup.cpp"
+    },
+    "name": "__vector_table",
+    "origin": "project_file",
+    "scope": null
+  }
+]
