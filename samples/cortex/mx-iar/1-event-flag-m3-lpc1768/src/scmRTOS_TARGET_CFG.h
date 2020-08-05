@@ -4,11 +4,11 @@
 //*
 //*     NICKNAME:  scmRTOS
 //*
-//*     PROCESSOR: ARM Cortex-M0
+//*     PROCESSOR: ARM Cortex-M3
 //*
 //*     TOOLKIT:   ARM IAR
 //*
-//*     PURPOSE:  OS Extensions includes
+//*     PURPOSE:   Project-level target configuration header
 //*
 //*     Version: v5.1.0
 //*
@@ -42,13 +42,38 @@
 //*     =================================================================
 //*
 //******************************************************************************
-//*     IAR 8.40.1 STM32F091 Sample by Yury A. Yakimov aka haker_fox, Copyright (c) 2015-2020
+//*     IAR 8.40.1 LPC1768 Sample by Yury A. Yakimov aka haker_fox, Copyright (c) 2015-2020
 
-#ifndef  scmRTOS_EXTENSIONS_H
-#define  scmRTOS_EXTENSIONS_H
+#ifndef  scmRTOS_TARGET_CFG_H
+#define  scmRTOS_TARGET_CFG_H
 
-#include <profiler.h>
+//------------------------------------------------------------------------------
+// If the macro value is 0 (the default), the port uses SysTick as a system
+// timer. It initializes the timer and starts it. The user must make sure that
+// the address of the timer interrupt handler (SysTick_Handler) is in the right
+// place at the interrupt vector table.
+// If the macro value is 1, then the user has to implement (see docs for details):
+//     1. extern "C" void __init_system_timer();
+//     2. void LOCK_SYSTEM_TIMER() / void UNLOCK_SYSTEM_TIMER();
+//     3. In the interrupt handler of the custom timer, the user needs to call
+//        OS::system_timer_isr().
+//
+#define SCMRTOS_USE_CUSTOM_TIMER 0
 
-#endif // scmRTOS_EXTENSIONS_H
-//-----------------------------------------------------------------------------
+
+//------------------------------------------------------------------------------
+// Define SysTick clock frequency and its interrupt rate in Hz.
+// It makes sense if USE_CUSTOM_TIMER = 0.
+// 
+#define SYSTICKFREQ     4000000 // use an internal IRC oscillator
+#define SYSTICKINTRATE  1000
+
+
+//------------------------------------------------------------------------------
+// Define number of priority bits implemented in hardware.
+//
+#define CORE_PRIORITY_BITS  2
+
+
+#endif // scmRTOS_TARGET_CFG_H
 

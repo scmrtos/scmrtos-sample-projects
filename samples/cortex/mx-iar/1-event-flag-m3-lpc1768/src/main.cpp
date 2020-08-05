@@ -4,7 +4,7 @@
 //*
 //*     NICKNAME:  scmRTOS
 //*
-//*     PROCESSOR: ARM Cortex-M4F
+//*     PROCESSOR: ARM Cortex-M3
 //*
 //*     TOOLKIT:   ARM IAR
 //*
@@ -42,7 +42,7 @@
 //*     =================================================================
 //*
 //******************************************************************************
-//*     IAR 8.40.1 STM32F334 Sample by Yury A. Yakimov aka haker_fox, Copyright (c) 2015-2020
+//*     IAR 8.40.1 LPC1768 Sample by Yury A. Yakimov aka haker_fox, Copyright (c) 2015-2020
 
 #include <scmRTOS.h>
 
@@ -52,27 +52,34 @@ typedef OS::process<OS::pr1, 300> TProc1;
 
 // Event Flags to test
 OS::TEventFlag ef;
+OS::TEventFlag timerEvent;
 
-// Register defenitions (you can use CMSIS header instead of these definitions)
-static uint32_t * const RCC_AHBENR = reinterpret_cast<uint32_t *>(0x40021014);
-static uint32_t * const GPIOA_MODER = reinterpret_cast<uint32_t *>(0x4800'0000);
-static uint32_t * const GPIOA_BSRR = reinterpret_cast<uint32_t *>(0x4800'0018);
-static uint32_t * const GPIOC_IDR = reinterpret_cast<uint32_t *>(0x48000810);
-// Register bits defenitions (you can use CMSIS header instead of these definitions)
-static const uint32_t RCC_AHBENR_IOPAEN = ( 1 << 17UL );
-static const uint32_t RCC_AHBENR_IOPCEN = ( 1 << 19UL );
-static const uint32_t GPIOA_MODER_5_MASK = ( 3UL << 5 * 2 );
-static const uint32_t GPIOA_MODER_5_OUTPUT_MASK = ( 1UL << 5 * 2 );
+// Register definitions (you can use CMISIS header or something else)
+static uint32_t * const FIO1DIR = reinterpret_cast<uint32_t *>(0x2009'c020);
+static uint32_t * const FIO1SET = reinterpret_cast<uint32_t *>(0x2009'c038);
+static uint32_t * const FIO1CLR = reinterpret_cast<uint32_t *>(0x2009'c03c);
+
+
+static const auto LED1_PIN = 24UL;
+static const auto LED2_PIN = 25UL;
 
 static void ledPortSetup() {
-    *RCC_AHBENR |= RCC_AHBENR_IOPAEN | RCC_AHBENR_IOPCEN;
-    *GPIOA_MODER &= ~GPIOA_MODER_5_MASK;
-    *GPIOA_MODER |= GPIOA_MODER_5_OUTPUT_MASK;
+    *FIO1DIR |= 1UL << LED1_PIN | 1UL << LED2_PIN;
 }
-static void ledLD2Set( const bool on ) {
-    static const auto LED_PIN = 5;
-    const int lp = ( on ? 0 : 16 ) + LED_PIN;
-    *GPIOA_BSRR = ( 1UL << lp );
+
+static void ledSet( const bool on, const int pin ) {
+    if (on)
+        *FIO1SET = 1UL << pin;
+    else
+        *FIO1CLR = 1UL << pin;
+}
+
+static void led1Set( const bool on ) {
+    ledSet(on, LED1_PIN);
+}
+
+static void led2Set( const bool on ) {
+    ledSet(on, LED2_PIN);
 }
 
 int main() {
@@ -84,33 +91,30 @@ int main() {
 namespace OS {
     template<>
     OS_PROCESS void TProc0::exec() {
-        // Led LD2 on nucleo board blinks every 500 ms. Here we use sleep() function
         for (;;) {
-            ledLD2Set(true);
-            sleep(500);
-            ledLD2Set(false);
-            sleep(500);
-            if (ef.is_signaled()) {
-                ef.clear();
-                for ( auto i = 0; i < 10; i++ ) {
-                    ledLD2Set(true);
-                    sleep(100);
-                    ledLD2Set(false);
-                    sleep(100);
-                }
-            }
+            // Here we wait for ef flag signal that gives us the TProc1 process
+            ef.wait();
+            led1Set(true);
+            ef.wait();
+            led1Set(false);
         }
     }
 
     template<>
     OS_PROCESS void TProc1::exec() {
-        static const auto BUTTON_B1_PIN = 1UL << 13;
         for (;;) {
-            // Every time we press USER button this task sends signal to TPpoc0 and
-            // it flashes LD2 at higher frequency for a while, then restores original rate.
-            // Yes, it's polling here. But TProc1 has the lowest priority, so it's acceptable.
-            if (!( *GPIOC_IDR & BUTTON_B1_PIN ))
-                ef.signal();
+            static const auto COUNTER_VALUE = 3;
+            static auto counter = COUNTER_VALUE;
+            // Instead of sleep we use here OS::TEventFlag service, see function
+            // OS::system_timer_user_hook() below
+            timerEvent.wait();
+            led2Set(true);
+            timerEvent.wait();
+            led2Set(false);
+            if (--counter == 0) {
+                counter = COUNTER_VALUE;
+                ef.signal(); // send a signal to TProc0
+            }
         }
     }
 }
@@ -120,6 +124,15 @@ void OS::idle_process_user_hook() {
     __WFI();
 }
 #endif
+
+void OS::system_timer_user_hook() {
+    static const auto COUNTER_INIT_VALUE = 300;
+    static int counter = COUNTER_INIT_VALUE;
+    if (--counter == 0) {
+        counter = COUNTER_INIT_VALUE;
+        timerEvent.signal_isr();
+    }
+}
 
 // Process objects
 TProc0 Proc0;

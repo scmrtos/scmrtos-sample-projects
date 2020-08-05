@@ -4,7 +4,7 @@
 //*
 //*     NICKNAME:  scmRTOS
 //*
-//*     PROCESSOR: ARM Cortex-M4F
+//*     PROCESSOR: ARM Cortex-M3
 //*
 //*     TOOLKIT:   ARM IAR
 //*
@@ -42,7 +42,7 @@
 //*     =================================================================
 //*
 //******************************************************************************
-//*     IAR 8.40.1 STM32F334 Sample by Yury A. Yakimov aka haker_fox, Copyright (c) 2015-2020
+//*     IAR 8.40.1 LPC1768 Sample by Yury A. Yakimov aka haker_fox, Copyright (c) 2015-2020
 
 #ifndef  scmRTOS_CONFIG_H
 #define  scmRTOS_CONFIG_H
@@ -86,7 +86,7 @@ typedef uint_fast32_t tick_count_t;
 //    scmRTOS System Timer Hook
 //
 //
-#define  scmRTOS_SYSTIMER_HOOK_ENABLE       0
+#define  scmRTOS_SYSTIMER_HOOK_ENABLE       1
 
 //-----------------------------------------------------------------------------
 //

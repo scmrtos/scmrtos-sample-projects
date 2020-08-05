@@ -4,7 +4,7 @@
 //*
 //*     NICKNAME:  scmRTOS
 //*
-//*     PROCESSOR: ARM Cortex-M0
+//*     PROCESSOR: ARM Cortex-M3
 //*
 //*     TOOLKIT:   ARM IAR
 //*
@@ -42,7 +42,7 @@
 //*     =================================================================
 //*
 //******************************************************************************
-//*     IAR 8.40.1 STM32F091 Sample by Yury A. Yakimov aka haker_fox, Copyright (c) 2015-2020
+//*     IAR 8.40.1 LPC1768 Sample by Yury A. Yakimov aka haker_fox, Copyright (c) 2015-2020
 
 #ifndef  scmRTOS_EXTENSIONS_H
 #define  scmRTOS_EXTENSIONS_H
