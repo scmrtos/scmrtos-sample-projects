@@ -11,10 +11,10 @@
 //*     PURPOSE:   Port Test File
 //*                Sample '4-Debug' debug process module
 //*
-//*     Version: v5.1.0
+//*     Version: v5.2.0
 //*
 //*
-//*     Copyright (c) 2003-2016, scmRTOS Team
+//*     Copyright (c) 2003-2021, scmRTOS Team
 //*
 //*     Permission is hereby granted, free of charge, to any person
 //*     obtaining  a copy of this software and associated documentation
@@ -43,7 +43,7 @@
 //*     =================================================================
 //*
 //******************************************************************************
-//*     4-Debug sample by Oleksandr O. Redchuk, Copyright (c) 2011-2016
+//*     4-Debug sample by Oleksandr O. Redchuk, Copyright (c) 2011-2021
 
 #ifndef  DEBUG_H
 #define  DEBUG_H

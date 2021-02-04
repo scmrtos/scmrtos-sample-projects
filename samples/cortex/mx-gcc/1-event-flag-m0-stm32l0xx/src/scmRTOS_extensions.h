@@ -10,10 +10,10 @@
 //*
 //*     PURPOSE:  OS Extensions includes
 //*
-//*     Version: v5.1.0
+//*     Version: v5.2.0
 //*
 //*
-//*     Copyright (c) 2003-2016, scmRTOS Team
+//*     Copyright (c) 2003-2021, scmRTOS Team
 //*
 //*     Permission is hereby granted, free of charge, to any person
 //*     obtaining  a copy of this software and associated documentation
@@ -42,7 +42,7 @@
 //*     =================================================================
 //*
 //******************************************************************************
-//*     GCC STM32L0XX Samples by Anton B. Gusev aka AHTOXA, Copyright (c) 2015-2016
+//*     GCC STM32L0XX Samples by Anton B. Gusev aka AHTOXA, Copyright (c) 2015-2021
 
 #ifndef  scmRTOS_EXTENSIONS_H
 #define  scmRTOS_EXTENSIONS_H

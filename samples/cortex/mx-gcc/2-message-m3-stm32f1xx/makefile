@@ -72,12 +72,12 @@ endif
 	OBJCOPY		= $(TOOL)objcopy
 	OBJDUMP		= $(TOOL)objdump
 	SIZE		= $(TOOL)size -d
-#	FLASHER		= openocd
+	FLASHER		= openocd
 #	FLASHER		= stm32flash
 ifeq ($(OS),Windows_NT)
 	FLASHER		= ST-LINK_CLI
 else
-	FLASHER		= st-flash
+#	FLASHER		= st-flash
 endif
 	DOXYGEN		= doxygen
 	RM			= rm -f
@@ -197,9 +197,7 @@ endif
 # debug level (d0..d3)
 	OPENOCD_PARAMS		= -d0
 # interface and board/target settings (using the OOCD target-library here)
-#	OPENOCD_PARAMS		+= -f interface/arm-usb-ocd.cfg 
-#	OPENOCD_PARAMS		+= -f $(PRJDIR)/STM32F10X.cfg
-	OPENOCD_PARAMS		+= -f board/stm32f4discovery.cfg
+	OPENOCD_PARAMS		+= -f $(PRJDIR)/openocd.cfg
 	OPENOCD_PARAMS		+= -c init
 	OPENOCD_PARAMS		+= -c "sleep 200"
 

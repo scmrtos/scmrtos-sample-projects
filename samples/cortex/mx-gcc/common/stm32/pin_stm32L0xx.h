@@ -1,7 +1,8 @@
 /**
  *  stm32tpl --  STM32 C++ Template Peripheral Library
+ *  Visit https://github.com/antongus/stm32tpl for new versions
  *
- *  Copyright (c) 2015 Anton B. Gusev aka AHTOXA
+ *  Copyright (c) 2011-2020 Anton B. Gusev aka AHTOXA
  *
  *  Permission is hereby granted, free of charge, to any person obtaining a copy
  *  of this software and associated documentation files (the "Software"), to deal
@@ -23,7 +24,7 @@
  *
  *
  *  file         : pin_stm32L0xx.h
- *  description  : GPIO pin manipulation class template for STM32L0xx.
+ *  description  : GPIO pin manipulation class template for STM32L0xx and STM32F0xx.
  *                 Inspired by AVR macros from Askold Volkov
  *
  * USAGE:
@@ -91,6 +92,17 @@ typedef struct
   volatile uint32_t AFR[2];   ///!< GPIO alternate function registers
 } GPIOxTypeDef;
 
+#ifdef STM32TPL_PIN_STM32F0XX
+enum
+{
+	pGPIOA_BASE      = 0x48000000UL,
+	pGPIOB_BASE      = 0x48000400UL,
+	pGPIOC_BASE      = 0x48000800UL,
+	pGPIOD_BASE      = 0x48000C00UL,
+	pGPIOE_BASE      = 0x48001000UL,
+	pGPIOF_BASE      = 0x48001400UL,
+};
+#else // by default STM32L00x assumed
 enum
 {
 	pGPIOA_BASE      = 0x50000000UL,
@@ -99,6 +111,7 @@ enum
 	pGPIOD_BASE      = 0x50000C00UL,
 	pGPIOH_BASE      = 0x50001C00UL
 };
+#endif
 
 }
 
@@ -179,60 +192,14 @@ enum PinOutputType
  */
 enum PinAltFunction
 {
-	ALT_FUNC_RTC_50Hz  = 0x00,          ///< RTC_50Hz Alternate Function mapping
-	ALT_FUNC_MCO       = 0x00,          ///< MCO (MCO1 and MCO2) Alternate Function mapping
-	ALT_FUNC_TAMPER    = 0x00,          ///< TAMPER (TAMPER_1 and TAMPER_2) Alternate Function mapping
-	ALT_FUNC_SWJ       = 0x00,          ///< SWJ (SWD and JTAG) Alternate Function mapping
-	ALT_FUNC_TRACE     = 0x00,          ///< TRACE Alternate Function mapping
-
-	ALT_FUNC_TIM1      = 0x01,          ///< TIM1 Alternate Function mapping
-	ALT_FUNC_TIM2      = 0x01,          ///< TIM2 Alternate Function mapping
-
-	ALT_FUNC_TIM3      = 0x02,          ///< TIM3 Alternate Function mapping
-	ALT_FUNC_TIM4      = 0x02,          ///< TIM4 Alternate Function mapping
-	ALT_FUNC_TIM5      = 0x02,          ///< TIM5 Alternate Function mapping
-
-	ALT_FUNC_TIM8      = 0x03,          ///< TIM8 Alternate Function mapping
-	ALT_FUNC_TIM9      = 0x03,          ///< TIM9 Alternate Function mapping
-	ALT_FUNC_TIM10     = 0x03,          ///< TIM10 Alternate Function mapping
-	ALT_FUNC_TIM11     = 0x03,          ///< TIM11 Alternate Function mapping
-
-	ALT_FUNC_I2C1      = 0x04,          ///< I2C1 Alternate Function mapping
-	ALT_FUNC_I2C2      = 0x04,          ///< I2C2 Alternate Function mapping
-	ALT_FUNC_I2C3      = 0x04,          ///< I2C3 Alternate Function mapping
-
-	ALT_FUNC_SPI1      = 0x05,          ///< SPI1 Alternate Function mapping
-	ALT_FUNC_SPI2      = 0x05,          ///< SPI2/I2S2 Alternate Function mapping
-
-	ALT_FUNC_SPI3      = 0x06,          ///< SPI3/I2S3 Alternate Function mapping
-
-	ALT_FUNC_USART1    = 0x07,          ///< USART1 Alternate Function mapping
-	ALT_FUNC_USART2    = 0x07,          ///< USART2 Alternate Function mapping
-	ALT_FUNC_USART3    = 0x07,          ///< USART3 Alternate Function mapping
-	ALT_FUNC_I2S3ext   = 0x07,          ///< I2S3ext Alternate Function mapping
-
-	ALT_FUNC_UART4     = 0x08,          ///< UART4 Alternate Function mapping
-	ALT_FUNC_UART5     = 0x08,          ///< UART5 Alternate Function mapping
-	ALT_FUNC_USART6    = 0x08,          ///< USART6 Alternate Function mapping
-
-	ALT_FUNC_CAN1      = 0x09,          ///< CAN1 Alternate Function mapping
-	ALT_FUNC_CAN2      = 0x09,          ///< CAN2 Alternate Function mapping
-	ALT_FUNC_TIM12     = 0x09,          ///< TIM12 Alternate Function mapping
-	ALT_FUNC_TIM13     = 0x09,          ///< TIM13 Alternate Function mapping
-	ALT_FUNC_TIM14     = 0x09,          ///< TIM14 Alternate Function mapping
-
-	ALT_FUNC_OTG_FS    = 0x0A,          ///< OTG_FS Alternate Function mapping
-	ALT_FUNC_OTG_HS    = 0x0A,          ///< OTG_HS Alternate Function mapping
-
-	ALT_FUNC_ETH       = 0x0B,          ///< ETHERNET Alternate Function mapping
-
-	ALT_FUNC_FSMC      = 0x0C,          ///< FSMC Alternate Function mapping
-	ALT_FUNC_OTG_HS_FS = 0x0C,          ///< OTG HS configured in FS, Alternate Function mapping
-	ALT_FUNC_SDIO      = 0x0C,          ///< SDIO Alternate Function mapping
-
-	ALT_FUNC_DCMI      = 0x0D,          ///< DCMI Alternate Function mapping
-
-	ALT_FUNC_EVENTOUT  = 0x0F           ///< EVENTOUT Alternate Function mapping
+	ALT_FUNC_0         = 0,
+	ALT_FUNC_1         = 1,
+	ALT_FUNC_2         = 2,
+	ALT_FUNC_3         = 3,
+	ALT_FUNC_4         = 4,
+	ALT_FUNC_5         = 5,
+	ALT_FUNC_6         = 6,
+	ALT_FUNC_7         = 7,
 };
 
 
@@ -259,10 +226,23 @@ template<> struct port_gpio_t<'D'>
 	enum { GPIOx_BASE = pGPIOD_BASE };
 };
 
+#ifdef STM32TPL_PIN_STM32F0XX
+template<> struct port_gpio_t<'E'>
+{
+	enum { GPIOx_BASE = pGPIOE_BASE };
+};
+
+template<> struct port_gpio_t<'F'>
+{
+	enum { GPIOx_BASE = pGPIOF_BASE };
+};
+
+#else
 template<> struct port_gpio_t<'H'>
 {
 	enum { GPIOx_BASE = pGPIOH_BASE };
 };
+#endif
 
 template<
 	char port,

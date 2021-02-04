@@ -6,7 +6,7 @@
 //*    Registration of new Exception handling routines.
 //*
 //------------------------------------------------------------------------------
-//*    bfin-elf port by Harry E. Zhurov, Copyright (c) 2016
+//*    bfin-elf port by Harry E. Zhurov, Copyright (c) 2016-2021
 
 #include <sys/excause.h>
 #include <ccblkfn.h>

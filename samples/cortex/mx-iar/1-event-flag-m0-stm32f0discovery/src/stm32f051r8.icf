@@ -1,0 +1,36 @@
+/* ---Basic Memory Regions--- */
+
+/* Flash */
+define symbol FlashBegin        = 0x08000000;
+define symbol FlashEnd          = 0x0800FFFF;
+
+/* Internal RAM */
+define symbol IntSramBegin      = 0x20000000;
+define symbol IntSramEnd        = 0x20001FFF;
+
+define symbol IntVecStart       = FlashBegin;
+
+/* Additional internal RAM and RAM Buffers */
+/* Exernal RAM */
+/* External FLASH */
+
+/* ---Sizes--- */
+define symbol MspStackSize = 0x0080;
+
+define memory mem with size = 4G;
+define region ROM_region   = mem:[from FlashBegin to FlashEnd];
+define region RAM_region   = mem:[from IntSramBegin to IntSramEnd];
+
+define block CSTACK    with alignment = 8, size = MspStackSize   { };
+
+initialize by copy { readwrite };
+do not initialize  { section .noinit };
+
+place at address mem: IntVecStart { readonly section .intvec };
+
+place in ROM_region   { readonly };
+place in RAM_region   { 
+                        block CSTACK,
+                        readwrite,
+                      };
+
