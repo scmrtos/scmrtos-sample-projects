@@ -6,7 +6,7 @@
 //*    Please see COPYING.LIBGLOSS for details.
 //*    
 //------------------------------------------------------------------------------
-//*    bfin-elf port by Harry E. Zhurov, Copyright (c) 2016
+//*    bfin-elf port by Harry E. Zhurov, Copyright (c) 2016-2021
 
 #ifndef _EXCEPTION_H
 #define _EXCEPTION_H

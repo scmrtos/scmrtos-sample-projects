@@ -10,10 +10,10 @@
 //*
 //*     PURPOSE:   Project Level Configuration
 //*
-//*     Version: v5.1.0
+//*     Version: v5.2.0
 //*
 //*
-//*     Copyright (c) 2003-2016, scmRTOS Team
+//*     Copyright (c) 2003-2021, scmRTOS Team
 //*
 //*     Permission is hereby granted, free of charge, to any person
 //*     obtaining  a copy of this software and associated documentation
@@ -42,7 +42,7 @@
 //*     =================================================================
 //*
 //******************************************************************************
-//*     IAR 8.40.1 LPC1768 Sample by Yury A. Yakimov aka haker_fox, Copyright (c) 2015-2020
+//*     IAR 8.40.1 LPC1768 Sample by Yury A. Yakimov aka haker_fox, Copyright (c) 2015-2021
 
 #ifndef  scmRTOS_CONFIG_H
 #define  scmRTOS_CONFIG_H

@@ -3,7 +3,7 @@
 *
 *  Cortex-M4F/Cortex-M7F context testing function.
 *
-*  Copyright (c) 2010, 2020 by Anton Gusev
+*  Copyright (c) 2010-2021, 2020 by Anton Gusev
 **/
 #include <scmRTOS.h>
 #include "hw.h"

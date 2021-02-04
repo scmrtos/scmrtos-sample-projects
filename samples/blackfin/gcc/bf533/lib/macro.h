@@ -2,7 +2,7 @@
 //*
 //*    Blackfin/bfin-elf support library
 //*    
-//*    Copyright (c) 2016, Harry E. Zhurov
+//*    Copyright (c) 2016-2021, Harry E. Zhurov
 //*
 //******************************************************************************
 
