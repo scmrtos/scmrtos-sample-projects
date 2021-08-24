@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+    <fileVersion>4</fileVersion>
+    <fileChecksum>3949455577</fileChecksum>
+    <configuration>
+        <name>Debug</name>
+        <outputs>
+            <file>$PROJ_DIR$\src\stm32f091_startup.cpp</file>
+            <file>$PROJ_DIR$\src\stm32f091rbt6.icf</file>
+            <file>$PROJ_DIR$\..\..\..\..\scmRTOS\port\cortex\mx-iar\os_target.cpp</file>
+            <file>$PROJ_DIR$\..\..\..\..\scmRTOS\port\cortex\mx-iar\os_target_asm.S</file>
+            <file>$PROJ_DIR$\src\scmRTOS_CONFIG.h</file>
+            <file>$PROJ_DIR$\src\main.cpp</file>
+            <file>$PROJ_DIR$\..\..\..\..\scmRTOS\core\usrlib.h</file>
+            <file>$PROJ_DIR$\src\scmRTOS_extensions.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\scmRTOS\core\scmRTOS.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\scmRTOS\core\os_kernel.cpp</file>
+            <file>$PROJ_DIR$\..\..\..\..\scmRTOS\core\scmRTOS_defs.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\scmRTOS\port\cortex\mx-iar\os_target.h</file>
+            <file>$PROJ_DIR$\src\scmRTOS_TARGET_CFG.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\scmRTOS\core\os_services.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\scmRTOS\core\os_kernel.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\scmRTOS\core\os_services.cpp</file>
+            <file>$PROJ_DIR$\..\..\..\..\scmRTOS\core\usrlib.cpp</file>
+            <file>$PROJ_DIR$\Debug\Obj\main.o</file>
+            <file>$PROJ_DIR$\Debug\Obj\os_kernel.xcl</file>
+            <file>$PROJ_DIR$\Debug\Obj\os_kernel.o</file>
+            <file>$PROJ_DIR$\Debug\Obj\os_services.xcl</file>
+            <file>$PROJ_DIR$\Debug\Obj\os_target_asm.o</file>
+            <file>$PROJ_DIR$\Debug\Obj\stm32f091_startup.xcl</file>
+            <file>$PROJ_DIR$\Debug\Obj\usrlib.o</file>
+            <file>$PROJ_DIR$\Debug\Obj\stm32f091_startup.o</file>
+            <file>$PROJ_DIR$\Debug\Obj\usrlib.xcl</file>
+            <file>$PROJ_DIR$\Debug\List\stm32f091_startup.s</file>
+            <file>$PROJ_DIR$\Debug\Obj\os_target.xcl</file>
+            <file>$PROJ_DIR$\Debug\Obj\os_services.o</file>
+            <file>$PROJ_DIR$\Debug\Obj\main.xcl</file>
+            <file>$PROJ_DIR$\Debug\Exe\event-flag-stm32f051-sample.out</file>
+            <file>$PROJ_DIR$\Debug\List\stm32f091_startup.lst</file>
+            <file>$PROJ_DIR$\Debug\Obj\watchdog-m0-stm32f091rbt6.pbd</file>
+            <file>$PROJ_DIR$\Debug\Obj\os_target.o</file>
+            <file>$PROJ_DIR$\Debug\List\os_kernel.lst</file>
+            <file>$PROJ_DIR$\Debug\List\os_kernel.s</file>
+            <file>$PROJ_DIR$\Debug\Obj\os_kernel.__cstat.et</file>
+            <file>$PROJ_DIR$\Debug\Obj\usrlib.__cstat.et</file>
+            <file>$PROJ_DIR$\Debug\Obj\os_target.__cstat.et</file>
+            <file>$PROJ_DIR$\Debug\Obj\main.__cstat.et</file>
+            <file>$PROJ_DIR$\Debug\Obj\stm32f091_startup.__cstat.et</file>
+            <file>$TOOLKIT_DIR$\lib\rt6M_tl.a</file>
+            <file>$PROJ_DIR$\Debug\List\event-flag-stm32f051-sample.map</file>
+            <file>$PROJ_DIR$\Debug\List\main.lst</file>
+            <file>$PROJ_DIR$\Debug\List\main.s</file>
+            <file>$TOOLKIT_DIR$\lib\dl6M_tln.a</file>
+            <file>$PROJ_DIR$\Debug\Obj\os_services.__cstat.et</file>
+            <file>$TOOLKIT_DIR$\lib\shb_l.a</file>
+            <file>$TOOLKIT_DIR$\lib\m6M_tl.a</file>
+            <file>$TOOLKIT_DIR$\lib\dlpp6M_tl_nc.a</file>
+            <file>$PROJ_DIR$\Debug\List\os_services.lst</file>
+            <file>$PROJ_DIR$\Debug\List\os_services.s</file>
+            <file>$TOOLKIT_DIR$\inc\c\stddef.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\iccarm_builtin.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\iar_intrinsics_common.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\ysizet.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\scmRTOS\ext\profiler\profiler.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\intrinsics.h</file>
+            <file>$PROJ_DIR$\Debug\List\os_target.s</file>
+            <file>$PROJ_DIR$\Debug\List\os_target.lst</file>
+            <file>$PROJ_DIR$\..\..\..\..\scmRTOS\ext\watchdog\watch_dog_os_ext.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\yvals.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\DLib_Product.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\DLib_Defaults.h</file>
+            <file>$PROJ_DIR$\Debug\List\usrlib.lst</file>
+            <file>$TOOLKIT_DIR$\inc\c\stdint.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\ycheck.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\DLib_Config_Full.h</file>
+            <file>$PROJ_DIR$\Debug\List\usrlib.s</file>
+        </outputs>
+        <file>
+            <name>$PROJ_DIR$\src\stm32f091_startup.cpp</name>
+            <outputs>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 40</file>
+                </tool>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 26 31 24</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 22</file>
+                </tool>
+            </outputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\..\scmRTOS\port\cortex\mx-iar\os_target.cpp</name>
+            <outputs>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 38</file>
+                </tool>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 58 59 33</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 27</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 8 52 66 61 63 67 62 55 65 6 11 57 53 54 4 12 10 14 13 7 56</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\..\scmRTOS\port\cortex\mx-iar\os_target_asm.S</name>
+            <outputs>
+                <tool>
+                    <name>AARM</name>
+                    <file> 21</file>
+                </tool>
+            </outputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\src\main.cpp</name>
+            <outputs>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 39</file>
+                </tool>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 44 43 17</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 29</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 8 52 66 61 63 67 62 55 65 6 11 57 53 54 4 12 10 14 13 7 56 60</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\..\scmRTOS\core\os_kernel.cpp</name>
+            <outputs>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 36</file>
+                </tool>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 35 34 19</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 18</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 8 52 66 61 63 67 62 55 65 6 11 57 53 54 4 12 10 14 13 7 56</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\..\scmRTOS\core\os_services.cpp</name>
+            <outputs>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 46</file>
+                </tool>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 51 50 28</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 20</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 8 52 66 61 63 67 62 55 65 6 11 57 53 54 4 12 10 14 13 7 56</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\..\scmRTOS\core\usrlib.cpp</name>
+            <outputs>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 37</file>
+                </tool>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 68 64 23</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 25</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 6 65 66 61 63 67 62</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\Debug\Exe\event-flag-stm32f051-sample.out</name>
+            <outputs>
+                <tool>
+                    <name>ILINK</name>
+                    <file> 42</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ILINK</name>
+                    <file> 1 17 19 28 33 21 24 23 47 41 49 48 45</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>[ROOT_NODE]</name>
+            <outputs>
+                <tool>
+                    <name>ILINK</name>
+                    <file> 30 42</file>
+                </tool>
+            </outputs>
+        </file>
+    </configuration>
+    <configuration>
+        <name>Release</name>
+        <outputs />
+        <forcedrebuild>
+            <name>[MULTI_TOOL]</name>
+            <tool>ILINK</tool>
+        </forcedrebuild>
+    </configuration>
+</project>

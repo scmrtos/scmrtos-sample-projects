@@ -22,6 +22,10 @@ Sample Project List
 * cortex-m3-gcc-lpc1766
 * cortex-m4-gcc-stm32f4xx
 * cortex-m3-iar-stm32f1xx
+* cortex-m0-iar-stm32f091rbt6
+* cortex-m0-iar-stm32f051r8t6
+* cortex-m3-iar-lpc1768fbd100
+* cortex-m4f-iar-stm32f334r8
 * msp430-gcc-msp430f149
 * msp430-iar-msp430f160
 * msp430-iar-msp430f2617
