@@ -81,6 +81,8 @@ void OS::wdg_feed_user_hook() {
 void OS::wdg_force_reboot_user_hook( const TPriority pr ) {
     const auto failedProcPrio = pr;
     (void)failedProcPrio; // you can log this variable that contains the priority of failed process
+    TCritSect cs;
+    while (1); // as IWDG cannot be forced to reboot CPU, just wait for its timeout
 }
 
 void OS::wdg_init_user_hook() {
