@@ -78,7 +78,7 @@
                 </option>
                 <option>
                     <name>OGChipSelectEditMenu</name>
-                    <state>STM32F091RB	ST STM32F091RB</state>
+                    <state>STM32F334R8	ST STM32F334R8</state>
                 </option>
                 <option>
                     <name>GenLowLevelInterface</name>
@@ -117,7 +117,7 @@
                 <option>
                     <name>GBECoreSlave</name>
                     <version>27</version>
-                    <state>34</state>
+                    <state>39</state>
                 </option>
                 <option>
                     <name>OGUseCmsis</name>
@@ -134,21 +134,21 @@
                 <option>
                     <name>CoreVariant</name>
                     <version>27</version>
-                    <state>34</state>
+                    <state>39</state>
                 </option>
                 <option>
                     <name>GFPUDeviceSlave</name>
-                    <state>STM32F091RB	ST STM32F091RB</state>
+                    <state>STM32F334R8	ST STM32F334R8</state>
                 </option>
                 <option>
                     <name>FPU2</name>
                     <version>0</version>
-                    <state>0</state>
+                    <state>4</state>
                 </option>
                 <option>
                     <name>NrRegs</name>
                     <version>0</version>
-                    <state>0</state>
+                    <state>1</state>
                 </option>
                 <option>
                     <name>NEON</name>
@@ -157,7 +157,7 @@
                 <option>
                     <name>GFPUCoreSlave2</name>
                     <version>27</version>
-                    <state>34</state>
+                    <state>39</state>
                 </option>
                 <option>
                     <name>OGCMSISPackSelectDevice</name>
@@ -198,7 +198,7 @@
                 </option>
                 <option>
                     <name>DSPExtension</name>
-                    <state>0</state>
+                    <state>1</state>
                 </option>
                 <option>
                     <name>TrustZone</name>
@@ -301,7 +301,8 @@
                 </option>
                 <option>
                     <name>IExtraOptions</name>
-                    <state>--warnings_are_errors</state>
+                    <state>--warnings_are_errors
+</state>
                 </option>
                 <option>
                     <name>CCLangConformance</name>
@@ -370,7 +371,7 @@
                 <option>
                     <name>CCOptStrategy</name>
                     <version>0</version>
-                    <state>2</state>
+                    <state>1</state>
                 </option>
                 <option>
                     <name>CCOptLevelSlave</name>
@@ -437,7 +438,7 @@
                 <option>
                     <name>CCOptStrategySlave</name>
                     <version>0</version>
-                    <state>2</state>
+                    <state>1</state>
                 </option>
                 <option>
                     <name>CCGuardCalls</name>
@@ -772,7 +773,7 @@
                 </option>
                 <option>
                     <name>IlinkIcfFile</name>
-                    <state>$PROJ_DIR$\src\stm32f091rbt6.icf</state>
+                    <state>$PROJ_DIR$\src\stm32f334r8.icf</state>
                 </option>
                 <option>
                     <name>IlinkIcfFileSlave</name>
@@ -2170,10 +2171,10 @@
             <name>$PROJ_DIR$\src\scmRTOS_TARGET_CFG.h</name>
         </file>
         <file>
-            <name>$PROJ_DIR$\src\stm32f091_startup.cpp</name>
+            <name>$PROJ_DIR$\src\stm32f334r8.icf</name>
         </file>
         <file>
-            <name>$PROJ_DIR$\src\stm32f091rbt6.icf</name>
+            <name>$PROJ_DIR$\src\stm32f334r8_startup.cpp</name>
         </file>
     </group>
 </project>

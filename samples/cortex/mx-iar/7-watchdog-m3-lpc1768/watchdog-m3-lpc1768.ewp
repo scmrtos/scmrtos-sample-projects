@@ -78,7 +78,7 @@
                 </option>
                 <option>
                     <name>OGChipSelectEditMenu</name>
-                    <state>STM32F091RB	ST STM32F091RB</state>
+                    <state>LPC1768	NXP LPC1768</state>
                 </option>
                 <option>
                     <name>GenLowLevelInterface</name>
@@ -117,7 +117,7 @@
                 <option>
                     <name>GBECoreSlave</name>
                     <version>27</version>
-                    <state>34</state>
+                    <state>38</state>
                 </option>
                 <option>
                     <name>OGUseCmsis</name>
@@ -134,11 +134,11 @@
                 <option>
                     <name>CoreVariant</name>
                     <version>27</version>
-                    <state>34</state>
+                    <state>38</state>
                 </option>
                 <option>
                     <name>GFPUDeviceSlave</name>
-                    <state>STM32F091RB	ST STM32F091RB</state>
+                    <state>LPC1768	NXP LPC1768</state>
                 </option>
                 <option>
                     <name>FPU2</name>
@@ -157,7 +157,7 @@
                 <option>
                     <name>GFPUCoreSlave2</name>
                     <version>27</version>
-                    <state>34</state>
+                    <state>38</state>
                 </option>
                 <option>
                     <name>OGCMSISPackSelectDevice</name>
@@ -301,7 +301,8 @@
                 </option>
                 <option>
                     <name>IExtraOptions</name>
-                    <state>--warnings_are_errors</state>
+                    <state>--warnings_are_errors
+</state>
                 </option>
                 <option>
                     <name>CCLangConformance</name>
@@ -370,7 +371,7 @@
                 <option>
                     <name>CCOptStrategy</name>
                     <version>0</version>
-                    <state>2</state>
+                    <state>0</state>
                 </option>
                 <option>
                     <name>CCOptLevelSlave</name>
@@ -437,7 +438,7 @@
                 <option>
                     <name>CCOptStrategySlave</name>
                     <version>0</version>
-                    <state>2</state>
+                    <state>0</state>
                 </option>
                 <option>
                     <name>CCGuardCalls</name>
@@ -708,7 +709,7 @@
                 </option>
                 <option>
                     <name>IlinkOutputFile</name>
-                    <state>event-flag-stm32f051-sample.out</state>
+                    <state>watchdog-m3-lpc1768.out</state>
                 </option>
                 <option>
                     <name>IlinkDebugInfoEnable</name>
@@ -772,7 +773,7 @@
                 </option>
                 <option>
                     <name>IlinkIcfFile</name>
-                    <state>$PROJ_DIR$\src\stm32f091rbt6.icf</state>
+                    <state>$PROJ_DIR$\src\lpc1768.icf</state>
                 </option>
                 <option>
                     <name>IlinkIcfFileSlave</name>
@@ -2158,6 +2159,12 @@
     <group>
         <name>src</name>
         <file>
+            <name>$PROJ_DIR$\src\lpc1768.icf</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\src\lpc1768_startup.cpp</name>
+        </file>
+        <file>
             <name>$PROJ_DIR$\src\main.cpp</name>
         </file>
         <file>
@@ -2168,12 +2175,6 @@
         </file>
         <file>
             <name>$PROJ_DIR$\src\scmRTOS_TARGET_CFG.h</name>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\src\stm32f091_startup.cpp</name>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\src\stm32f091rbt6.icf</name>
         </file>
     </group>
 </project>
