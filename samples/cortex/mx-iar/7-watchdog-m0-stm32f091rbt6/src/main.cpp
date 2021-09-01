@@ -158,7 +158,7 @@ namespace OS {
 }
 
 void OS::system_timer_user_hook() {
-    wdg.run();
+    wdg.tick();
     static const auto COUNTER_INIT_VALUE = 1000;
     static int counter = COUNTER_INIT_VALUE;
     if (--counter == 0) {

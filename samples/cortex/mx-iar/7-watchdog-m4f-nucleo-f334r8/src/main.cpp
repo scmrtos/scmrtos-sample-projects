@@ -141,7 +141,7 @@ void OS::idle_process_user_hook() {
 #endif
 
 void OS::system_timer_user_hook() {
-    wdg.run();
+    wdg.tick();
 }
 
 // Process objects

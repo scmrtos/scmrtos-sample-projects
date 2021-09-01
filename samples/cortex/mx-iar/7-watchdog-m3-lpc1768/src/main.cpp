@@ -162,7 +162,7 @@ void OS::system_timer_user_hook() {
         counter = COUNTER_INIT_VALUE;
         timerEvent.signal_isr();
     }
-    wdg.run();
+    wdg.tick();
 }
 
 // Process objects
