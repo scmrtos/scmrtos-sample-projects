@@ -41,7 +41,6 @@ SRC_THUMB_CPP += src/uart.cpp
 #       OS sources
 SRC_ARM_CPP =  os_kernel.cpp
 SRC_ARM_CPP += os_services.cpp
-SRC_ARM_CPP += usrlib.cpp
 SRC_ARM_CPP += os_target.cpp
 #       Application sources
 SRC_ARM_CPP += main.cpp

@@ -38,7 +38,6 @@ SRC_THUMB_CPP =
 #       OS sources
 SRC_THUMB_CPP += os_kernel.cpp
 SRC_THUMB_CPP += os_services.cpp
-SRC_THUMB_CPP += usrlib.cpp
 
 #       Application sources
 SRC_THUMB_CPP += ./src/main.cpp

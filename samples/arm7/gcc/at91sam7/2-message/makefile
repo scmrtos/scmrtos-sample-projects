@@ -40,7 +40,6 @@ SRC_THUMB_ASM =
 #       OS sources
 SRC_ARM_CPP =  os_kernel.cpp
 SRC_ARM_CPP += os_services.cpp
-SRC_ARM_CPP += usrlib.cpp
 SRC_ARM_CPP += os_target.cpp
 #       Application sources
 SRC_ARM_CPP += main.cpp
